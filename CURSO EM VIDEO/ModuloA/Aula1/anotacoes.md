@@ -1,4 +1,4 @@
-`${O que o faz o JavaScript?}`
+`${O que faz o JavaScript?}`
 
 // Client x Server
 
@@ -8,6 +8,6 @@
 
 // Web site - tecnologias fundamentais
 
-- HTML: Responssável pelo conteúdo, como textos, imagens, vídeos e etc.
+- HTML: Responsável pelo conteúdo, como textos, imagens, vídeos e etc.
 - CSS: Responsável pelo design, como cores, tamanhos, formatos e etc.
 - JAVASCRIPT: Responsável pelas interações.

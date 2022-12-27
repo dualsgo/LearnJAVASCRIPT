@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br"> <!--Idioma-->
+
+<head>
+    <meta charset="UTF-8"><!--Compatibilidade dos caracteres-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"><!--Compatibilidade com navegadores-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><!--Compatibilidade com a viewport-->
+    <title>Meu primeiro programa...</title>
+    <style>
+        body {
+            background-color: #5d5dda;
+            color: #fff;
+            font: normal 20pt arial;
+        }
+
+        h1 {
+            color: #d7e60f;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Olá, mundo!</h1>
+    <p>Já me livrei da maldição</p>
+    <!--Script ficam antes do fechamento do body para tornar mais eficiente o seu carregamento-->
+    <script>
+        var nome = window.prompt('Qual é o seu nome?');//A variável nome recebe o valor que for inserido pelo usuário no prompt
+        alert('É um prazer te conhecer ' + nome + ' !');// exibirá o valor em um alerta
+    </script>
+</body>
+
+</html>

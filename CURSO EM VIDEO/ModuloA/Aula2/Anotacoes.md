@@ -6,10 +6,10 @@ Sabe a diferença entre um cliente e um servidor para a internet?_/
 /_ Q02
 Para que serve HTML, CSS e JAVASCRIPT_/
 
-- HTML é o conteúdo, CSS é o design e JAVASCRIPT são as interações
+- Servem para criação de web sites (entre outras coisas) HTML é o conteúdo, CSS é o design e JAVASCRIPT são as interações
 
 /_ Q03
-Cite 4 site que fazem uso de JAVASCRIPT_/
+Cite 4 sites que fazem uso de JAVASCRIPT_/
 
 Google, YouTube, Netflix, Sites governamentais
 
@@ -23,13 +23,13 @@ Javascript - Como chegamos até aqui?
 
 1994 - Mark Andersen se juntou a Jim Clark e fundaram a NETSCAPE que criou um navegador baseado no MOSAIC
 
-1995 - Brendan Eich da NETSCAPE criou a linguagem MOCCA/LiveScript para dar mais funcionalidades ao HTML. Na mesma época surgia o JAVA e devido seu sucesso surgiu o nome JAVASCRIPT para a linguagem de Brandon (As duas linguagens são baseadas na linguagem C). A Microsoft criou o JScript baseado no JAVASCRIPT com algumas melhorias junto ao Internet Explorer e o Windows 95. Devido isso o JAVASCRIPT foi padronizado pela ECMA e essa versão padronizada é conhecida como ECMAScript
+1995 - Brendan Eich da NETSCAPE criou a linguagem MOCHA/LiveScript para dar mais funcionalidades ao HTML. Na mesma época surgia o JAVA e devido seu sucesso surgiu o nome JAVASCRIPT para a linguagem de Brendan (As duas linguagens são baseadas na linguagem C). A Microsoft criou o JScript baseado no JAVASCRIPT com algumas melhorias junto ao Internet Explorer e o Windows 95. Devido isso o JAVASCRIPT foi padronizado pela ECMA e essa versão padronizada é conhecida como ECMAScript
 
 2002 - Foi criada a fundação MOZILLA e o seu navegador FIREFOX
 
 2008/2009 - A GOOGLE criou seu próprio navegador o CHROME que se tornou rapidamente o mais popular. Ele possui um motor interno de JAVASCRIPT muito poderoso (V8).
 
-2010 - Foi criado o NODEJS para rodar JAVASCRIPT fora do navegador
+2010 - Foi criado o NODE.JS para rodar JAVASCRIPT fora do navegador
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
