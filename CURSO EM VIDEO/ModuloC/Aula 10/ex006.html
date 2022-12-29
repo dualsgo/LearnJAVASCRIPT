@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primeiros passos com DOM</title>
+    <style>
+        #area {
+            background: green;
+            color: white;
+            width: 200px;
+            height: 200px;
+            line-height: 200px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="area">    Interaja...
+    </div>
+
+    <script>
+
+        var caixa = window.document.getElementById('area') // escopo global
+caixa.addEventListener('click', clicar);
+caixa.addEventListener('mouseenter', entrar);
+caixa.addEventListener('mouseout', sair);
+        function clicar() {
+            caixa.innerText = 'Clicou'
+            caixa.style.background = 'blue'
+        }
+
+        function entrar() {
+            caixa.innerText = 'Entrou'
+            caixa.style.background = 'yellow'
+        }
+
+        function sair() {
+            caixa.innerText = 'Saiu'
+            caixa.style.background = 'red'
+        }
+
+    </script>
+
+</body>
+
+</html>
