@@ -41,7 +41,7 @@ OPERADORES DO JS
 
 Operadores aritiméticos
 
-- adição
++ adição
 * subtração
 - multiplicação
   / divisão real

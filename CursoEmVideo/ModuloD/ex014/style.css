@@ -1,0 +1,34 @@
+/*Configuracoes para o corpo do site*/
+body {
+    background: rgb(70, 142, 236);
+    font: normal 15pt Arial;
+}
+
+/*Configuracao do título*/
+header {
+    color: white;
+    text-align: center;
+}
+
+/*Configuracoes para a seção de texto e imagem*/
+section {
+    background: white;
+    border-radius: 10px;
+    padding: 15px;
+    width: 500px;
+    margin: auto;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 16);
+}
+
+section div {
+    display: flex;
+    justify-content: center;
+}
+
+/*Configuracao do rodape*/
+
+footer {
+    text-align: center;
+    color: white;
+    font-style: italic;
+}

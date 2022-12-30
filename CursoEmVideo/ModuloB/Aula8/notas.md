@@ -51,7 +51,7 @@ Relacionais
 LÓGICOS
 
 ! negação
-$$ e conjulção
+&& e conjulção
 || ou disjunção
 
 
