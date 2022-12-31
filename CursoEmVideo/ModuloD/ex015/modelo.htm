@@ -19,7 +19,7 @@
                 <input type="number" name="txtano" id="txtano" min="0">
             </p>
             <p>Sexo:
-                <input type="radio" name="radsex" id="mas" checked>
+                <input type="radio" name="radsex" id="masc" checked>
                 <label for="mas">Masculino</label>
                 <input type="radio" name="radsex" id="fem">
                 <label for="fem">Feminino</label>
@@ -36,7 +36,29 @@
         <p> &copy; CursoEmVideo</p>
     </footer>
     <script>
-
+function verificar() {
+    var data = new Date();
+    var ano = data.getFullYear();
+    // captura as informações do dispositivo, nesse caso o ano
+    var fano = document.getElementById('txtano');
+    var res = document.querySelector('div#res');
+    if (fano.value.length == 0 || Number(fano.value) > ano) {
+        window.alert("ERRO!");
+    }
+    else {
+        var fsex = document.getElementsByName('radsex');
+        var idade = ano - Number(fano.value);
+        var genero = ''
+        if (fsex[0].checked) {
+            genero = 'Homem'
+        } 
+        
+        else if (fsex[1].checked) {
+            genero = 'Mulher'
+        } res.innerHTML = `Detectamos ${genero} com ${idade} anos.`
+        res.style.textAlign = 'center'
+    } 
+}
 
 
 
