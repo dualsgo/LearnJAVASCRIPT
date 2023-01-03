@@ -1,18 +1,24 @@
-?/
+/*Q01
+O que é uma variável?
+*/
 
 - É um espaço reservado na memória para armazenarmos dados
 
 /_ Q02
-Como declarar uma variável numérica inteira ou real usando JS?_/
+Como declarar uma variável numérica inteira ou real usando JS?
+_/
 
 - Declaramos uma variável inteira com o valor 1 (exemplo) e para real utilizamos o ponto 1.3 (ponto é usado como vírgula na matemática)
 
 /_ Q03
-Quais são os tipos primitivos do JS?_/
+Quais são os tipos primitivos do JS?
+_/
 
 - number (infinity e NaN), string, boolean (true e false), null (é considerado object), undefined, object (array) e function
+
 /_ Q04
-O que significa colocar o valor null dentro de uma variável?_/
+O que significa colocar o valor null dentro de uma variável?
+_/
 
 - Ao atribuir o valor null anulamos a variável
 

@@ -1,10 +1,10 @@
-/\_ Q01
+/* Q01
 Já sabe organizar suas pastas no VSCode?/
 
 - Sim! Explicação longa
 
-/_ Q02
-O node.js está instalado no seu computador?_/
+/* Q02
+O node.js está instalado no seu computador?*/
 
 - Sim, está. Serve para executar o JavaScript fora do navegador
 
