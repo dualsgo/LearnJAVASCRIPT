@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript interno e externo</title>
+  </head>
+
+  <body>
+    <!--
+        Colocamos o script no final do corpo para ser renderizado por último, 
+        pois o navegador le o documento de cima para baixo e o JS precisa que o HTML 
+        esteja carregado para o JavaScrip funcionar perfeitamente
+    -->
+
+    <script src="aula01.js"></script><!--O atributo src deve ser utilizado, diferente de CSS que utiliza href-->
+    <!--Rodando de um arquivo externo-->
+    <script>
+      alert("Olá mundo");
+    </script>
+    <!--Rodando internamente-->
+  </body>
+</html>
