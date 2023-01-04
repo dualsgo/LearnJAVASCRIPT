@@ -61,9 +61,9 @@ function minhhaFuncao(){
 
 - Para comentar os códigos há duas formas:
 
-/*barra asterisco, asterisco barra*/ Comenta várias linhas.
+- /*barra asterisco, asterisco barra*/ Comenta várias linhas.
 
-//barra barra Comenta apenas a linha em que se encontra.
+- //barra barra Comenta apenas a linha em que se encontra.
 
 ## Variáveis
 
@@ -84,46 +84,67 @@ var nome é diferente de var Nome ou nomE
 
 - const: Não pode ser redeclarada e nem seu valor pode ser reatribuído. Ele é constante!
 
-OBS.: É necessário observar o escopo(Global ou local)
+>OBS.: É necessário observar o escopo(Global ou local)
 
 ## Operadores
 
 - São usados para atribuir valores, comparar e executar operações matemáticas.
-- São organizados em categorias:
+- São organizados em seis categorias:
 
-OPERADORES ARITIMÉTICOS - Para efetuar as operações matemáticas:
+>1 - Operadores Aritiméticos
+>2 - Operadores de Atribuição
+>3 - Operadores de Sequência
+>4 - Operadores de Comparação
+>5 - Operador Condicional (Ternário)
+>6 - Operadores Lógicos
 
-Adição +, Subtração -, Multiplicação *, Exponenciação **, Divisão / e Resto da Divisão % 
+- OPERADORES ARITIMÉTICOS - Para efetuar as operações matemáticas:
 
-OPERADORES DE ATRIBUIÇÃO - Para atribuir os valores para as variáveis
+>Adição +
+>Subtração -
+>Multiplicação *
+>Exponenciação **
+>Divisão /
+>Resto da Divisão % 
 
-recebe =, adiciona +=, subtrai -=
+- OPERADORES DE ATRIBUIÇÃO - Para atribuir os valores para as variáveis
 
-OPERADORES DE SEQUENCIA - São usados para concatenar strings (+) strings
+>recebe =
+>adiciona +=
+>subtrai -=
 
-++ incrementa, pois é o mesmo que a = a + 1
--- decremente, pois é o mesmo que a = a - 1
+- OPERADORES DE SEQUENCIA - São usados para concatenar strings (+) strings
 
-OPERADORES DE COMPARAÇÃO - São usados em declarações lógicas e retornam true ou false (valores booleanos)
+>++ incrementa, pois é o mesmo que a = a + 1
+>-- decremente, pois é o mesmo que a = a - 1
 
-Igual (valor) ==, Idêntico (valor e tipo) ===, não igual(diferente) !=, não identico !==,
-Menor que <, Maior que >, Menor ou Igual <=, Maior ou Igual >=
+- OPERADORES DE COMPARAÇÃO - São usados em declarações lógicas e retornam true ou false (valores booleanos)
 
-OPERADOR TERNÁRIO
+>Igual (valor) ==
+>Idêntico (valor e tipo) ===
+>Não igual(diferente) !=
+>Não identico !==
+>Menor que <
+>Maior que >
+>Menor ou Igual <=
+>Maior ou Igual >=
 
-(teste lógico) ? true \\Codigo que deve ser executado : false \\Codigo que deve ser executado
+- OPERADOR TERNÁRIO
 
-OPERADORES LÓGICOS
+> (teste lógico) ? true \\Codigo que deve ser executado : false \\Codigo que deve ser executado
 
-e &&, ou ||
+## OPERADORES LÓGICOS
 
-true && true - true
-true && false - false
-false && true - false
-false && false - false
+- e &&
+- ou ||
 
-true || true - true
-true || false - true    
-false || true - true
-false || false - false
+>true && true - true
+>true && false - false
+>false && true - false
+>false && false - false
+
+>true || true - true
+>true || false - true    
+>false || true - true
+>false || false - false
 
