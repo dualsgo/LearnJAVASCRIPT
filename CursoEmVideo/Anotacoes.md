@@ -20,9 +20,9 @@ O que faz o JavaScript?
 
 Client x Server
 
-- Cliente utiliza o serviço forncecido pelo servidor
-- Usamos o navegador para solicitar ao servidor os arquivos (em geral, arquivos html) através da URL e recebemos cópias em pacotes
-- JavaScript é uma tecnologia client side, mas também é utilizado no server side
+- Cliente utiliza o serviço forncecido pelo servidor.
+- Usamos o navegador para solicitar ao servidor os arquivos (em geral, arquivos html) através da URL e recebemos cópias em pacotes.
+- JavaScript é uma tecnologia client side, mas também é utilizado no server side.
 
 Web site - tecnologias fundamentais
 
@@ -35,33 +35,33 @@ Web site - tecnologias fundamentais
 Questão 1
 Sabe a diferença entre um cliente e um servidor para a internet?
 
-- Cliente é o dispositivo do usuário que faz as solicitações dos arquivos necessário para o uso de sites e páginas web para o servidor
+- Cliente é o dispositivo do usuário que faz as solicitações dos arquivos necessários para o uso de sites e páginas web para o servidor.
 
 Questão 2
 Para que serve HTML, CSS e JAVASCRIPT
 
-- Servem para criação de web sites (entre outras coisas) HTML é o conteúdo, CSS é o design e JAVASCRIPT são as interações
+- Servem para criação de web sites (entre outras coisas) HTML é o conteúdo, CSS é o design e JAVASCRIPT são as interações.
 
 Questão 3
-Cite 4 sites que fazem uso de JAVASCRIPT
+Cite 4 sites que fazem uso de JAVASCRIPT.
 
-- Google, YouTube, Netflix, Sites governamentais
+- Google, YouTube, Netflix, Sites governamentais.
 
 ## Javascript - Como chegamos até aqui?
 
-- 1960/1970 - Surgiu o princípio da internet devido a Guerra Fria. Foi criada a DARPA para pesquisar tecnologias para a guerra. Os dados dos centros militares precisavam ser protegidos (backup) e assim foi criada a ARPANET, para a comunicação e compartilhamento desses dados entre os centros. Nela também estavam instituições educacionais, como MIT. Devido ao crescimento exponencial os militares não davam conta da infraestrutura.
+- 1960/1970 - Surgiu o princípio da internet devido a Guerra Fria. O governo dos Estados Unidos crioi a DARPA para pesquisar tecnologias para a guerra. Os dados dos centros militares precisavam ser protegidos de ataques (backup) e assim foi criada a ARPANET, para a comunicação e compartilhamento desses dados entre os centros militares. Nela também estavam instituições educacionais, como MIT. Devido ao crescimento exponencial os militares não davam conta da infraestrutura e separaram a rede militar. 
 
-- 1993 - Tim Bernes Lee foi responsável pela criação das ligações entre documentos (HTML, Protocolo HTTP e WWW). Neste mesmo ano foi criado o navegador MOSAIC por Mark Andersen NCSA
+- 1993 - Tim Bernes Lee foi responsável pela criação das ligações entre documentos (HTML, Protocolo HTTP e WWW). Neste mesmo ano foi criado o navegador MOSAIC por Mark Andersen NCSA.
 
-- 1994 - Mark Andersen se juntou a Jim Clark e fundaram a NETSCAPE que criou um navegador baseado no MOSAIC
+- 1994 - Mark Andersen se juntou a Jim Clark e fundaram a NETSCAPE que criou um navegador baseado no MOSAIC.
 
-- 1995 - Brendan Eich da NETSCAPE criou a linguagem MOCHA/LiveScript para dar mais funcionalidades ao HTML. Na mesma época surgia o JAVA e devido seu sucesso surgiu o nome JAVASCRIPT para a linguagem de Brendan (As duas linguagens são baseadas na linguagem C). A Microsoft criou o JScript baseado no JAVASCRIPT com algumas melhorias junto ao Internet Explorer e o Windows 95. Devido isso o JAVASCRIPT foi padronizado pela ECMA e essa versão padronizada é conhecida como ECMAScript
+- 1995 - Brendan Eich da NETSCAPE criou a linguagem MOCHA/LiveScript para dar mais funcionalidades ao HTML. Na mesma época surgia o JAVA e devido seu sucesso surgiu o nome JAVASCRIPT para a linguagem de Brendan (As duas linguagens são baseadas na linguagem C). A Microsoft criou o JScript baseado no JAVASCRIPT com algumas melhorias junto ao Internet Explorer e o Windows 95. Devido a isso o JAVASCRIPT foi padronizado pela ECMA e essa versão padronizada é conhecida como ECMAScript.
 
-- 2002 - Foi criada a fundação MOZILLA e o seu navegador FIREFOX
+- 2002 - Foi criada a fundação MOZILLA e o seu navegador FIREFOX.
 
 - 2008/2009 - A GOOGLE criou seu próprio navegador o CHROME que se tornou rapidamente o mais popular. Ele possui um motor interno de JAVASCRIPT muito poderoso (V8).
 
-- 2010 - Foi criado o NODE.JS para rodar JAVASCRIPT fora do navegador
+- 2010 - Foi criado o NODE.JS para rodar JAVASCRIPT fora do navegador.
 
 ## ECMAScript - Versões e destaques
 
@@ -77,249 +77,253 @@ Cite 4 sites que fazem uso de JAVASCRIPT
 Tecnologias/Frameworks que usam JavaScript
 
 - JQuery (conjunto de bibliotecas)
-- Angular
-- React
-- Vue
-- Electron
-- Ionic
-- Cordova
+- Angular.
+- React.
+- Vue.
+- Electron.
+- Ionic.
+- Cordova.
 
 ## MODULO 1 - AULA 3
 
 Questão 1
 Sabe que empresa criou o JavaScript?
 
-- NETSCAPE
+- NETSCAPE.
 
 Questão 2
 Java e JavaScript possuem alguma relação?
 
-- Ambas são baseadas na linguagem C, portanto possuem caracteristicas em comum mas são linguagens diferentes. O nome JavaScript foi adotado devido a ascenção do JAVA
+- Ambas são baseadas na linguagem C, portanto possuem caracteristicas em comum mas são linguagens diferentes. O nome JavaScript foi adotado devido a ascenção do JAVA.
 
 Questão 3
-O que ECMAScript tem a ver com JavaScript
+O que ECMAScript tem a ver com JavaScript?
 
-- ECMAScript é a versão padronizada do JavaScript da NETSCAPE
+- ECMAScript é a versão padronizada do JavaScript da NETSCAPE.
 
 Questão 4
 Sabia que o programa WhatsApp desktop é criado em JavaScript?
 
-- Sim, utilizando o framework ELECTRON desenvolvido pelo GITHUB
+- Sim, utilizando o framework ELECTRON desenvolvido pelo GITHUB.
 
 ## Dando os primeiros passos - Antes de começar...
 
-- Assitir os vídeos
-- Treinar no computador
-- Ler manuais e referências
-- Anotar tudo
-- Interagir com pessoas
-- Resolver problemas e fazer projetos pessoais com programação
+- Assitir os vídeos.
+- Treinar no computador.
+- Ler manuais e referências.
+- Anotar tudo.
+- Interagir com pessoas.
+- Resolver problemas e fazer projetos pessoais com programação.
 
 Bibliografia recomendada
 
-- Livro "JAVASCRIPT, O GUIA DEFINITIVO"
-- Guia de referência da MOZILLA MDN e da ECMA 262
+- Livro "JAVASCRIPT, O GUIA DEFINITIVO".
+- Guia de referência da MOZILLA MDN e da ECMA 262.
 
 Crenças limitantes e dúvidas comuns
 
-- Não há idade certa para programar. Cada um tem seu tempo de aprendizagem
-- Não importa o sexo
-- Não importa a localização. Existem diversas formas de aprendizagem
-- Para programar precisa vontade e dedicação
-- Para programar não é obrigatório saber inglês nem ser mestre em matemática
-- Lógica de programação é importante para aprender os fundamentos
-- Salário não deve ser o objetivo e sim a consequência
+- Não há idade certa para programar. Cada um tem seu tempo de aprendizagem.
+- Não importa o sexo.
+- Não importa a localização. Existem diversas formas de aprendizagem.
+- Para programar precisa vontade e dedicação.
+- Para programar não é obrigatório saber inglês nem ser mestre em matemática.
+- Lógica de programação é importante para aprender os fundamentos.
+- Salário não deve ser o objetivo e sim a consequência.
 - Não existe a melhor linguagem do mundo. Cada uma possui suas especialidades. Escolha uma e não diminua as outras.
-- O ideal é aprender a base pouco a pouco de forma simples e no futuro aprender outras frameworks
+- O ideal é aprender a base pouco a pouco de forma simples e no futuro aprender outras frameworks.
 
 
 ## Ferramentas
 
-- NAVEGADOR, Chrome
-- IDE, Visual Studio Code
-- NODE JS
+- NAVEGADOR, Chrome.
+- IDE, Visual Studio Code.
+- NODE JS.
 
 ## MODULO 1 - AULA 4
 
 Questão 1
-Que livros e documentos recomendamos?/
+Que livros e documentos recomendamos?
 
-- Documentação da MOZILLA MDN, ECMA 262 e livro 'JAVASCRIPT, O GUIA DEFINITIVO'
+- Documentação da MOZILLA MDN, ECMA 262 e livro 'JAVASCRIPT, O GUIA DEFINITIVO'.
 
 Questão 2
 Para aprender JS, precisamos saber inglês?
 
-- Não é um pré requisito, mas saber o básico ajuda e futuramente será um diferencial para vagas de emprego
+- Não é um pré requisito, mas saber o básico ajuda e futuramente será um diferencial para vagas de emprego.
 
 Questão 3
-Que dicas nós demos para quem quer estudar
+Que dicas nós demos para quem quer estudar?
 
-- Assitir os vídeos
-- Treinar no computador
-- Ler manuais e referências
-- Anotar tudo
-- Interagir com pessoas
-- Resolver problemas e fazer projetos pessoais com programação
+- Assitir os vídeos.
+- Treinar no computador.
+- Ler manuais e referências.
+- Anotar tudo.
+- Interagir com pessoas.
+- Resolver problemas e fazer projetos pessoais com programação.
 
 Questão 4
 Quais programas nós instalamos no computador?
 
-- Navegador Google Chrome, Visual Studio Code e NODE JS
+- Navegador Google Chrome, Visual Studio Code e NODE JS.
 
 ## Criando o seu primeiro script - Relembrando...
 
-- HTML, é o conteúdo, CSS é o estilo/design e JavaScript são as interações
-- Organizar bem os arquivos em suas respectivas pastas
+- HTML, é o conteúdo, CSS é o estilo/design e JavaScript são as interações.
+- Organizar bem os arquivos em suas respectivas pastas.
 
 ## MODULO B - AULA 5
 
 Questão 1
-Já sabe organizar suas pastas no VSCode?/
+Já sabe organizar suas pastas no VSCode?
 
-- Sim! Explicação longa
+- Sim! Nomeamos as pastas sem espaços e com letras minusculas.
 
 Questão 2
 O node.js está instalado no seu computador?
 
-- Sim, está. Serve para executar o JavaScript fora do navegador
+- Sim, está. Serve para executar o JavaScript fora do navegador mas também pode ser utilizado no VSCode.
 
 Questão 3
 Sabe diferenciar HTML5, CSS3 e JS dentro de um código?
 
-- Sim! As tags HMTL5 ficam no body (mas todo o arquivos basicamente é considerado html) CSS3 fica dentro da tag style e JS dentro da tag script
+- Sim! As tags HMTL5 ficam no body (mas todo o arquivos basicamente é considerado html) CSS3 fica dentro da tag style e JS dentro da tag script.
 
 Questão 4
 Sabe disparar alertas, confirmações e perguntas?
 
-- Alertas são disparados com alert(), sendo exibida uma janela com botão ok
-- Confirmações são disparadas com confirm() e exibiem na janela um botão ok e outro cancel
-- Perguntas são disparadas com prompt() e exibem uma area para texto onde o usuário entra com os dados
+- Alertas são disparados com alert(), sendo exibida uma janela com botão ok.
+- Confirmações são disparadas com confirm() e exibiem na janela um botão ok e outro cancel.
+- Perguntas são disparadas com prompt() e exibem uma area para texto onde o usuário entra com os dados.
 
 ## Tipos de dados e variáveis
 
 Comentários - Ignoram os códigos
 
-- // Comentário em única linha
+- // Comentário em única linha.
 
-- /\* Comentário em
-  mais de uma linha \ 
+- /* Comentário em
+  mais de uma linha *\.
   
 ## Variáveis
 
-- São espaços reservados. A memória do computador disponibiliza espaços para guardarmos dados
-- Palavra chave var para variáveis e temos no JS moderno let e const
-- As variáveis precisam receber nomes identificadores descritivos e posteriormente recebem seus valores
+- São espaços reservados. A memória do computador disponibiliza espaços para guardarmos dados.
+- Palavra chave var para variáveis e temos no JS moderno let e const.
+- As variáveis precisam receber nomes identificadores descritivos e posteriormente recebem seus valores.
 - Os identificadores devem seguir certas regras:
 
-A - Podem começar com letra, $ ou \_ (underline/sublinhado)
-B - Não podem começar com números
-C - É possível usar acentos e símbolos
-D - Não podem conter espaços
-E - Não podem ser palavras reservadas
-F - Maiúsculas e minúsculas fazem a diferença
-G - Tente escolher nomes coerentes para as variáveis
-H - Evite se tornar um programados alfabeto ou programador contador
+A - Podem começar com letra, $ ou _ (underline/sublinhado).
+B - Não podem começar com números.
+C - É possível usar acentos e símbolos.
+D - Não podem conter espaços.
+E - Não podem ser palavras reservadas.
+F - Maiúsculas e minúsculas fazem a diferença.
+G - Tente escolher nomes coerentes para as variáveis.
+H - Evite se tornar um programados alfabeto ou programador contador.
 
-- O sinal de igual é chamado de RECEBE pois ele atribui o valor a variável (Operador de atribuição)
-- Abrir terminal no VSCode e digitar node
-  CTRL + L para limpar
+- O sinal de igual é chamado de RECEBE pois ele atribui o valor a variável (Operador de atribuição).
+- Abrir terminal no VSCode e digitar node.
+  Atalho CTRL + L para limpar
 
-#Tipos de dados - Primitivos primordiais
+## Tipos de dados - Primitivos primordiais
 
 - number:
 
-5, 19, -12 // São números inteiros
+5, 19, -12 // São números inteiros.
 
-0.5, -15.9, 3.14, 8.0 // São números reais, com ponto flutuante (float)
+0.5, -15.9, 3.14, 8.0 // São números reais, com ponto flutuante (float).
 
-infinity e NaN
+infinity e NaN (Not a Number).
 
-- string cadeias de caracteres (inclusive numeros, como cpf por exemplo)
+- string // São cadeias de caracteres (inclusive numeros, como cpf por exemplo):
 
-"Google", 'JavaScript', `Maria`, "14994086761"
+Podem ser escritas com aspas simples ou duplas.
+"Google", 'JavaScript', "14994086761"
+
+Podem ser escritas entre crases
+`Maria ${variavel}` (template string. Podemos concatenar variáveis colocando-as dentro do placeholder (Chaves) após o sifrão.)
 
 - boolean
 
-true e false
+true e false.
 
 - null
 - undefined
 - object
 
-array
+array.
 
 - function
 
-comando typeof para saber o tipo de dado
+Obs.: Utilizamos o comando typeof para saber o tipo de dado.
+
+typeof dado
 
 ## MODULO B - AULA 6
 
 Questão 1
 O que é uma variável?
 
-- É um espaço reservado na memória para armazenarmos dados
+- É um espaço reservado na memória para armazenarmos dados.
 
 Questão 2
 Como declarar uma variável numérica inteira ou real usando JS?
 
-- Declaramos uma variável inteira com o valor 1 (exemplo) e para real utilizamos o ponto 1.3 (ponto é usado como vírgula na matemática)
+- Declaramos uma variável inteira com o valor 1 (exemplo) e para real utilizamos o ponto 1.3 (ponto é usado como vírgula na matemática).
 
 Questão 3
 Quais são os tipos primitivos do JS?
 
-- number (infinity e NaN), string, boolean (true e false), null (é considerado object), undefined, object (array) e function
+- number (infinity e NaN), string, boolean (true e false), null (é considerado object), undefined, object (array) e function.
 
 Questão 4
 O que significa colocar o valor null dentro de uma variável?
 
-- Ao atribuir o valor null anulamos a variável
+- Ao atribuir o valor null anulamos a variável.
 
 ## Manipulação de dados
 
-- o sinal de + também serve para concatenação
-- O prompt retorna string
-A - number + number retorna uma adição
-B - string + string retorna concatenação
+- o sinal de + também serve para concatenação.
+- O prompt retorna por padrão um dado do tipo string.
+A - (number + number) retorna uma adição.
+B - (string + string) retorna concatenação.
+
 - Para converter string para number usamos:
-A - parseInt(n) para número inteiro
-B - parseFloat(n) para número real/decimal
-C - Number(n) o JS irá identificar automaticamente
+A - parseInt(n) para número inteiro.
+B - parseFloat(n) para número real/decimal.
+C - Number(n) o JS irá identificar automaticamente.
+
 - Para converter number para string usamos:
 A - String(n)
 B - n.toString()
+
 - template string
-A - utilizamos o placeholder entre crases dessa forma para concatenar strings `${variavel}`
+A - utilizamos o placeholder entre crases dessa forma para concatenar strings `${variavel}`.
 
 ## Lidando com strings:
 
-> .length // quantos caracteres a string tem
+> .length // Retrona quantos caracteres a string tem.
 
-> .toUpperCase() // Transforma em maiúscula
+> .toUpperCase() // Transforma em maiúscula.
 
-> .toLowerCase() // Transforma em minúscula
+> .toLowerCase() // Transforma em minúscula.
 
 # Lidando com números:
 
-> var n1 = 1545.5 // Declarando a variavel
+> var n1 = 1545.5 // Declarando a variavel.
+> n1 // Chamando a variavel.
+> 1545.5 // Retorno do valor que foi atribuido.
 
-> n1 // chamando a variavel
-> 1545.5 // retorno do valor que foi atribuido
+> n1.toFixed(2) // para fixar as casas decimais.
+> '1545.50' // Retorno com duas casas decimais.
 
-> n1.toFixed(2) // para fixar as casas decimais
-> '1545.50' // exibe com duas casas decimais
-> n1.toFixed(2).replace('.',',') // alem disso troca . pela ,
+> n1.toFixed(2).replace('.',',') // Troca do . pela ,
+>'1545,50' // Retorno
 
->'1545,50'
+> n1.toLocaleString('pt-BR',{style: 'currency', currency: 'BRL'}) // atributos para mostrar em valor monetário
+> 'R$ 1.545,50' // Retorno da variável com valor monetário em Real.
 
-> n1.toLocaleString('pt-BR',{style: 'currency', currency: 'BRL'
-> }) // atributos para mostrar em valor monetário
-
-'R$ 1.545,50'
-
-> n1.toLocaleString('pt-BR',{style: 'currency', currency: 'USD'
-> }) // atributos para mostrar em valor monetário
-
->'US$ 1,545,50'
+> n1.toLocaleString('pt-BR',{style: 'currency', currency: 'USD'}) // atributos para mostrar em valor monetário
+>'US$ 1,545,50' // Retorno da variável com valor monetário em dolar.
 
 ## MODULO B - AULA 7
 
@@ -327,38 +331,35 @@ Questão 1
 Como é possível guardar o valor digitado em um prompt() dentro de uma variável?
 
 - Declarando uma variável que receberá o valor fornecido pelo usuário
-  var exemplo = prompt('valor')
+> var exemplo = prompt('valor').
 
 Questão 2
 Como fazer com que um número digitado em um prompt() possa ser usado em cálculos?
 
 - Como o prompt() retorna sempre uma string, precisamos converter para number utilizando Number(n).
 
->var n1 = Number(prompt('Número));
->var n2 = Number(prompt('Outro número'));
->var soma = n1 + n2
+>var n1 = Number(prompt('Número)); //Declaramos a variável e atribuímos o prompt, assim o valor da variável será passado pelo usuário.
+>var n2 = Number(prompt('Outro número'));//Declaramos a variável e atribuímos o prompt, assim o valor da variável será passado pelo usuário.
+>var soma = n1 + n2 //O retorno será a soma dos valores passados pelo usuário.
 
-Tamém podemos usar parseInt ou parseFloat se quisermos especificamente um tipo de número
+Obs.: Também podemos usar parseInt ou parseFloat se quisermos especificamente um tipo de número (real ou decimal). A conversão pode ocorrer direto na variável que recebe o valor ou na variável que somas os valores.
 
 Questão 3
 Como transformar um texto todo para letras MAIUSCULAS?
 
 - utilizando .toUpperCase()
 
-var nome = prompt('Digite o nome')
-document.write(`Seu nome em maiúscula é ${nome.toUpperCase()}`);
+>var nome = prompt('Digite o nome') //Declaramos a variável e atribuímos o prompt, assim o valor da variável será passado pelo usuário.
+>document.write(`Seu nome em maiúscula é ${nome.toUpperCase()}`); // A sintaxe é variavel.metodo()
 
 Questão 4
 Como mostrar um número formatado como um valor monetário?
 
-- Declaramos a variável e manipluamos fixando duas casas decimais, substituimos . por virgula e depois localizamos a string
+- Declaramos a variável e manipluamos fixando duas casas decimais, substituimos . por virgula e depois localizamos a string.
 
-var n1 = 1545.5
-
-n1.toFixed(2).replace('.',',')
-n1.toLocaleString('pt-BR',{style: 'currency', currency: 'BRL'
-})
-
+> var n1 = 1545.5 //Declaração
+> n1.toFixed(2).replace('.',',') //Fixando as casas decimais e substituindo ponto e virgula.
+> n1.toLocaleString('pt-BR',{style: 'currency', currency: 'BRL'}) //Localizando a unidade monetaria.
 
 ## OPERADORES DO JS
 
@@ -379,8 +380,8 @@ n1.toLocaleString('pt-BR',{style: 'currency', currency: 'BRL'
 
 - PRECEDENCIA DOS OPERADORES
 
->5+3/2
->5+1.5
+>5+3/2 //Divisão
+>5+1.5 
 >6.5
 
 - Ordem de precedencia (Se houver mais de um começar da esquerda para direita)
@@ -401,7 +402,7 @@ n1.toLocaleString('pt-BR',{style: 'currency', currency: 'BRL'
 - AUTO ATRIBUIÇÃO
 
 >var n = 3 atribuição simples
->n = n + 4 SIMPLIFICADO n += 4
+>n = n + 4 SIMPLIFICADO n += 4 // n tem valor 3 e recebe mais 4. O retorno é 7
 >n = n - 5
 >n = n \* 4
 >n = n / 2
@@ -411,7 +412,7 @@ n1.toLocaleString('pt-BR',{style: 'currency', currency: 'BRL'
 - INCREMENTO
 
 >var x = 5
->x = x + 1 SIMPLIFICADO x++
+>x = x + 1 SIMPLIFICADO x++ // x tem valor 5 e recebe + 1. O retorno é 6
 >x = x - 1 SIMPLIFICADO X--
 
 ## MODULO B - AULA 8
@@ -424,30 +425,25 @@ Para que serve o operador % em JS? Seria para calcular porcentagem?
 Questão 2
 6+4/2 é igual a 5 ou 8?
 
-- É 8 pois pela ordem de precedencia fazemos primeiro a divisão e depois a adição
+- É 8 pois pela ordem de precedencia fazemos primeiro a divisão e depois a adição.
 
   6 + (4/2)
-
   6 + 2
-
   8
 
 Questão 3
 Se uma variavel n esta valendo 10 e executamos um n+=5, qual sera seu novo valor?
 
-- n começa com valor 10 e recebe o incremento de 5 se tornando 15
+- n começa com valor 10 e recebe o incremento de 5 se tornando 15.
 
-n = 10
-
-10 + 5
-
-n = 15
+>var n = 10
+>10 + 5
+>n = 15
 
 Questão 4
 Para que servem os peradores ++ e --?
 
-- São operadore de incremento e decremento
-  São o mesmpo que n = n + 1 ou n+=1
+- São operadores de incremento e decremento (São o mesmpo que n = n + 1 ou n+=1)
 
 ## OPERADORES DO JS
 
@@ -470,19 +466,21 @@ Para que servem os peradores ++ e --?
 >!true = false - não verdadeiro é falso
 >!false = true - não falso é verdadeiro
 
-- && um e outro precisam ser verdadeiros
+- && um e outro precisam ser verdadeiros (Se apenas um for true ou algum for false o retorno é false)
 
 >true && true - true
 >true && false - false
 >false && false - false
 >false && true - false
 
-- || um OU outro precisa ser verdadeiro
+- || um OU outro precisa ser verdadeiro (Se houver pelo menos um true o retorno é true)
 
 >true || true - true
 >true || false - true
 >false || false - false
 >false || true - true
+
+## Ordem de precedência dos operadores
 
 - ARITIMETICO (PARENTESES, POTENCIA/MULTI/DIVI, ADICAO E SUB) > RELACIONAL (DA ESQUERDA PARA DIREITA) > LOGICO (NAO/E/OU)
 
@@ -505,9 +503,7 @@ Em uma mesma expressão, temos os operadores || e &&. Quem eu resolvo primeiro?
 Questão 3
 Sabe usar o operador ternário para colocar um entre dois valores em uma variável
 
-- Sim! Operador ternário é teste ? true : false
-
-
+- Sim! Operador ternário é (teste ? retorno caso true : retorno caso false)
 
 ## DOM - DOCUMENT OBJECT MODEL - Objetos que dão acesso aos componentes do site
 
@@ -523,19 +519,18 @@ Sabe usar o operador ternário para colocar um entre dois valores em uma variáv
 >head - meta, tittle, ...
 >body - h1, p, div, ...
 
--window.document.write(conteudo) adiciona ao documento
+>document.write(conteudo) adiciona ao documento
 
 ## Selecionando
 
-- por marca - window.document.getElementsByTagName('p')[0] para selecionar o primeiro p
-- por id - getElementById - para selecionar pelo #id
-- por nome - getElementsByName
-- por classe - getElementsByClassName
-- por seletor - querySelector e querySelectorAll
+- por marca - window.document.getElementsByTagName('p')[0] //Para selecionar o primeiro p
+- por id - getElementById - para selecionar pelo #id único.
+- por nome - getElementsByName.
+- por classe - getElementsByClassName.
+- por seletor - querySelector e querySelectorAll.
 
-
-- innertText mostra o conteúdo bruto
-- innerHTML mostra o conteudo com a formatação
+- innertText mostra o conteúdo bruto.
+- innerHTML mostra o conteudo com a formatação.
 
 var p1 = window.document.getElementsByTagName('p')[1]
 
