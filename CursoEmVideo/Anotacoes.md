@@ -532,24 +532,18 @@ Sabe usar o operador ternário para colocar um entre dois valores em uma variáv
 - innertText mostra o conteúdo bruto.
 - innerHTML mostra o conteudo com a formatação.
 
-var p1 = window.document.getElementsByTagName('p')[1]
+>var p1 = window.document.getElementsByTagName('p')[1] //Capturou o elemento e atribuiu seu valor a uma variavel. 
+>window.document.write('Está escrito: ' + p1.innerText) // Aqui o retorno é o conteudo desse elemento em HTML.
 
-window.document.write('Está escrito: ' + p1.innerText)
+>p1.style.color = 'blue' //Mudando estilos pelo JS
+>corpo.style.background = 'black'
 
-p1.style.color = 'blue'
+>var d = window.document.getElementById('msg')
+>d.style.background = 'green'
+>d.innerText = 'Estou aguardando'
 
-corpo.style.background = 'black'
-
-${var} d = window.document.getElementById('msg')
-
-d.style.background = 'green'
-
-d.innerText = 'Estou aguardando'
-
-var d = window.document.querySelector('div#msg')
-
-d.style.background = 'blue'
-
+>var d = window.document.querySelector('div#msg')
+>d.style.background = 'blue'
 
 ## MODULO C - AULA 10
 
@@ -566,14 +560,14 @@ Sabe montar a árvore DOM de um website simples?
 Questão 3
 O que são os elementos Parent e os elementos Child em uma árvore DOM? 
 
-- São níveis de hierarquia dentro do documento
+- São níveis de hierarquia dentro do documento.
 
 Questão 4
 Quais são os cinco principais métodos de selecionar elemtentos DOM dentro do JS? 
 
-- São so métodos GET
->getElementBy Id, Class, TagName e Name
-> E os métodos querySelector e querySelectorAll
+- São os métodos GET
+>getElementBy... Id(), Class(), TagName() e Name()
+- E os métodos querySelector() e querySelectorAll()
 
 ## Eventos DOM
 
@@ -584,29 +578,29 @@ Quais são os cinco principais métodos de selecionar elemtentos DOM dentro do J
 - click - movimento de click
 - mouseout - mose retirado da div
 
-
 ## FUNÇOES 
 
-function ação(parametros) {
+- function ação(parametros) {
 Bloco - ocorrem somente quando o evento ocorrer
 }
 
-function() {} - anonima
+- function(){
 
+} // Função anonima
 
 ## EVENTO ONCLICK
 
-    <div id="area" onclick="clicar()">
+    <div id="area" onclick="clicar()"> //Adicionando o evento e a ação direto no HTML
         Interaja...
     </div>
 
     <script>
+//Criando a ação que será executada com a ativação do evento.
 
 function clicar(){
     var caixa = window.document.getElementById('area')
     caixa.innerText = 'Clicou'
-
-
+    
 ## Eventos dentro do HTML
 
  <div id="area" onclick="clicar()" onmouseenter="entrar()" onmouseout="sair()">
@@ -615,7 +609,7 @@ function clicar(){
 
     <script>
 
-        var caixa = window.document.getElementById('area') // escopo global
+        var caixa = window.document.getElementById('area') //var tem escopo global então podemos reutilizar dentro do bloco de código em vez de reatribuir novamente em cada evento
 
         function clicar() {
             caixa.innerText = 'Clicou'
@@ -632,14 +626,12 @@ function clicar(){
             caixa.style.background = 'red'
         }
 
-/////////////////////////////////
-
 ## Eventos com ouvidores listeners
 
 var caixa = window.document.getElementById('area') // escopo global
-
+// SINTAXE: variavel.addEnetListener('evento', funcao)
 caixa.addEventListener('click', clicar);
-caixa.addEventListener('mouseenter', entrar); // variavel.addEnetListener('evento', funcao)
+caixa.addEventListener('mouseenter', entrar);
 caixa.addEventListener('mouseout', sair);
 
         function clicar() {
@@ -657,42 +649,44 @@ caixa.addEventListener('mouseout', sair);
             caixa.style.background = 'red'
         }
 
-
 ## MODULO D - AULA 11
 
 Questão 1
-Consegue citar trÊs eventos que podem acontecer com elementos DOM de um site?
+Consegue citar três eventos que podem acontecer com elementos DOM de um site?
  
 - Eventos de CLICK e MOUSE(Enter, Out, etc)
 
 Questão 2
 O que é uma função? Como criar funções em JS?
  
-- Uma função é um bloco de código reutilizável
+- Uma função é um bloco de código reutilizável.
+Criamos utilizando a palavra chave function, utilizando ou não parametros e colocamos as condições dntro do bloco de código.
+
+function nome(param){
+condicoes e retornos
+}
+chamada da função
 
 Questão 3
 Sabe como pegar os valores de caixas de texto e fazer cálculos com eles?
  
-- EXEMPLO EM FORMA DE FUNÇÃO 
+- EXEMPLO EM FORMA DE FUNÇÃO (Forma para fazer em documento HTML com botão de ação, mas podemos fazer de forma mais simples no console ou node)
 
-        <input type="number" id="txtn1"> // Priemeiro espaço para entrada
-
-        <input type="number" id="txtn2"> // Segundo espaço para entrada
-
-        <input type="button" value="Clique" onclick="somar()"> // Botão de somar - NESSE CASO VALUE É O TEXTO
-
-        <div id="res">Resultado</div> // ESSE TEXTO SERA MUDADO PELA VAR RES
+><input type="number" id="txtn1"> // Primeiro espaço para entrada
+><input type="number" id="txtn2"> // Segundo espaço para entrada
+><input type="button" value="Clique" onclick="somar()"> // Botão de somar - NESSE CASO VALUE É O TEXTO
+><div id="res">Resultado</div> // ESSE TEXTO SERA MUDADO PELA VAR RES
         
         // FUNÇÃO CRIADA NO JAVASCRIPT
 
-        function somar() {
+>       function somar() {
             var res = document.getElementById('res')
             var n1 = document.getElementById('txtn1').value
             var n2 = document.getElementById('txtn2').value
             var s = Number(n1) + Number(n2)
             res.innerText = `A soma entre ${n1} e ${n2} é ${s}`
         }
-
+## -----------------
 - SEQUENCIAS
 
     var n = 3 
@@ -722,7 +716,7 @@ false
 Questão 1
 Já sabe como usar a extensão Node Exec no VS Code?
 
-- Sim. Executamos o código com a tecla F8
+- Sim. Executamos o código com a tecla F8.
 
 Questão 2
 Sabe criar uma condição em seu programa JS
@@ -937,7 +931,7 @@ Também podemos criar a função e adicionar um observador de envento.
 Questão 4
 Quer aprender mais sobre funções?
 
-- Sim
+- Sim.
 
 ## Função
 
@@ -949,9 +943,7 @@ Quer aprender mais sobre funções?
 >Ação -
 >Retorno 
 
-function  ação(parametro){
-
+> function  ação(parametro){
     return res
 }
-
 ação(5)
