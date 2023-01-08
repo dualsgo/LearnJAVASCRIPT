@@ -1,0 +1,1901 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Introdução ao JavasScript MDN</title>
+  <link rel="stylesheet" href="https://stackedit.io/style.css" />
+</head>
+
+<body class="stackedit">
+  <div class="stackedit__html"><h2 id="aula-1">Aula 1</h2>
+<h2 id="definição-de-alto-nível"><a href="https://developer.mozilla.org/pt-BR/docs/Learn/JavaScript/First_steps/What_is_JavaScript#defini%C3%A7%C3%A3o_de_alto_n%C3%ADvel">Definição de alto nível</a></h2>
+<p>JavaScript é uma linguagem de programação que permite a você implementar itens complexos em páginas web — toda vez que uma página da web faz mais do que simplesmente mostrar a você informação estática — mostrando conteúdo que se atualiza em um intervalo de tempo, mapas interativos ou gráficos 2D/3D animados, etc. — você pode apostar que o JavaScript provavelmente está envolvido. É a terceira camada do bolo das tecnologias padrões da web, duas das quais (<a href="https://developer.mozilla.org/pt-BR/docs/Learn/HTML">HTML</a>  e  <a href="https://developer.mozilla.org/pt-BR/docs/Learn/CSS">CSS</a>) nós falamos com muito mais detalhes em outras partes da Área de Aprendizado.</p>
+<p><img src="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/What_is_JavaScript/cake.png" alt=""></p>
+<ul>
+<li><a href="https://developer.mozilla.org/pt-BR/docs/Glossary/HTML">HTML</a>  é a linguagem de marcação que nós usamos para estruturar e dar significado para o nosso conteúdo web. Por exemplo, definindo parágrafos, cabeçalhos, tabelas de conteúdo, ou inserindo imagens e vídeos na página.</li>
+<li><a href="https://developer.mozilla.org/pt-BR/docs/Glossary/CSS">CSS</a>  é uma linguagem de regras de estilo que nós usamos para aplicar estilo ao nosso conteúdo HTML. Por exemplo, definindo cores de fundo e fontes, e posicionando nosso conteúdo em múltiplas colunas.</li>
+<li><a href="https://developer.mozilla.org/pt-BR/docs/Glossary/JavaScript">JavaScript</a>  é uma linguagem de programação que permite a você criar conteúdo que se atualiza dinamicamente, controlar múltimídias, imagens animadas, e tudo o mais que há de intessante. Ok, não tudo, mas é maravilhoso o que você pode efetuar com algumas linhas de código JavaScript.</li>
+</ul>
+<p>As três camadas ficam muito bem uma em cima da outra. Vamos exemplificar com um simples bloco de texto. Nós podemos marcá-lo usando HTML para dar estrutura e propósito:</p>
+<pre><code>&lt;p&gt;Jogador 1: Chris&lt;/p&gt;
+
+</code></pre>
+<p><img src="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/What_is_JavaScript/just-html.png" alt=""></p>
+<p>Nós podemos adicionar um pouco de CSS na mistura, para deixar nosso parágrafo um pouco mais atraente:</p>
+<pre><code>p {
+  font-family: 'helvetica neue', helvetica, sans-serif;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-align: center;
+  border: 2px solid rgba(0,0,200,0.6);
+  background: rgba(0,0,200,0.3);
+  color: rgba(0,0,200,0.6);
+  box-shadow: 1px 1px 2px rgba(0,0,200,0.4);
+  border-radius: 10px;
+  padding: 3px 10px;
+  display: inline-block;
+  cursor:pointer;
+}
+
+</code></pre>
+<p><img src="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/What_is_JavaScript/html-and-css.png" alt=""></p>
+<p>E finalmente, nós podemos adicionar JavaScript para implementar um comportamento dinâmico:</p>
+<pre><code>const para = document.querySelector('p');
+
+para.addEventListener('click', atualizarNome);
+
+function atualizarNome() {
+  var nome = prompt('Insira um novo nome');
+  para.textContent = 'Jogador 1: ' + nome;
+}
+
+</code></pre>
+<p>Experimente clicar no botão acima para ver o que acontece (note também que você pode encontrar essa demonstração no GitHub — veja o  <a href="https://github.com/mdn/learning-area/blob/main/javascript/introduction-to-js-1/what-is-js/javascript-label.html">código fonte</a>  ou  <a href="https://mdn.github.io/learning-area/javascript/introduction-to-js-1/what-is-js/javascript-label.html">veja funcionar</a>)!</p>
+<p>JavaScript pode fazer muito mais do que isso — vamos explorar com mais detalhes.</p>
+<h2 id="então-o-que-ele-pode-realmente-fazer"><a href="https://developer.mozilla.org/pt-BR/docs/Learn/JavaScript/First_steps/What_is_JavaScript#ent%C3%A3o_o_que_ele_pode_realmente_fazer">Então o que ele pode realmente fazer?</a></h2>
+<p>O núcleo da linguagem JavaScript consiste em alguns benefícios comuns da programação que permite a você fazer coisas como:</p>
+<ul>
+<li>Armazenar conteúdo útil em variáveis. No exemplo acima, a propósito, nós pedimos que um novo nome seja inserido e armazenamos o nome em uma variável chamada  <code>nome</code>.</li>
+<li>Operações com pedaços de texto (conhecidos como “strings” em programação). No exemplo acima, nós pegamos a string "Jogador 1: " e concatenamos (juntamos) com a variável  <code>nome</code>  para criar o texto completo “Jogador 1: Chris”.</li>
+<li>Executar o código em resposta a determinados eventos que ocorrem em uma página da Web. Nós usamos o  <code>[click (en-US)](https://developer.mozilla.org/en-US/docs/Web/API/Element/click_event "Currently only available in English (US)")</code>  no nosso exemplo acima para que quando clicassem no botão, rodasse o código que atualiza o texto.</li>
+<li>E muito mais!</li>
+</ul>
+<p>O que é ainda mais empolgante é a funcionalidade construída no topo do núcleo da linguagem JavaScript. As APIs (Application Programming Interfaces - Interface de Programação de Aplicativos) proveem a você superpoderes extras para usar no seu código JavaScript.</p>
+<p>APIs são conjuntos prontos de blocos de construção de código que permitem que um desenvolvedor implemente programas que seriam difíceis ou impossíveis de implementar. Eles fazem o mesmo para a programação que os kits de móveis prontos para a construção de casas - é muito mais fácil pegar os painéis prontos e parafusá-los para formar uma estante de livros do que para elaborar o design, sair e encontrar a madeira, cortar todos os painéis no tamanho e formato certos, encontrar os parafusos de tamanho correto e  <em>depois</em>  montá-los para formar uma estante de livros.</p>
+<p>Elas geralmente se dividem em duas categorias.</p>
+<p><img src="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/What_is_JavaScript/browser.png" alt="APIs de terceiros e APIs do navegador"></p>
+<p><strong>APIs de navegadores</strong>  já vem implementadas no navegador, e são capazes de expor dados do ambiente do computador, ou fazer coisas complexas e úteis. Por exemplo:</p>
+<ul>
+<li>A  <a href="https://developer.mozilla.org/pt-BR/docs/Web/API/Document_Object_Model">API DOM (Document Object Model)</a>  permite a você manipular HTML e CSS, criando, removendo e mudando HTML, aplicando dinamicamente novos estilos para a sua página, etc. Toda vez que você vê uma janela pop-up aparecer em uma página, ou vê algum novo conteúdo sendo exibido (como nós vimos acima na nossa simples demonstração), isso é o DOM em ação.</li>
+<li>A  <a href="https://developer.mozilla.org/pt-BR/docs/Web/API/Geolocation">API de Geolocalização</a>  recupera informações geográficas. É assim que o  <a href="https://www.google.com/maps">Google Maps</a>  consegue encontrar sua localização e colocar em um mapa.</li>
+<li>As APIs  <a href="https://developer.mozilla.org/pt-BR/docs/Web/API/Canvas_API">Canvas</a>  e  <a href="https://developer.mozilla.org/pt-BR/docs/Web/API/WebGL_API">WebGL</a>  permite a você criar gráficos 2D e 3D animados. Há pessoas fazendo algumas coisas fantásticas usando essas tecnologias web — veja  <a href="https://www.chromeexperiments.com/webgl">Chrome Experiments</a>  e  <a href="https://webglsamples.org/">webglsamples</a>.</li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/Guide/Audio_and_video_delivery" title="Currently only available in English (US)">APIs de áudio e vídeo  (en-US)</a>  como  <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement" title="Currently only available in English (US)"><code>HTMLMediaElement</code>  (en-US)</a>  e  <a href="https://developer.mozilla.org/pt-BR/docs/Web/API/WebRTC_API">WebRTC</a>  permitem a você fazer coisas realmente interessantes com multimídia, tanto tocar música e vídeo em uma página da web, como capturar vídeos com a sua câmera e exibir no computador de outra pessoa (veja  <a href="http://chrisdavidmills.github.io/snapshot/">Snapshot demo</a>  para ter uma ideia).</li>
+</ul>
+<p><strong>Nota:</strong>  Muitas demonstrações acima não vão funcionar em navegadores antigos — quando você for experimentar, é uma boa ideia usar browsers modernos como Firefox, Edge ou Opera para ver o código funcionar. Você vai precisar estudar  <a href="https://developer.mozilla.org/pt-BR/docs/Learn/Tools_and_testing/Cross_browser_testing">testes cross browser</a>  com mais detalhes quando você estiver chegando perto de produzir código (código real que as pessoas vão usar).</p>
+<p><strong>APIs de terceiros</strong>  não estão implementados no navegador automaticamente, e você geralmente tem que pegar seu código e informações em algum lugar da Web. Por exemplo:</p>
+<ul>
+<li>A  <a href="https://dev.twitter.com/overview/documentation">API do Twitter</a>  permite a você fazer coisas como exibir seus últimos tweets no seu website.</li>
+<li>A  <a href="https://developers.google.com/maps/">API do Google Maps</a>  permite a você inserir mapas customizados no seu site e outras diversas funcionalidades.</li>
+</ul>
+<p><strong>Nota:</strong>  Essas APIs são avançadas e nós não vamos falar sobre nenhuma delas nesse módulo. Você pode achar muito mais sobre elas em nosso módulo  <a href="https://developer.mozilla.org/pt-BR/docs/Learn/JavaScript/Client-side_web_APIs">APIs web no lado cliente</a>.</p>
+<p>Tem muito mais coisas disponíveis! Contudo, não fique animado ainda. Você não estará pronto para desenvolver o próximo Facebook, Google Maps ou Instagram depois de estudar JavaScript por 24 horas — há um monte de coisas básicas para estudar primeiro. E é por isso que você está aqui — vamos começar!</p>
+<h2 id="o-que-javascript-está-fazendo-na-sua-página-web"><a href="https://developer.mozilla.org/pt-BR/docs/Learn/JavaScript/First_steps/What_is_JavaScript#o_que_javascript_est%C3%A1_fazendo_na_sua_p%C3%A1gina_web">O que JavaScript está fazendo na sua página web?</a></h2>
+<p>Aqui nós vamos realmente começar a ver algum código, e enquanto fazemos isso vamos explorar o que realmente acontece quando você roda algum código JavaScript na sua página.</p>
+<p>Vamos recaptular brevemente a história do que acontece quando você carrega uma página web em um navegador (falamos sobre isso no nosso artigo  <a href="https://developer.mozilla.org/pt-BR/docs/Learn/CSS/First_steps/How_CSS_works#how_does_css_actually_work">Como o CSS funciona</a>). Quando você carrega uma página web no seu navegador, você está executando seu código (o HTML, CSS e JavaScript) dentro de um ambiente de execução (a guia do navegador). Isso é como uma fábrica que pega a matéria prima (o código) e transforma em um produto (a página web).</p>
+<p><img src="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/What_is_JavaScript/execution.png" alt=""></p>
+<p>Um uso muito comum do JavaScript é modificar dinamicamente HTML e CSS para atualizar uma interface do usuário, por meio da API do Document Object Model (conforme mencionado acima). Observe que o código em seus documentos web geralmente é carregado e executado na ordem em que aparece na página. Se o JavaScript carregar e tentar executar antes do carregamento do HTML e CSS afetado, poderão ocorrer erros. Você aprenderá maneiras de contornar isso mais adiante neste artigo, na seção  <a href="https://developer.mozilla.org/pt-BR/docs/Learn/JavaScript/First_steps/What_is_JavaScript#script_loading_strategies">Estratégias de carregamento de scripts</a>.</p>
+<h3 id="segurança-do-navegador"><a href="https://developer.mozilla.org/pt-BR/docs/Learn/JavaScript/First_steps/What_is_JavaScript#seguran%C3%A7a_do_navegador">Segurança do navegador</a></h3>
+<p>Cada guia do navegador tem seu próprio espaço para executar código (esses espaços são chamados de “ambientes de execução”, em termos técnicos) — isso significa que na maioria dos casos o código em cada guia está sendo executado separadamente, e o código em uma guia não pode afetar diretamente o código de outra guia — ou de outro website. Isso é uma boa medida de segurança — se esse não fosse o caso, então hackers poderiam começar a escrever código para roubar informações de outros websites, e fazer outras coisas más.</p>
+<p><strong>Nota:</strong>  Há muitas maneiras de trocar código e conteúdo entre diferentes websites/guias de uma forma segura, mas são técnicas avançadas que não serão estudadas nesse curso.</p>
+<h3 id="ordem-de-execução-do-javascript"><a href="https://developer.mozilla.org/pt-BR/docs/Learn/JavaScript/First_steps/What_is_JavaScript#ordem_de_execu%C3%A7%C3%A3o_do_javascript">Ordem de execução do JavaScript</a></h3>
+<p>Quando o navegador encontra um bloco de código JavaScript, ele geralmente executa na ordem, de cima para baixo. Isso significa que você precisa ter cuidado com a ordem na qual você coloca as coisas. Por exemplo, vamos voltar ao bloco JavaScript que nós vimos no primeiro exemplo:</p>
+<pre><code>const para = document.querySelector('p');
+
+para.addEventListener('click', atualizarNome);
+
+function atualizarNome() {
+  let nome = prompt('Informe um novo nome:');
+  para.textContent = 'Jogador 1: ' + nome;
+}
+
+</code></pre>
+<p>Aqui nós estamos selecionando um parágrafo (linha 1) e anexando a ele um  <em>event listener</em>  (linha 3). Então, quando o parágrafo recebe um clique, o bloco de código  <code>atualizarNome()</code>  (linhas 5 a 8) é executado. O bloco de código  <code>atualizarNome()</code>(esses tipos de bloco de código reutilizáveis são chamados “funções”) pede ao usuário que informe um novo nome, e então insere esse nome no parágrafo, atualizando-o.</p>
+<p>Se você inverte a ordem das duas primeiras linhas de código, ele não fucionaria — em vez disso, você receberia um erro no console do navegador —  <code>TypeError: para is undefined</code>. Isso significa que o objeto  <code>para</code>  não existe ainda, então nós não podemos adicionar  <em>um event listener</em>  a ele.</p>
+<p><strong>Nota:</strong>  Esse é um erro muito comum — você precisa verificar se os objetos aos quais você se refere no seu código existem antes de você tentar anexar coisas a eles.</p>
+<h3 id="código-interpretado-x-compilado"><a href="https://developer.mozilla.org/pt-BR/docs/Learn/JavaScript/First_steps/What_is_JavaScript#c%C3%B3digo_interpretado_x_compilado">Código interpretado x compilado</a></h3>
+<p>Você pode ouvir os termos  <strong>interpretado</strong>  e  <strong>compilado</strong>  no contexto da programação. JavaScript é uma linguagem interpretada — o código é executado de cima para baixo e o resultado da execução do código é imediatamente retornado. Você não tem que transformar o código em algo diferente antes do navegador executa-lo.</p>
+<p>Linguagens compiladas, por outro lado, são transformadas (compiladas) em algo diferente antes que sejam executadas pelo computador. Por exemplo, C/C++ são compiladas em linguagem Assembly, e depois são executadas pelo computador.</p>
+<p>JavaScript é uma linguagem de programação leve e interpretada. O navegador recebe o código JavaScript em sua forma de texto original e executa o script a partir dele. Do ponto de vista técnico, a maioria dos intérpretes modernos de JavaScript realmente usa uma técnica chamada  <strong>compilação just-in-time</strong>  para melhorar o desempenho; o código-fonte JavaScript é compilado em um formato binário mais rápido enquanto o script está sendo usado, para que possa ser executado o mais rápido possível. No entanto, o JavaScript ainda é considerado uma linguagem interpretada, pois a compilação é manipulada em tempo de execução, e não antes.</p>
+<p>Há vantagens em ambos os tipos de linguagem, mas nós não iremos discutir no momento.</p>
+<h3 id="lado-do-servidor-x-lado-do-cliente"><a href="https://developer.mozilla.org/pt-BR/docs/Learn/JavaScript/First_steps/What_is_JavaScript#lado_do_servidor_x_lado_do_cliente">Lado do servidor x Lado do cliente</a></h3>
+<p>Você pode também ouvir os termos  <strong>lado do servidor (<em>server-side</em>)</strong>  e  <strong>lado do cliente (<em>client-side</em>)</strong>, especialmente no contexto de desenvolvimento web. Códigos do lado do cliente são executados no computador do usuário — quando uma página web é visualizada, o código do lado do cliente é baixado, executado e exibido pelo navegador. Nesse módulo JavaScript nós estamos explicitamente falando sobre  <strong>JavaScript do lado do cliente</strong>.</p>
+<p>Códigos do lado do servidor, por outro lado, são executados no servidor e o resultado da execução é baixado e exibido no navegador. Exemplos de linguagens do lado do servidor populares incluem PHP, Python, Ruby, e <a href="http://ASP.NET">ASP.NET</a>. E JavaScript! JavaScript também pode ser usada como uma linguagem  <em>server-side</em>, por exemplo, no popular ambiente Node.js — você pode encontrar mais sobre JavaScript do lado do servidor no nosso tópico  <a href="https://developer.mozilla.org/pt-BR/docs/Learn/Server-side">Websites dinâmicos - Programação do lado do servidor</a>.</p>
+<h3 id="código-dinâmico-x-estático"><a href="https://developer.mozilla.org/pt-BR/docs/Learn/JavaScript/First_steps/What_is_JavaScript#c%C3%B3digo_din%C3%A2mico_x_est%C3%A1tico">Código dinâmico x estático</a></h3>
+<p>A palavra  <strong>dinâmico</strong>  é usada para descrever tanto o JavaScript  <em>client-side</em>  como o  <em>server-side</em>  — essa palavra se refere a habilidade de atualizar a exibição de uma página web/app para mostrar coisas diferentes em circunstâncias diferentes, gerando novo conteúdo como solicitado. Código do lado do servidor dinamicamente gera novo conteúdo no servidor, puxando dados de um banco de dados, enquanto que JavaScript do lado do cliente dinamicamente gera novo conteúdo dentro do navegador do cliente, como criar uma nova tabela HTML com dados recebidos do servidor e mostrar a tabela em uma página web exibida para o usuário. Os significados são ligeiramente diferente nos dois contextos, porém relacionados, e ambos (JavaScript  <em>server-side</em>  e  <em>client-side</em>) geralmente trabalham juntos.</p>
+<p>Uma página web sem atualizações dinâmicas é chamada de  <strong>estática</strong>  — ela só mostra o mesmo conteúdo o tempo todo.</p>
+<h2 id="como-você-adiciona-javascript-na-sua-página"><a href="https://developer.mozilla.org/pt-BR/docs/Learn/JavaScript/First_steps/What_is_JavaScript#como_voc%C3%AA_adiciona_javascript_na_sua_p%C3%A1gina">Como você adiciona JavaScript na sua página?</a></h2>
+<p>O JavaScript é inserido na sua página de uma maneira similar ao CSS. Enquanto o CSS usa o elemento  <a href="https://developer.mozilla.org/pt-BR/docs/Web/HTML/Element/link"><code>&lt;link&gt;</code></a>  para aplicar folhas de estilo externas e o elemento  <a href="https://developer.mozilla.org/pt-BR/docs/Web/HTML/Element/style"><code>&lt;style&gt;</code></a>  para aplicar folhas de estilo internas, o JavaScript só precisa de um amigo no mundo do HTML — o elemento  <a href="https://developer.mozilla.org/pt-BR/docs/Web/HTML/Element/script"><code>&lt;script&gt;</code></a>. Vamos aprender como funciona.</p>
+<h3 id="javascript-interno"><a href="https://developer.mozilla.org/pt-BR/docs/Learn/JavaScript/First_steps/What_is_JavaScript#javascript_interno">JavaScript interno</a></h3>
+<ol>
+<li>
+<p>Antes de tudo, faça uma cópia local do nosso arquivo de exemplo  <a href="https://github.com/mdn/learning-area/blob/main/javascript/introduction-to-js-1/what-is-js/apply-javascript.html">aplicando-javascript.html</a>. Salve-o em alguma pasta, de uma forma sensata.</p>
+</li>
+<li>
+<p>Abra o arquivo no seu navegador web e no seu editor de texto. Você verá que o HTML cria uma simples página web contendo um botão clicável.</p>
+</li>
+<li>
+<p>Agora, vá até o seu editor de texto e adicione o código a seguir antes da tag de fechamento  <code>&lt;/body&gt;</code>:</p>
+<pre><code>&lt;script&gt;
+
+  // O JavaScript fica aqui
+
+&lt;/script&gt;
+
+</code></pre>
+</li>
+<li>
+<p>Agora nós vamos adicionar um pouco de JavaScript dentro do nosso elemento  <a href="https://developer.mozilla.org/pt-BR/docs/Web/HTML/Element/script"><code>&lt;script&gt;</code></a>  para que a página faça algo mais interessante — adicione o seguinte código abaixo da linha “// O JavaScript fica aqui”:</p>
+<pre><code>function criarParagrafo() {
+  let para = document.createElement('p');
+  para.textContent = 'Você clicou no botão!';
+  document.body.appendChild(para);
+}
+
+const botoes = document.querySelectorAll('button');
+
+for(var i = 0; i &lt; botoes.length ; i++) {
+  botoes[i].addEventListener('click', criarParagrafo);
+}
+
+</code></pre>
+</li>
+<li>
+<p>Salve seu arquivo e recarregue a página — agora você deveria ver que quando você clique no botão, um novo parágrafo é gerado e colocado logo abaixo.</p>
+</li>
+</ol>
+<p><strong>Nota:</strong>  Se seu exemplo não parece funcionar, leia cada passo novamente e confira que você fez tudo certo. Você salvou sua cópia local do código inicial como um arquivo .html? Você adicionou o elemento  <a href="https://developer.mozilla.org/pt-BR/docs/Web/HTML/Element/script"><code>&lt;script&gt;</code></a>  imediatamente antes da tag  <code>&lt;/body&gt;</code>? Você digitou o código JavaScript exatamente como ele está sendo mostrado?  <strong>JavaScript é uma linguagem case sensitive (isso significa que a linguagem vê diferença entre letras maiúsculas e minúsculas) e muito confusa, então você precisa digitar a sintaxe exatamente como foi mostrada, senão não vai funcionar.</strong></p>
+<p><strong>Nota:</strong>  Você pode ver essa versão no GitHub como  <a href="https://github.com/mdn/learning-area/blob/main/javascript/introduction-to-js-1/what-is-js/apply-javascript-internal.html">apicando-javascript-interno.html</a>  (<a href="https://mdn.github.io/learning-area/javascript/introduction-to-js-1/what-is-js/apply-javascript-internal.html">veja funcionar também</a>).</p>
+<h3 id="javascript-externo"><a href="https://developer.mozilla.org/pt-BR/docs/Learn/JavaScript/First_steps/What_is_JavaScript#javascript_externo">JavaScript externo</a></h3>
+<p>Isso funciona muito bem, mas e se nós quiséssemos colocar nosso JavaScript em um arquivo externo? Vamos explorar isso agora.</p>
+<ol>
+<li>
+<p>Primeiro, crie um novo arquivo na mesma pasta que está o arquivo HTML de exemplo. Chame-o de  <code>script.js</code>  — tenha certeza de que o nome do arquivo tem a extensão  <code>.js</code>, pois é assim que ele será reconhecido como JavaScript.</p>
+</li>
+<li>
+<p>Agora substitua o elemento atual  <a href="https://developer.mozilla.org/pt-BR/docs/Web/HTML/Element/script"><code>&lt;script&gt;</code></a>  pelo seguinte código:</p>
+<pre><code>&lt;script src="script.js" defer&gt;&lt;/script&gt;
+
+</code></pre>
+</li>
+<li>
+<p>Em  <code>script.js</code>, adicione o seguinte script:</p>
+<pre><code>function createParagraph() {
+  let para = document.createElement('p');
+  para.textContent = 'Você clicou no botão!';
+  document.body.appendChild(para);
+}
+
+const buttons = document.querySelectorAll('button');
+
+for(let i = 0; i &lt; buttons.length ; i++) {
+  buttons[i].addEventListener('click', createParagraph);
+}
+
+</code></pre>
+</li>
+<li>
+<p>Salve e atualize seu navegador, e você deverá ver a mesma coisa! Funciona igualmente, mas agora nós temos o JavaScript em um arquivo externo. Isso é geralmente uma coisa boa em termos de organização de código, e faz com que seja possível reutilizar o código em múltiplos arquivos HTML. Além disso, o HTML fica mais legível sem grandes pedaços de script no meio dele.</p>
+</li>
+</ol>
+<p><strong>Nota:</strong>  Você pode ver essa versão no GitHub como  <a href="https://github.com/mdn/learning-area/blob/main/javascript/introduction-to-js-1/what-is-js/apply-javascript-external.html">aplicando-javascript-externo.html</a>  e  <a href="https://github.com/mdn/learning-area/blob/main/javascript/introduction-to-js-1/what-is-js/script.js">script.js</a>  (<a href="https://mdn.github.io/learning-area/javascript/introduction-to-js-1/what-is-js/apply-javascript-external.html">veja funcionar também</a>).</p>
+<h3 id="manipuladores-de-javascript-inline"><a href="https://developer.mozilla.org/pt-BR/docs/Learn/JavaScript/First_steps/What_is_JavaScript#manipuladores_de_javascript_inline">Manipuladores de JavaScript inline</a></h3>
+<p>Note que às vezes você vai encontrar código JavaScript escrito dentro do HTML. Isso deve ser algo como:</p>
+<pre><code>function criarParagrafo() {
+  let para = document.createElement('p');
+  para.textContent = 'Você clicou o botao!';
+  document.body.appendChild(para);
+}
+
+</code></pre>
+<pre><code>&lt;button onclick="criarParagrafo()"&gt;Me clique!&lt;/button&gt;
+
+</code></pre>
+<p>Você pode tentar essa versão na nossa demonstração abaixo.</p>
+<p>Essa demonstração tem exatamente a mesma funcionalidade que vimos nas primeiras duas seções, exceto que o elemento  <a href="https://developer.mozilla.org/pt-BR/docs/Web/HTML/Element/button"><code>&lt;button&gt;</code></a>  inclui um manipulador  <em>inline</em>  <code>onclick</code>  para fazer a função ser executada quando o botão é clicado.</p>
+<p><strong>Contudo, por favor, não faça isso.</strong>  É uma má prática poluir seu HTML com JavaScript, e isso é ineficiente — você teria que incluir o atributo  <code>onclick="criarParagrafo()"</code>  em todo botão que você quisesse aplicar JavaScript.</p>
+<p>Usando uma estrutura feita de puro JavaScript permite a você selecionar todos os botões usando uma instrução. O código que nós usamos acima para servir a esse propósito se parece com isso:</p>
+<pre><code>const botoes = document.querySelectorAll('button');
+
+for(var i = 0; i &lt; botoes.length ; i++) {
+  botoes[i].addEventListener('click', criarParagrafo);
+}
+
+</code></pre>
+<p>Isso talvez parece ser mais do que o atributo  <code>onclick</code>, mas isso vai funcionar para todos os botões, não importa quantos tem na página, e quantos forem adicionados ou removidos. O JavaScript não precisará ser mudado.</p>
+<p><strong>Nota:</strong>  Tente editar a sua versão do arquivo  <code>aplicar-javascript.html</code>, adicionando alguns botões a mais. Quando você recarregar, você deverá ver que todos os botões, quando clicados, irão criar parágrafos. Agradável, não?</p>
+<h3 id="estratégias-para-o-carregamento-de-scripts"><a href="https://developer.mozilla.org/pt-BR/docs/Learn/JavaScript/First_steps/What_is_JavaScript#estrat%C3%A9gias_para_o_carregamento_de_scripts">Estratégias para o carregamento de scripts</a></h3>
+<p>Há um considerável número de problemas envolvendo o carregamento de scripts na ordem correta. Infelizmente, nada é tão simples quanto parece ser! Um problema comum é que todo o HTML de uma página é carregado na ordem em que ele aparece. Se você estiver usando Javascript para manipular alguns elementos da página (sendo mais preciso, manipular o  <a href="https://developer.mozilla.org/pt-BR/docs/Learn/JavaScript/Client-side_web_APIs/Manipulating_documents#the_document_object_model">Document Object Model</a>), seu código não irá funcionar caso o JavaScript for carregado e executado antes mesmo dos elementos HTML estarem disponíveis.</p>
+<p>Nos exemplos acima, tanto nos scripts internos ou externos, o JavaScript é carregado e acionado dentro do cabeçalho do documento, antes do corpo da página ser completamente carregado. Isso poderá causar algum erro. Assim, temos algumas soluções para isso.</p>
+<p>No exemplo interno, você pode ver essa estrutura em volta do código:</p>
+<pre><code>document.addEventListener("DOMContentLoaded", function() {
+  ...
+});
+
+</code></pre>
+<p>Isso é um  <em>event listener</em>  (ouvidor de eventos*)*, que ouve e aguarda o disparo do evento “DOMContentLoaded” vindo do  <em>browser</em>, evento este que significa que o corpo do HTML está completamente carregado e pronto. O código JavaScript que estiver dentro desse bloco não será executado até que o evento seja disparado, portanto, o erro será evitado (você irá  <a href="https://developer.mozilla.org/pt-BR/docs/Learn/JavaScript/Building_blocks/Events">aprender sobre eventos</a>  mais tarde).</p>
+<p>No exemplo externo, nós usamos um recurso moderno do JavaScript para resolver esse problema: Trata-se do atributo  <code>defer</code>, que informa ao  <em>browser</em>  para continuar renderizando o conteúdo HTML uma vez que a tag  <code>&lt;script&gt;</code>  foi atingida.</p>
+<pre><code>&lt;script src="script.js" defer&gt;&lt;/script&gt;
+
+</code></pre>
+<p>Neste caso, ambos script e HTML irão carregar de forma simultânea e o código irá funcionar.</p>
+<p><strong>Nota:</strong>  No caso externo, nós não precisamos utilizar o evento  <code>DOMContentLoaded</code>  porque o atributo  <code>defer</code>  resolve o nosso problema. Nós não utilizamos  <code>defer</code>  como solução para os exemplos internos pois  <code>defer</code>  funciona apenas com scripts externos.</p>
+<p>Uma solução à moda antiga para esse problema era colocar o elemento script bem no final do body da página (antes da tag  <code>&lt;/body&gt;)</code>. Com isso, os scripts iriam carregar logo após todo o conteúdo HTML. O problema com esse tipo de solução é que o carregamento/renderização do script seria completamente bloqueado até que todo o conteúdo HTML fosse analisado. Em sites de maior escala, com muitos scripts, essa solução causaria um grande problema de performance e deixaria o site lento.</p>
+<h4 id="async-e-defer">async e defer</h4>
+<p>Atualmente, há dois recursos bem modernos que podermos usar para evitar o problema com o bloqueio de scripts —  <code>async</code>  e  <code>defer</code>  (que vimos acima). Vamos ver as diferenças entre esses dois?</p>
+<p>Os scripts que são carregados usando o atributo  <code>async</code>  (veja abaixo) irão baixar o script sem bloquear a renderização da página e irão executar imediatamente após o script terminar de ser disponibilizado. Nesse modo você não tem garantia nenhuma que os scripts carregados irão rodar em uma ordem específica, mas saberá que dessa forma eles não irão impedir o carregamento do restante da página. O melhor uso para o  <code>async</code>  é quando os scripts de uma página rodam de forma independente entre si e também não dependem de nenhum outro script.</p>
+<p>Por exemplo, se você tiver os seguintes elementos script:</p>
+<pre><code>&lt;script async src="js/vendor/jquery.js"&gt;&lt;/script&gt;
+
+&lt;script async src="js/script2.js"&gt;&lt;/script&gt;
+
+&lt;script async src="js/script3.js"&gt;&lt;/script&gt;
+
+</code></pre>
+<p>Você não pode garantir que o script.  <code>jquery.js</code>  carregará antes ou depois do  <code>script2.js</code>  e  <code>script3.js</code>  . Nesse caso, se alguma função desses scripts dependerem de algo vindo do  <code>jquery</code>, ela produzirá um erro pois o  <code>jquery</code>  ainda não foi definido/carregado quando os scripts executaram essa função.</p>
+<p><code>async</code>  deve ser usado quando houver muitos scripts rodando no  <em>background</em>, e você precisa que estejam disponíveis o mais rápido possível. Por exemplo, talvez você tenha muitos arquivos de dados de um jogo para carregar que serão necessários assim que o jogo iniciar, mas por enquanto, você só quer entrar e ver a tela de carregamento, a do titulo do jogo e o  <em>lobby</em>, sem ser bloqueado pelo carregamento desses scripts.</p>
+<p>Scripts que são carregados utilizando o atributo  <code>defer</code>  (veja abaixo) irão rodar exatamente na ordem em que aparecem na página e serão executados assim que o script e o conteúdo for baixado.</p>
+<pre><code>&lt;script defer src="js/vendor/jquery.js"&gt;&lt;/script&gt;
+
+&lt;script defer src="js/script2.js"&gt;&lt;/script&gt;
+
+&lt;script defer src="js/script3.js"&gt;&lt;/script&gt;
+
+</code></pre>
+<p>Todos os scripts com o atributo  <code>defer</code>  irão carregar na ordem que aparecem na página. No segundo exemplo, podemos ter a certeza que o script  <code>jquery.js</code>  irá carregar antes do  <code>script2.js</code>  e  <code>script3.js</code>  e o  <code>script2.js</code>  irá carregar antes do  <code>script3.js</code>. Os scripts não irão rodar sem que antes todo o conteúdo da página seja carregado, que no caso, é muito útil se os seus scripts dependem de um DOM completamente disponibilizado em tela (por exemplo, scripts que modificam um elemento).</p>
+<p>Resumindo:</p>
+<ul>
+<li><code>async</code>  e  <code>defer</code>  istruem o  <em>browser</em>  a baixar os scripts numa  <em>thread</em>  (processo) à parte, enquanto o resto da página (o DOM, etc.) está sendo baixado e disponibilizado de forma não bloqueante.</li>
+<li>Se os seus scripts precisam rodar imediatamente, sem que dependam de outros para serem executados, use  <code>async</code>.</li>
+<li>Se seus scripts dependem de outros scripts ou do DOM completamente disponível em tela, carregue-os usando  <code>defer</code>  e coloque os elementos  <code>&lt;script&gt;</code>  na ordem exata que deseja que sejam carregados.</li>
+</ul>
+<h2 id="comentários"><a href="https://developer.mozilla.org/pt-BR/docs/Learn/JavaScript/First_steps/What_is_JavaScript#coment%C3%A1rios">Comentários</a></h2>
+<p>Assim como HTML e CSS, é possível escrever comentários dentro do seu código JavaScript que serão ignorados pelo navegador, e existirão simplesmente para prover instruções aos seus colegas desenvolvedores sobre como o código funciona (e pra você, se você tiver que voltar ao seu código depois de 6 meses e não se lembrar do que fez). Comentários são muito úteis, e você deveria usá-los frequentemente, principalmente quando seus códigos forem muito grandes. Há dois tipos:</p>
+<ul>
+<li>
+<p>Um comentário de uma linha é escrito depois de duas barras. Por exemplo:</p>
+<pre><code>// Eu sou um comentário
+
+</code></pre>
+</li>
+<li>
+<p>Um comentário de múltiplas linhas é escrito entre os caracteres /* e */. Por exemplo:</p>
+<pre><code>/*
+  Eu também sou
+  um comentário
+*/
+
+</code></pre>
+</li>
+</ul>
+<p>Então, por exemplo, você poderia fazer anotações na nossa última demonstração de código JavaScript, da seguinte forma:</p>
+<pre><code>// Função: Cria um novo parágrafo e o insere no fim do arquivo HTML.
+
+function criarParagrafo() {
+  var para = document.createElement('p');
+  para.textContent = 'Você clicou no botão!';
+  document.body.appendChild(para);
+}
+
+/*
+  1. Captura referências de todos os botões na página e armazena isso em um array.
+  2. Vai até todos os botões e adiciona um event listener click a cada um deles.
+
+  Quando cada botão é clicado, a função criarParagrafo() será executada.
+*/
+
+const botoes = document.querySelectorAll('button');
+
+for(var i = 0; i &lt; botoes.length ; i++) {
+  botoes[i].addEventListener('click', criarParagrafo);
+}
+
+</code></pre>
+<p><strong>Nota:</strong>  Em geral mais comentários são melhores que menos, porém você deve tomar cuidado para não adicionar comentários de mais tentando explicar o que uma variável é (o nome da sua variável deve ser mais intuitivo), ou tentando explicar uma operação simples (talvez seu código seja muito complicado denecessariamente).</p>
+<h2 id="sumário"><a href="https://developer.mozilla.org/pt-BR/docs/Learn/JavaScript/First_steps/What_is_JavaScript#sum%C3%A1rio">Sumário</a></h2>
+<p>Então, esse foi o seu primeiro passo no mundo do JavaScript. Nós iniciamos apenas com teoria, então te ensinamos porque usar JavaScript e que tipo de coisa você pode fazer com ele. Pelo caminho você viu alguns códigos de exemplo e aprendeu como JavaScript se encaixa com o resto do código do seu site, entre outras coisas.</p>
+<p>O JavaScript talvez pareça um pouco assustador agora, mas não se preocupe — nesse curso você será guiado passo a passo, e tudo vai começar a fazer sentido. No próximo artigo vamos  <a href="https://developer.mozilla.org/pt-BR/docs/Learn/JavaScript/First_steps/A_first_splash">mergulhar direto para a prática</a>, levando você a construir seu próprio código JavaScript.</p>
+<h2 id="aula-2">Aula 2</h2>
+<h2 id="pensando-como-um-programador"><a href="https://developer.mozilla.org/pt-BR/docs/Learn/JavaScript/First_steps/A_first_splash#pensando_como_um_programador">Pensando como um Programador</a></h2>
+<p>Uma das coisas mais difíceis de aprender na programação não é a sintaxe que você precisa aprender, mas como aplicá-la para resolver problemas do mundo real. Você precisa começar a pensar como um programador - isso geralmente envolve olhar para as descrições do que seu programa precisa fazer e analisar como eles podem ser aplicados na solução real (prática), quais recursos de código são necessários para alcançar esse objetivo, e como fazê-los trabalhar em conjunto.</p>
+<p>Isso requer um mistura de trabalho duro, experiência com a sintaxe de programação utilizada e prática, além de um pouco de criatividade, é claro. Quanto mais você programa, melhor programador se torna. Nós não prometemos transformar seu cérebro em um “cérebro de programador” em 5 minutos, mas vamos te dar todas as oportunidades para pensar na prática como um programador ao longo deste curso.</p>
+<p>Com isso em mente, vejamos o exemplo que estaremos construindo neste artigo e analisaremos o processo geral de dissecá-lo em tarefas tangíveis.</p>
+<h2 id="exemplo-—-jogo-adivinhe-um-número"><a href="https://developer.mozilla.org/pt-BR/docs/Learn/JavaScript/First_steps/A_first_splash#exemplo_%E2%80%94_jogo_adivinhe_um_n%C3%BAmero">Exemplo — Jogo adivinhe um número</a></h2>
+<p>Neste artigo vamos mostrar a você como construir este simples jogo, que pode ser visto abaixo:</p>
+<p>Vá em frente e jogue por um tempo para se familiarizar com o jogo antes de continuar.</p>
+<p>Vamos imaginar que o seu chefe te deu as seguintes diretrizes para criar este jogo:</p>
+<blockquote>
+<p>Quero que você crie um jogo simples do tipo adivinhe um número. Ele deve gerar um número aleatório de 1 a 100, depois desafiar o jogador a adivinhar o número em 10 rodadas. A cada rodada deve ser dito ao jogador se ele está certo ou errado, se estiver errado, deve ser dito se o palpite é muito baixo ou muito alto. Também deve ser mostrado ao jogador os números que ele tentou adivinhar anteriormente. O jogo termina se o jogador acertar o número ou acabarem o número de tentativas. Quando o jogo acabar, deve ser dado ao jogador a opção de jogar novamente.</p>
+</blockquote>
+<p>Olhando para o enunciado, a primeira coisa que devemos fazer é quebrá-lo em pequenas tarefas, da forma mais parecida com o pensamento de um programador quanto possível:</p>
+<ol>
+<li>Gerar um número aleatório entre 1 e 100.</li>
+<li>Gravar o número do turno que o jogador está. Iniciar em 1.</li>
+<li>Dar ao jogador uma forma de adivinhar o número.</li>
+<li>Após a tentativa ter sido submetida, primeiro gravar em algum lugar para que o usuário possa ver as tentativas anteriores.</li>
+<li>Depois, verificar se o palpite está correto.</li>
+<li>Se estiver correto:
+<ol>
+<li>Escrever mensagem de parabéns.</li>
+<li>Impedir que o jogador insira mais respostas (isso pode bugar o jogo).</li>
+<li>Mostrar controle que permita ao jogador reiniciar o jogo.</li>
+</ol>
+</li>
+<li>Se o palpite estiver errado e o jogador ainda tem turnos sobrando:
+<ol>
+<li>Dizer ao jogador que ele está errado.</li>
+<li>Permitir que ele insira outra resposta.</li>
+<li>Incrementar o número do turno em 1.</li>
+</ol>
+</li>
+<li>Se o jogador está errado mas não tem turnos sobrando:
+<ol>
+<li>Dizer ao jogador que o jogo acabou.</li>
+<li>Impedir que o jogador insira mais respostas (isso pode bugar o jogo).</li>
+<li>Mostrar controle que permita ao jogador reiniciar o jogo.</li>
+</ol>
+</li>
+<li>Quando reiniciar, tenha certeza de resetar todas as variáveis e a interface do jogo, então volte para o passo 1.</li>
+</ol>
+<p>Então vamos em frente, olhando como podemos transformar esses passos em código, construindo esse exemplo e explorando as ferramentas do JavaScript ao longo do caminho.</p>
+<h3 id="configuração-inicial"><a href="https://developer.mozilla.org/pt-BR/docs/Learn/JavaScript/First_steps/A_first_splash#configura%C3%A7%C3%A3o_inicial">Configuração Inicial</a></h3>
+<p>Para iniciar este tutorial, gostaríamos que você fizesse uma cópia do arquivo  <a href="https://github.com/mdn/learning-area/blob/main/javascript/introduction-to-js-1/first-splash/number-guessing-game-start.html">jogo-adivinhe-o-numero-inicio.html</a>  (<a href="https://mdn.github.io/learning-area/javascript/introduction-to-js-1/first-splash/number-guessing-game-start.html">ver demonstração</a>). Abra-o em um editor de texto e também no seu browser. No momento você vai apenas ver um simples cabeçalho, parágrafo de instruções e um formulário para entrada de informações, mas o formulário não fará nada por enquanto.</p>
+<p>O lugar em que começaremos a escrever nosso código será dentro da tag  <a href="https://developer.mozilla.org/pt-BR/docs/Web/HTML/Element/script"><code>&lt;script&gt;</code></a>  na parte inferior do HTML:</p>
+<pre><code>&lt;script&gt;
+
+  // Seu JavaScript vai aqui
+
+&lt;/script&gt;
+
+</code></pre>
+<h3 id="adicionando-variáveis-para-armazenar-nossos-dados"><a href="https://developer.mozilla.org/pt-BR/docs/Learn/JavaScript/First_steps/A_first_splash#adicionando_vari%C3%A1veis_para_armazenar_nossos_dados">Adicionando variáveis para armazenar nossos dados</a></h3>
+<p>Vamos começar. Primeiramente, adicione as seguintes linhas na sua tag  <a href="https://developer.mozilla.org/pt-BR/docs/Web/HTML/Element/script"><code>&lt;script&gt;</code></a>  :</p>
+<pre><code>var numeroAleatorio= Math.floor(Math.random() * 100) + 1;
+
+var palpites = document.querySelector('.palpites');
+var ultimoResultado = document.querySelector('.ultimoResultado');
+var baixoOuAlto = document.querySelector('.baixoOuAlto');
+
+var envioPalpite = document.querySelector('.envioPalpite');
+var campoPalpite = document.querySelector('.campoPalpite');
+
+var contagemPalpites = 1;
+var botaoReinicio;
+
+</code></pre>
+<p>Aqui estamos setando as variáveis que precisamos para guardar os dados que nosso programa irá utilizar. Variáveis são basicamente recipientes para valores (como números, ou strings ou textos). Variáveis são criadas com a palavra-chave  <code>var</code>  seguida de um nome para sua variável. Você pode atribuir um valor para sua variável com um sinal de igual (<code>=</code>) seguido do valor que você quer dar a ela.</p>
+<p>No nosso exemplo:</p>
+<ul>
+<li>
+<p>À primeira variável —  <code>numeroAleatorio</code>  — é atribuído um número aleatório entre 1 e 100, calculado usando um algoritmo matemático.</p>
+</li>
+<li>
+<p>As próximas três variáveis são criadas para guardar uma referência para os parágrafos resultantes em nosso HTML, e são usadas para inserir valores nos parágrafos no código:</p>
+<pre><code>&lt;p class="palpites"&gt;&lt;/p&gt;
+&lt;p class="ultimoResultado"&gt;&lt;/p&gt;
+&lt;p class="baixoOuAlto"&gt;&lt;/p&gt;
+
+</code></pre>
+</li>
+<li>
+<p>As próximas duas variáveis armazenam referências para o campo de texto e o botão de envio e são usados para controlar o envio do palpite.</p>
+<pre><code>&lt;label for="campoPalpite"&gt;Digite seu palpite: &lt;/label&gt;&lt;input type="text" id="campoPalpite" class="campoPalpite"&gt;
+&lt;input type="submit" value="Enviar palpite" class="envioPalpite"&gt;
+
+</code></pre>
+</li>
+<li>
+<p>As últimas duas variáveis (contagemPalpites e botaoReinicio) são usadas para armazenar a contagem dos palpites do usuário, e o outro é uma referência para o botão de reset, que não existe ainda (mas irá existir).</p>
+</li>
+</ul>
+<p><strong>Nota:</strong>  Você irá aprender muito mais sobre variáveis a partir do  <a href="https://developer.mozilla.org/pt-BR/docs/user:chrisdavidmills/variables" title="This is a link to an unwritten page">próximo artigo</a>.</p>
+<h3 id="funções"><a href="https://developer.mozilla.org/pt-BR/docs/Learn/JavaScript/First_steps/A_first_splash#fun%C3%A7%C3%B5es">Funções</a></h3>
+<p>Em seguida, adicione o seguinte código abaixo do JavaScript anterior:</p>
+<pre><code>function conferirPalpite() {
+  alert('Eu sou um placeholder');
+}
+
+</code></pre>
+<p>Funções são blocos reutilizáveis de código que você pode escrever uma vez e executá-lo de novo e de novo, eliminando a necessidade de repetir o código todas as vezes. Isso é realmente útil. Há várias formas de se definir funções, mas, por agora, vamos nos concentrar em um tipo simples. Aqui nós definimos uma função usando a palavra chave  <code>function</code>, seguida de um nome, com parênteses colocados na sequência. Depois disso nós colocamos duas chaves (<code>{ }</code>). Dentro das chaves vai todo o código que queremos executar sempre que chamarmos a função.</p>
+<p>O código é executado digitando o nome da função seguido pelos parênteses.</p>
+<p>Tente salvar o seu código agora e atualizá-lo no navegador.</p>
+<p>Vá até o  <a href="https://developer.mozilla.org/pt-BR/docs/Learn/Common_questions/What_are_browser_developer_tools">console JavaScript</a>, e insira a seguinte linha:</p>
+<pre><code>conferirPalpite();
+
+</code></pre>
+<p>Você deverá ver um alerta aparecer dizendo “Eu sou um placeholder”; nós definimos uma função em nosso código que cria um alerta a qualquer hora em que a chamarmos.</p>
+<p><strong>Nota:</strong>  Você irá aprender muito mais sobre funções mais tarde no curso.</p>
+<h3 id="operadores"><a href="https://developer.mozilla.org/pt-BR/docs/Learn/JavaScript/First_steps/A_first_splash#operadores">Operadores</a></h3>
+<p>Os operadores JavaScript nos permite realizar testes, fazer cálculos matemáticos, unir sequências de texto, e outras coisas do tipo.</p>
+<p>Vamos salvar nosso código e atualizar a página exibida em nosso navegador. Abra o  <a href="https://developer.mozilla.org/pt-BR/docs/Learn/Common_questions/What_are_browser_developer_tools">console JavaScript</a>  se você ainda não o tiver aberto, para que possamos digitar os exemplos mostrados abaixo — digite cada um exatamente como mostrado na coluna “Exemplo”, pressionando Return/Enter na sequência, e veja quais resultados são retornados. Se você não tiver fácil acesso às ferramentas de desenvolvimento do navegador você pode sempre utilizar o console embutido simples, como no exemplo abaixo:</p>
+<p>Primeiro vamos ver os operadores matemáticos, como por exemplo:</p>
+<p>Operador</p>
+<p>Nome</p>
+<p>Exemplo</p>
+<p><code>+</code></p>
+<p>Adição</p>
+<p><code>6 + 9</code></p>
+<p><code>-</code></p>
+<p>Subtração</p>
+<p><code>20 - 15</code></p>
+<p><code>*</code></p>
+<p>Multiplicação</p>
+<p><code>3 * 7</code></p>
+<p><code>/</code></p>
+<p>Divisão</p>
+<p><code>10 / 5</code></p>
+<p>Você também pode usar o operador  <code>+</code>  para unir sequências de texto (isso é chamado de concatenação em programação). Tente inserir as seguintes linhas:</p>
+<pre><code>var nome = 'Bingo';
+nome;
+var ola = ' diz olá!';
+ola;
+var cumprimento = nome + ola;
+cumprimento;
+
+</code></pre>
+<p>Há também alguns atalhos para operadores disponíveis, chamados de operadores de atribuição ampliada (ou atribuição composta). Por exemplo, se você quer adicionar uma nova sequência de texto à uma existente e retornar o resultado, você pode fazer o seguinte:</p>
+<pre><code>nome += ' diz olá!';
+
+</code></pre>
+<p>Isso é equivalente a:</p>
+<pre><code>nome = nome + ' diz olá!';
+
+</code></pre>
+<p>Quando estamos rodando testes de verdadeiro/falso (por exemplo, condicinais internas — veja  <a href="https://developer.mozilla.org/pt-BR/docs/Learn/JavaScript/First_steps/A_first_splash#conditionals">abaixo</a>, usamos operadores de comparação, por exemplo:</p>
+<p>Operador</p>
+<p>Nome</p>
+<p>Exemplo</p>
+<p><code>===</code></p>
+<p>Igualdade estrita (é estritamente o mesmo?)</p>
+<p><code>5 === 2 + 4</code></p>
+<p><code>!==</code></p>
+<p>Não-igualdade (não é o mesmo?)</p>
+<p><code>'Chris' !== 'Ch' + 'ris'</code></p>
+<p><code>&lt;</code></p>
+<p>Menor que</p>
+<p><code>10 &lt; 6</code></p>
+<p><code>&gt;</code></p>
+<p>Maior que</p>
+<p><code>10 &gt; 20</code></p>
+<h3 id="condicionais"><a href="https://developer.mozilla.org/pt-BR/docs/Learn/JavaScript/First_steps/A_first_splash#condicionais">Condicionais</a></h3>
+<p>Voltando à nossa função  <code>conferirPalpite()</code>, imagino que seja seguro dizer que não queremos que ela apenas exiba uma mensagem de teste (placeholder). Nós queremos verificar se o palpite do jogador está correto ou não, e responder apropriadamente.</p>
+<p>Neste ponto, substitua sua função  <code>conferirPalpite()</code>  atual por esta versão:</p>
+<pre><code>function conferirPalpite() {
+  var palpiteUsuario = Number(campoPalpite.value);
+  if (contagemPalpites === 1) {
+    palpites.textContent = 'Palpites anteriores: ';
+  }
+  palpites.textContent += palpiteUsuario + ' ';
+
+  if (palpiteUsuario === numeroAleatorio) {
+    ultimoResultado.textContent = 'Parabéns! Você acertou!';
+    ultimoResultado.style.backgroundColor = 'green';
+    baixoOuAlto.textContent = '';
+    configFimDeJogo();
+  } else if (contagemPalpites === 10) {
+    ultimoResultado.textContent = '!!!FIM DE JOGO!!!';
+    baixoOuAlto.textContent = '';
+    configFimDeJogo();
+  } else {
+    ultimoResultado.textContent = 'Errado!';
+    ultimoResultado.style.backgroundColor = 'red';
+    if(palpiteUsuario &lt; numeroAleatorio) {
+      baixoOuAlto.textContent = 'Seu palpite está muito baixo!';
+    } else if(palpiteUsuario &gt; numeroAleatorio) {
+      baixoOuAlto.textContent = 'Seu palpite está muito alto!';
+    }
+  }
+
+  contagemPalpites++;
+  campoPalpite.value = '';
+  campoPalpite.focus();
+}
+
+</code></pre>
+<p>Isso é bastante código — ufa! Vamos abordar cada seção e explicar o que faz.</p>
+<ul>
+<li>
+<p>A primeira linha (linha 2 no código acima) declara uma variável chamada  <code>palpiteUsuario</code>  e define seu valor igual ao valor inserido pelo jogador no campo de texto. Nós também rodamos esse valor através do método embutido  <code>Number()</code>, apenas para ter certeza de que o valor inserido é um número.</p>
+</li>
+<li>
+<p>Em seguida, encontramos nosso primero bloco de código condicional (linhas 3–5 no código acima). Um bloco de código condicional lhe permite executar código seletivamente, dependendo se uma condição é verdadeira ou não. Se parece um pouco com uma função, mas não é. A forma mais simples de um bloco condicional começa com a palavra chave  <code>if</code>, depois os parênteses, depois as chaves. Dentro dos parênteses nós incluímos um teste. Se o teste retornar  <code>true</code>(verdadeiro), o código dentro das chaves é executado. Caso contrário, não é executado, e seguimos para a próxima parte do código. Neste caso, o teste está verificando se a variável  <code>contagemPalpites</code>  é igual a  <code>1</code>  (isto é, se essa é ou não a primeira tentativa do jogador):</p>
+<pre><code>contagemPalpites === 1
+
+</code></pre>
+<p>Se a condição for verdadeira, nós tornamos o conteúdo do parágrafo de palpites,  <code>&lt;p class="palpites"&gt;&lt;/p&gt;</code>  igual a "Palpites anteriores: ". Caso contrário, o texto não é exibido.</p>
+</li>
+<li>
+<p>A linha 6 acrescenta o valor atual de  <code>palpiteUsuario</code>  ao final do parágrafo  <code>palpites</code>, mais um espaço em branco para que haja espaçamento entre cada palpite mostrado.</p>
+</li>
+<li>
+<p>O próximo bloco (linhas 8–24 acima) fazem as seguintes conferências:</p>
+<ul>
+<li>O primeiro  <code>if(){ }</code>  confere se o palpite do jogador é igual ao número aleatório (<code>numeroAleatorio</code>) definido no topo do nosso JavaScript. Se for, o jogador adivinhou corretamente o número e venceu o jogo. Então mostramos ao jogador uma mensagem de parabenização com uma agradável cor verde, limpamos o conteúdo do parágrado que informa sobre o palpite ser alto ou baixo  <code>&lt;p class="baixoOuAlto"&gt;&lt;/p&gt;</code>, e executamos uma função chamada  <code>configFimDeJogo()</code>, que iremos discutir mais tarde.</li>
+<li>Agora nós encadeamos outro teste ao final deste anterior usando uma estrutura  <code>else if(){ }</code>. Este confere se o palpite do jogador é sua última tentativa. Se for, o programa faz o mesmo que no bloco anterior, porém com uma mensagem de fim de jogo ao invés do texto de parabenização.</li>
+<li>O bloco final encadeado ao final do código (<code>else { }</code>) contém código que só é executado se nenhum dos outros dois testes retornar verdadeiro (ou seja, o jogador não acertou o número, porém ainda tem mais tentativas restantes). Neste caso nós dizemos a ele que está errado, e então rodamos outro teste condicional para checar se o palpite foi maior ou menor do que a resposta certa, exibindo então uma mensagem apropriada para informá-lo se foi maior ou menor.</li>
+</ul>
+</li>
+<li>
+<p>As próximas três linhas da função (linhas 26–28) nos deixa preparados para o próximo palpite ser submetido. Nós somamos 1 à variável  <code>contagemPalpites</code>  para que o jogador use sua tentativa (<code>++</code>  é uma operação de incremento — incrementa em 1), e o campo de texto do formulário de inserção seja esvaziado e focado novamente, pronto para que o próximo palpite seja inserido.</p>
+</li>
+</ul>
+<h3 id="eventos"><a href="https://developer.mozilla.org/pt-BR/docs/Learn/JavaScript/First_steps/A_first_splash#eventos">Eventos</a></h3>
+<p>Neste ponto temos uma função  <code>conferirPalpite()</code>  bem implementada, mas ela não irá fazer nada pois nós não a chamamos ainda. Idealmente nós queremos que ela seja acionada quando o botão “Enviar palpite” for pressionado, e para fazer isso precisamos usar um evento. Eventos são ações que acontencem no navegador, como um botão sendo clicado, ou uma página carregada, ou um vídeo tocando; ações as quais podemos responder executando blocos de código. Os construtores que monitoram os acontecimentos de eventos são chamados de  <strong>event listeners</strong>, e os blocos de código executados em resposta ao acontecimento do evento são chamados de  <strong>event handlers</strong>.</p>
+<p>Adicione a seguinte linha abaixo da chave de fechamento da sua função  <code>conferirPalpite()</code>:</p>
+<pre><code>envioPalpite.addEventListener('click', conferirPalpite);
+
+</code></pre>
+<p>Aqui nós estamos adicionando um  <em>event listener</em>  ao botão  <code>envioPalpite</code>. Esse é um método que aceita a inserção de dois valores (chamados de argumentos) — o tipo de envento que estamos monitorando (neste caso o evento  <code>click</code>) como um  <em>string</em>  (sequência de texto), e o código que queremos executar quando o evento ocorrer (neste caso a função  <code>conferirPalpite()</code>  — note que não temos que especificar os parênteses quando estivermos escrevendo dentro de  <a href="https://developer.mozilla.org/pt-BR/docs/Web/API/EventTarget/addEventListener" title="addEventListener()"><code>addEventListener()</code></a>).</p>
+<p>Tente agora salvar e atualizar seu código, e seu exemplo deve funcionar agora, até um ponto. O único problema agora é que se você acertar o palpite ou ficar sem mais tentativas o jogo irá falhar, porque ainda não definimos a função  <code>configFimDeJogo()</code>  que deve ser executada uma vez que o jogo terminar. Vamos adicionar agora o código restante e completar a funcionalidade do nosso exemplo.</p>
+<h3 id="finalizando-a-funcionalidade-do-jogo"><a href="https://developer.mozilla.org/pt-BR/docs/Learn/JavaScript/First_steps/A_first_splash#finalizando_a_funcionalidade_do_jogo">Finalizando a funcionalidade do jogo</a></h3>
+<p>Vamos adicionar a função  <code>configFimDeJogo()</code>  ao final do nosso código e então explorá-lo. Adicione agora isso, abaixo do restante do seu JavaScript:</p>
+<pre><code>function configFimDeJogo() {
+  campoPalpite.disabled = true;
+  envioPalpite.disabled = true;
+  botaoReinicio = document.createElement('button');
+  botaoReinicio.textContent = 'Iniciar novo jogo';
+  document.body.appendChild(botaoReinicio);
+  botaoReinicio.addEventListener('click', reiniciarJogo);
+}
+
+</code></pre>
+<ul>
+<li>As primeiras duas linhas desabilitam a entrada de texto do formulário e o clique do botão, definindo a propriedade  <em>disabled</em>  (desabilitado) de cada um como  <code>true</code>  (verdadeiro). Isso é necessário, pois se não o fizermos, o usuário poderia submeter mais palpites depois do jogo ter terminado, o que iria bagunçar as coisas.</li>
+<li>As próximas três linhas geram um novo elemento  <a href="https://developer.mozilla.org/pt-BR/docs/Web/HTML/Element/button"><code>&lt;button&gt;</code></a>, define o texto de seu rótulo como “Iniciar novo jogo”, e o adiciona ao final do nosso HTML existente.</li>
+<li>A linha final define um monitor de evento (<em>event listener</em>) em nosso botão, para que quando seja clicado, uma função chamada  <code>reiniciarJogo()</code>  seja executada.</li>
+</ul>
+<p>Agora precisamos definir essa função também! Adicione o seguinte código, novamente ao final do nosso JavaScript:</p>
+<pre><code>function reiniciarJogo() {
+  contagemPalpites = 1;
+
+  var reiniciarParas = document.querySelectorAll('.resultadoParas p');
+  for (var i = 0 ; i &lt; reiniciarParas.length ; i++) {
+    reiniciarParas[i].textContent = '';
+  }
+
+  botaoReinicio.parentNode.removeChild(botaoReinicio);
+
+  campoPalpite.disabled = false;
+  envioPalpite.disabled = false;
+  campoPalpite.value = '';
+  campoPalpite.focus();
+
+  ultimoResultado.style.backgroundColor = 'white';
+
+  numeroAleatorio = Math.floor(Math.random() * 100) + 1;
+}
+
+</code></pre>
+<p>Esse longo bloco de código redefine completamente tudo do modo como era no início do jogo, para que o jogador possa jogá-lo novamente. Ele:</p>
+<ul>
+<li>Coloca o valor da variável  <code>contagemPalpites</code>  novamente igual a 1.</li>
+<li>Limpa todos os parágrafos de informativos.</li>
+<li>Remove o botão resete do nosso código.</li>
+<li>Habilita os elementos do formulários, esvazia e direciona o foco ao campo de texto, pronto para que um novo palpite seja inserido.</li>
+<li>Remove a cor de fundo do parágrafo  <code>ultimoResultado</code>.</li>
+<li>Gera um novo número aleatório para que o jogador não esteja tentando adivinhar o mesmo número novamente!</li>
+</ul>
+<p><strong>Neste ponto você deve ter um jogo (simples) completamente funcional — parabéns!</strong></p>
+<p>Tudo o que temos que fazer agora neste artigo é falar sobre alguns outros recursos importantes que você já viu, mesmo que não os tenha notado ainda.</p>
+<h3 id="loops"><a href="https://developer.mozilla.org/pt-BR/docs/Learn/JavaScript/First_steps/A_first_splash#loops">Loops</a></h3>
+<p>Uma parte do código acima que precisamos olhar mais detalhadamente é o loop  <a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Statements/for">for</a>. Loop é um conceito muito importante em programação, que permite a você continuar executando um pedaço do código repetidamente, até que determinada condição seja satisfeita.</p>
+<p>Para começar, vá novamente até o  <a href="https://developer.mozilla.org/pt-BR/docs/Learn/Common_questions/What_are_browser_developer_tools">console JavaScript</a>  do seu navegador, e insira o seguinte:</p>
+<pre><code>for (var i = 1 ; i &lt; 21 ; i++) { console.log(i) }
+
+</code></pre>
+<p>O que aconteceu? Os números de 1 a 20 foram exibidos no seu console. Isso acontece por causa do loop. Um loop  <code>for</code>  utiliza a inserção de três valores (argumentos):</p>
+<ol>
+<li><strong>Um valor inicial</strong>: Nesse caso estamos iniciando a contagem em 1, mas poderia ser qualquer outro número que quisesse utilizar. Você pode substituir  <code>i</code>  por qualquer número que quiser também, mas  <code>i</code>  é utilizado por convenção porque é curto e fácil de lembrar.</li>
+<li><strong>Uma condição de saída</strong>: Aqui nós especificamos  <code>i &lt; 21</code>  — o loop irá continuar rodando até que  <code>i</code>  não seja mais menor que 21. Quando  <code>i</code>  alcançar 21, o loop não será mais executado.</li>
+<li><strong>Incremento</strong>: Nós especificamos  <code>i++</code>, que siginifica “adicione 1 à i”. O loop irá rodar uma vez para cada valor de  <code>i</code>, até que  <code>i</code>  alcance o valor de 21 (como abordado acima). Nesse caso, nós estamos simplesmente imprimindo o valor de  <code>i</code>  no console em cada iteração usando  <a href="https://developer.mozilla.org/pt-BR/docs/Web/API/Console/log" title="console.log()"><code>console.log()</code></a>.</li>
+</ol>
+<p>Agora vamos olhar o loop em nosso jogo de adivinhar o número — o código seguinte pode ser encontrado dentro da função  <code>reiniciarJogo()</code>:</p>
+<pre><code>var reiniciarParas = document.querySelectorAll('.resultadoParas p');
+for (var i = 0 ; i &lt; reiniciarParas.length ; i++) {
+  reiniciarParas[i].textContent = '';
+}
+
+</code></pre>
+<p>Esse código cria uma variável contendo uma lista de todos os parágrafos dentro de  <code>&lt;div class="resultadoParas"&gt;</code>  usando o método  <a href="https://developer.mozilla.org/pt-BR/docs/Web/API/Document/querySelectorAll" title="querySelectorAll()"><code>querySelectorAll()</code></a>, e então faz o loop em cada um, removendo o conteúdo de texto dos mesmos.</p>
+<h3 id="uma-pequena-discussão-sobre-objetos"><a href="https://developer.mozilla.org/pt-BR/docs/Learn/JavaScript/First_steps/A_first_splash#uma_pequena_discuss%C3%A3o_sobre_objetos">Uma pequena discussão sobre objetos</a></h3>
+<p>Vamos adicionar uma melhoria final antes de chegarmos a essa discussão. Adicione a linha seguinte logo abaixo da linha  <code>var botaoReinicio;</code>  próximo ao topo do seu JavaScript, em seguida salve nosso arquivo:</p>
+<pre><code>campoPalpite.focus();
+
+</code></pre>
+<p>Essa linha usa o método  <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/focus" title="Currently only available in English (US)"><code>focus()</code>  (en-US)</a>  para automaticamente colocar o cursor dentro campo de texto do  <a href="https://developer.mozilla.org/pt-BR/docs/Web/HTML/Element/Input"><code>&lt;input&gt;</code></a>  assim que a página carrega, significando que o usuário já pode começar a digitar o primeiro palpite, e não precisa clicar no campo do formulário primeiro. É apenas uma pequena adição, mas melhora a usabilidade — dando ao usuário uma boa dica visual do que ele deve fazer para jogar o jogo.</p>
+<p>Vamos analisar o que está acontencedo aqui com um pouco mais de detalhes. Em JavaScript, tudo é um objeto. Um objeto é uma coleção de funcionalidades relacionadas armazenadas em um único agrupamento. Você pode criar seus próprios objetos, mas isso é bastante avançado e nós não iremos abordar até mais tarde no curso. Por agora, vamos apenas discutir brevemente os objetos pré-construídos presentes em seu navegador, que lhe permite fazer várias coisas úteis.</p>
+<p>Neste caso particular, nós primeiro criamos a variável  <code>campoPalpite</code>  que armazena uma referência ao campo de inserção de texto do formulário em nosso HTML — a linha seguinte pode ser achada entre nossas declarações de variáveis próximas ao topo:</p>
+<pre><code>var campoPalpite = document.querySelector('.campoPalpite');
+
+</code></pre>
+<p>Para pegar essa referência, usamos o método  <a href="https://developer.mozilla.org/pt-BR/docs/Web/API/Document/querySelector" title="querySelector()"><code>querySelector()</code></a>  do objeto  <a href="https://developer.mozilla.org/pt-BR/docs/Web/API/Document"><code>document</code></a>.  <code>querySelector()</code>  pega um pedaço de informação — um  <a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Selectors" title="Currently only available in English (US)">seletor CSS  (en-US)</a>  que seleciona o elemento ao qual você quer referenciar.</p>
+<p>Como agora  <code>campoPalpite</code>  contém referência ao elemento  <a href="https://developer.mozilla.org/pt-BR/docs/Web/HTML/Element/Input"><code>&lt;input&gt;</code></a>, ele terá agora acesso a um número de propriedades (basicamente variáveis armazenadas dentro de objetos, sendo que alguns não podem ter seus valores alterados) e métodos (basicamente, funções armazenadas dentro de objetos). Um método disponível para elementos de inserção  <code>&lt;input&gt;</code>, é o  <code>focus()</code>, então agora podemos usar essa linha para focar o campo de inserção de texto:</p>
+<pre><code>campoPalpite.focus();
+
+</code></pre>
+<p>Variáveis que não contém referências a elementos de formulário não terão  <code>focus()</code>  disponível para elas. Por exemplo, a variável  <code>palpites</code>  contém referência de um elemento  <a href="https://developer.mozilla.org/pt-BR/docs/Web/HTML/Element/p"><code>&lt;p&gt;</code></a>, e  <code>contagemPalpites</code>  contém um número.</p>
+<h3 id="brincando-com-objetos-do-navegador"><a href="https://developer.mozilla.org/pt-BR/docs/Learn/JavaScript/First_steps/A_first_splash#brincando_com_objetos_do_navegador">Brincando com objetos do navegador</a></h3>
+<p>Vamos brincar um pouco com alguns objetos do navegador.</p>
+<ol>
+<li>
+<p>Primeiro abra seu programa em um navegador.</p>
+</li>
+<li>
+<p>Em seguida, abra as  <a href="https://developer.mozilla.org/pt-BR/docs/Learn/Common_questions/What_are_browser_developer_tools">ferramentas de desenvolvimento do navegador</a>, e certifique-se de que a aba do console JavaScript esteja aberta.</p>
+</li>
+<li>
+<p>Digite  <code>campoPalpite</code>  e o console irá lhe mostrar que a variável contém um elemento  <a href="https://developer.mozilla.org/pt-BR/docs/Web/HTML/Element/Input"><code>&lt;input&gt;</code></a>. Você também irá notar que o console completa automaticamente os nomes de objetos existentes dentro do ambiente de execução, incluindo suas variáveis!</p>
+<ol>
+<li>
+<p>Agora digite o seguinte:</p>
+<pre><code>campoPalpite.value = 'Olá';
+
+</code></pre>
+<p>A propriedade  <code>value</code>  representa o valor atual inserido no campo de texto. Você verá que inserindo esse comando, nós mudamos o valor desse objeto!</p>
+</li>
+</ol>
+</li>
+<li>
+<p>Agora tente digitar  <code>palpites</code>  e pressione  <em>return</em>. O console irá mostrar que a variável contém um elemento  <a href="https://developer.mozilla.org/pt-BR/docs/Web/HTML/Element/p"><code>&lt;p&gt;</code></a>.</p>
+</li>
+<li>
+<p>Agora tente inserir a linha seguinte:</p>
+<pre><code>palpites.value
+
+</code></pre>
+<p>O navegador irá retornar  <code>undefined</code>, porque  <code>value</code>  não existe em parágrafos.</p>
+</li>
+<li>
+<p>Para mudar o texto dentro de um parágrafo, você precisa da propriedade  <a href="https://developer.mozilla.org/pt-BR/docs/Web/API/Node/textContent" title="textContent"><code>textContent</code></a>. Tente isso:</p>
+<pre><code>palpites.textContent = 'Onde está meu parágrafo?';
+
+</code></pre>
+</li>
+<li>
+<p>Agora algo divertido. Tente inserir as linhas abaixo, uma por uma:</p>
+<pre><code>palpites.style.backgroundColor = 'yellow';
+palpites.style.fontSize = '200%';
+palpites.style.padding = '10px';
+palpites.style.boxShadow = '3px 3px 6px black';
+
+</code></pre>
+<p>Cada elemento em uma página tem uma propriedade  <code>style</code>, que contém um objeto no qual estão inseridos em suas propriedades todos os estilos incorporados de CSS aplicados ao respectivo elemento. Isso nos permite configurar dinamicamente novos estilos CSS nos elementos usando JavaScript.</p>
+</li>
+</ol>
+<h2 id="finalizado-por-enquanto..."><a href="https://developer.mozilla.org/pt-BR/docs/Learn/JavaScript/First_steps/A_first_splash#finalizado_por_enquanto">Finalizado por enquanto…</a></h2>
+<p>Então é isso, para construir o exemplo — você chegou ao final, muito bem! Teste o resultado do seu código, ou  <a href="https://mdn.github.io/learning-area/javascript/introduction-to-js-1/first-splash/number-guessing-game.html">jogue com nossa versão finalizada aqui</a>. Se você não conseguir fazer o exemplo funcionar, compare com o  <a href="https://github.com/mdn/learning-area/blob/main/javascript/introduction-to-js-1/first-splash/number-guessing-game.html">código fonte</a>.</p>
+<h2 id="aula-3">Aula 3</h2>
+<h2 id="tipos-de-erros"><a href="https://developer.mozilla.org/pt-BR/docs/Learn/JavaScript/First_steps/What_went_wrong#tipos_de_erros">Tipos de erros</a></h2>
+<p>De um modo geral, quando você faz algo errado no código, existem dois tipos principais de erros que você encontrará:</p>
+<ul>
+<li><strong>Erros de sintaxe:</strong>  são erros de ortografia em seu código que realmente fazem com que o programa não seja executado, ou pare de trabalhar parcialmente - você geralmente receberá algumas mensagens de erro também. Estes geralmente são adequados para consertar, desde que você esteja familiarizado com as ferramentas certas e saiba o que as mensagens de erro significam!</li>
+<li><strong>Erros lógicos:</strong>  são erros onde a sintaxe está realmente correta, mas o código não é o que você pretendia, o que significa que o programa é executado com sucesso, mas dá resultados incorretos. Muitas vezes, eles são mais difíceis de consertar do que erros de sintaxe, pois geralmente não há uma mensagem de erro resultante para direcioná-lo para a origem do erro.</li>
+</ul>
+<p>Ok, então não é assim tão simples - há alguns outros diferenciadores à medida que você aprofunda. Mas as classificações acima serão bem úteis nesta fase inicial da sua carreira. Examinaremos esses dois tipos a seguir.</p>
+<h2 id="um-exemplo-errôneo"><a href="https://developer.mozilla.org/pt-BR/docs/Learn/JavaScript/First_steps/What_went_wrong#um_exemplo_err%C3%B4neo">Um exemplo errôneo</a></h2>
+<p>Para começar, voltemos ao nosso jogo de adivinhação - porém desta vez estaremos explorando uma versão que tem alguns erros inseridos propositalmente. Vá até o Github e faça uma cópia local de  <a href="https://github.com/mdn/learning-area/blob/main/javascript/introduction-to-js-1/troubleshooting/number-game-errors.html">jogo-numero-erros.html</a>  (<a href="https://mdn.github.io/learning-area/javascript/introduction-to-js-1/troubleshooting/number-game-errors.html">veja-o em execução aqui</a>).</p>
+<ol>
+<li>Para começar, abra a cópia local dentro do seu editor de texto favorito, e em seu navegador.</li>
+<li>Tente jogar o jogo - você notará que, quando você pressiona o botão “Enviar palpite”, ele não funciona!</li>
+</ol>
+<blockquote>
+<p>**Nota:**Talvez você tenha sua própria versão de exemplo do jogo que não funciona, e pode querer consertá-la! Nós ainda gostaríamos que você trabalhasse no artigo com a nossa versão, para que possa aprender as técnicas que estamos ensinando aqui. Daí então você pode voltar e tentar consertar seu exemplo.</p>
+</blockquote>
+<p>Neste ponto, vamos consultar o console do desenvolvedor para ver se identificamos qualquer erro de sintaxe, e então tentar consertá-lo. Você irá aprender como, logo abaixo.</p>
+<h2 id="consertando-erros-de-sintaxe"><a href="https://developer.mozilla.org/pt-BR/docs/Learn/JavaScript/First_steps/What_went_wrong#consertando_erros_de_sintaxe">Consertando erros de sintaxe</a></h2>
+<p>Anteriormente no curso, nós fizemos você digitar alguns comandos simples de JavaScript no  <a href="https://developer.mozilla.org/pt-BR/docs/Learn/Common_questions/What_are_browser_developer_tools">console JavaScript</a>  (se você não se lembra como, abra o link anterior). O que é ainda mais útil é o fato do console lhe mostrar mensagens de erro sempre que existir algo errado na sintaxe dentro do JavaScript enviado ao motor de JavaScript do navegador. Agora vamos à caça.</p>
+<ol>
+<li>
+<p>Vá até a aba onde você tem aberto o arquivo  <code>jogo-numero-erros.html</code>  e abra o console JavaScript. Você deverá ver uma mensagem de erro sendo exibida:<img src="https://developer.mozilla.org/pt-BR/docs/Learn/JavaScript/First_steps/What_went_wrong/nao-e-uma-funcao.png" alt=""></p>
+</li>
+<li>
+<p>Esse é um erro bem fácil de identifcar, e o navegador lhe fornece várias informações úteis para lhe ajudar (a captura de tela acima foi feita no Firefox, mas os outros navegadores oferecem informações similares). Da esquerda para a direita, nós temos:</p>
+<ul>
+<li>Um “x” laranja para indicar que esse é um erro.</li>
+<li>Uma mensagem de erro para indicar o que está errado: “TypeError: envioPalpite.addeventListener is not a function”</li>
+<li>Um link “Learn More” que encaminha à uma página no MDN docs explicando o que esse erro significa em uma quantidade enorme de detalhes.</li>
+<li>O nome do arquivo JavaScript, que direciona à aba Debugger das ferramentas de desenvolvimento. Se você clicar nesse link, verá a linha exata onde o erro está destatacada.</li>
+<li>O número da linha onde o erro se encontra, e o número do caractere na linha onde o erro é encontrado primeiro. Neste caso nós temos, linha 86, caractere número 3.</li>
+</ul>
+</li>
+<li>
+<p>Se olharmos para a linha 86 em nosso nosso código de código, vamos encontrar a seguinte linha:</p>
+<pre><code>envioPalpite.addeventListener('click', conferir Palpite);
+
+</code></pre>
+</li>
+<li>
+<p>O erro diz o seguinte “envioPalpite.addeventListener is not a function”, que significa envioPalpite.addeventListener não é uma funçao. Então provavelmente digitamos algo errado. Se você não estiver certo da digitação correta de parte da sintaxe, é uma boa ideia procurar a funcionalidade no MDN docs. A melhor forma de fazer isso atualmente é pesquisar por “mdn  <em>nome-da-funcionalidade</em>” em seu mecanismo de buscas favorito. Aqui está um atalho para te salvar algum tempo nesse caso:  <a href="https://developer.mozilla.org/pt-BR/docs/Web/API/EventTarget/addEventListener"><code>addEventListener()</code></a>.</p>
+</li>
+<li>
+<p>Então, olhando nessa essa página, o erro parece ser termos digitado o nome da função errado! Lembre-se de que o JavaScript diferencia letras maiúsculas de minúsculas, então qualquer diferença na digitação ou no uso de letras maiúsculas irá causar um erro. Alterar  <code>addeventListener</code>  para  <code>addEventListener</code>  deverá corrigir esse erro. Faça essa alteração no código do seu arquivo.</p>
+</li>
+</ol>
+<p><strong>Nota:</strong>  Veja nossa página de referência  <a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Errors/Not_a_function">TypeError: “x” is not a function</a>  para mais detalhes sobre esse erro.</p>
+<h3 id="erros-de-sintaxe---segundo-round"><a href="https://developer.mozilla.org/pt-BR/docs/Learn/JavaScript/First_steps/What_went_wrong#erros_de_sintaxe_-_segundo_round">Erros de sintaxe - segundo round</a></h3>
+<ol>
+<li>
+<p>Salve o arquivo e atualize a aba do navegador, e você poderá ver que o erro foi corrigido.</p>
+</li>
+<li>
+<p>Agora se você tentar enviar um palpite e pressionar o botão !Enviar palpite" você verá… outro erro!<img src="https://developer.mozilla.org/pt-BR/docs/Learn/JavaScript/First_steps/What_went_wrong/variavel-e-nula.png" alt=""></p>
+</li>
+<li>
+<p>Dessa vez o erro informado é “TypeError: baixoOuAlto is null”, na linha 78.</p>
+<p><strong>Nota:</strong>  <a href="https://developer.mozilla.org/en-US/docs/Glossary/Null"><code>Null</code></a>  é um valor especial que significa “nada”, ou “sem valor”. Então  <code>baixoOuAlto</code>  foi declarado e inicializado, mas não com algum valor significativo — não possui nenhum caractere ou valor.</p>
+<p><strong>Nota:</strong>  Esse erro não apareceu assim que a página foi carregada porque esse erro ocorreu dentro de uma função (dentro do bloco  <code>conferirPalpite() { ... }</code>  ). Como você irá aprender com mais detalhes no nosso artigo de funções mais tarde, o código localizado dentro de funções roda em um escopo separado do código presente fora das funções. Nesse caso, o código não estava rodando e o erro não estava aparecendo até a função  <code>conferirPalpite()</code>  ser executada na linha 86.</p>
+</li>
+<li>
+<p>Dê uma olhada na linha 78, e você verá o seguinte código:</p>
+<pre><code>baixoOuAlto.textContent = 'Seu palpite foi muito alto!';
+
+</code></pre>
+</li>
+<li>
+<p>Essa linha está tentando definir a propriedade  <code>textContent</code>  (conteúdo de texto) da variável  <code>baixoOuAlto</code>  como uma sequência de texto, mas isso não está funcionando porque  <code>baixoOuAlto</code>  não contém o que deveria conter. Vamos ver o porquê — tente localizar outras instâncias de  <code>baixoOuAlto</code>  no código. A instância que aparece primeiro no código JavaScript é na linha 48:</p>
+<pre><code>var baixoOuAlto = document.querySelector('baixoOuAlto');
+
+</code></pre>
+</li>
+<li>
+<p>Nesse ponto estamos tentando fazer com que a variável contenha uma referência a um elemento no documento HTML. Vamos conferir se o valor é  <code>null</code>  (nulo) depois que essa linha é executada. Adicione o seguinte código na linha 49:</p>
+<pre><code>console.log(baixoOuAlto);
+
+</code></pre>
+<p><strong>Nota:</strong>  <a href="https://developer.mozilla.org/en-US/docs/Web/API/console/log"><code>console.log()</code></a>  é uma função de debugging (correção de erros) realmente útil que exibe um valor na tela do console. Então ela irá imprimir o valor da variável  <code>baixoOuAlto</code>  na tela do console assim que tentarmos defini-la na linha 48.</p>
+</li>
+<li>
+<p>Salve o arquivo e o atualize no navegador, e você deverá ver agora o resultado do  <code>console.log()</code>  na tela do seu console.<img src="https://developer.mozilla.org/pt-BR/docs/Learn/JavaScript/First_steps/What_went_wrong/console-log-saida.png" alt="">Pois bem, nesse ponto o valor de  <code>baixoOuAlto</code>  e  <code>null</code>, então definitivamente há um problema com a linha 48.</p>
+</li>
+<li>
+<p>Vamos pensar em qual poderia ser o problema. A linha 48 está usando um método  <a href="https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector"><code>document.querySelector()</code></a>  para pegar a referência do elemento selecionado com um seletor CSS selector (<em>CSS selector</em>). Olhando mais acima no nosso código, podemos encontrar o parágrafo em questão:</p>
+<pre><code>&lt;p class="baixoOuAlto"&gt;&lt;/p&gt;
+
+</code></pre>
+</li>
+<li>
+<p>Então nós precisamos de um seletor de classe aqui, que começa com um ponto (.), mas o seletor passado pelo método  <code>querySelector()</code>  na linha 48 não tem o ponto. Esse pode ser o problema! Tente mudar  <code>baixoOuAlto</code>  para  <code>.baixoOuAlto</code>  na linha 48.</p>
+</li>
+<li>
+<p>Tente salvar o arquivo e atualizá-lo no navegador de novo, e a sua declaração  <code>console.log()</code>  deverá retornar o elemento  <code>&lt;p&gt;</code>  que queremos. Ufa! Outro erro resolvido! Você pode deletar a linha do seu  <code>console.log()</code>  agora, ou mantê-la para referência posterior — a escolha é sua.</p>
+</li>
+</ol>
+<p><strong>Nota:</strong>  Veja nossa página de referência  <a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Errors/Unexpected_type">TypeError: “x” is (not) “y”</a>  para mais detalhes sobre esse erro.</p>
+<h3 id="erros-de-sintaxe---terceiro-round"><a href="https://developer.mozilla.org/pt-BR/docs/Learn/JavaScript/First_steps/What_went_wrong#erros_de_sintaxe_-_terceiro_round">Erros de sintaxe - terceiro round</a></h3>
+<ol>
+<li>Agora se você tentar jogar novamente, você deve ter mais sucesso — o jogo deve continuar normalmente, até você terminar, ou adivinhando o número, ou ficando sem mais chances.</li>
+<li>Nesse ponto, o jogo falha mais uma vez, e o mesmo erro do início é exibido — “TypeError: botaoReinicio.addeventListener is not a function”! No entanto, dessa vez é listado vindo da linha 94.</li>
+<li>Olhando a linha 94, é fácil de ver que nós cometemos o mesmo erro novamente. Só precisamos alterar mais uma vez  <code>addeventListener</code>  para  <code>addEventListener</code>. Faça isso.</li>
+</ol>
+<h2 id="um-erro-de-lógica"><a href="https://developer.mozilla.org/pt-BR/docs/Learn/JavaScript/First_steps/What_went_wrong#um_erro_de_l%C3%B3gica">Um erro de lógica</a></h2>
+<p>Nesse ponto, o jogo deve rodar normalmente, porém depois de jogá-lo algumas vezes você irá notar que o número “aleatório” que você tem que adivinhar é sempre igual a 1. Definitivamente não é como queremos que o jogo funcione!</p>
+<p>Há sem dúvida um problema na lógica do jogo em algum lugar — o jogo não está retornando nenhum erro;simplesmente não está funcionando corretamente.</p>
+<ol>
+<li>
+<p>Procure pela variável  <code>numeroAleatorio</code>, e as linhas onde o número aleatório é definido primeiro. A instância que armazena o número aleatório que queremos adivinhar no começo do jogo deve estar na linha 44 ou próximo a ela:</p>
+<pre><code>var numeroAleatorio = Math.floor(Math.random()) + 1;
+
+</code></pre>
+</li>
+<li>
+<p>E a linha que gera o número aleatório antes de cada jogo subsequente está na linha 113, ou próximo a ela:</p>
+<pre><code>numeroAleatorio = Math.floor(Math.random()) + 1;
+
+</code></pre>
+</li>
+<li>
+<p>Para checar se essas linhas são mesmo o problema, vamos recorrer ao nosso amigo  <code>console.log()</code>  de novo — insira a seguinte linha diretamente abaixo de cada uma das duas linhas:</p>
+<pre><code>console.log(numeroAleatorio);
+
+</code></pre>
+</li>
+<li>
+<p>Salve o arquivo e atualize o navegador, então jogue algumas vezes — você verá que o  <code>numeroAleatorio</code>  é igual a 1 cada vez em que é exibido no console.</p>
+</li>
+</ol>
+<h3 id="trabalhando-através-da-lógica"><a href="https://developer.mozilla.org/pt-BR/docs/Learn/JavaScript/First_steps/What_went_wrong#trabalhando_atrav%C3%A9s_da_l%C3%B3gica">Trabalhando através da lógica</a></h3>
+<p>Para consertar isso, vamos considerar como essa linha está trabalhando. Primeiro, nós invocamos  <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random"><code>Math.random()</code></a>, que gera um número decimal aleatório entre 0 e 1, ex. 0.5675493843.</p>
+<pre><code>Math.random()
+
+</code></pre>
+<p>Em seguida, passamos o resultado invocando  <code>Math.random()</code>  através de  <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/floor"><code>Math.floor()</code></a>, que arredonda o número passado para o menor número inteiro mais próximo. E então adicionamos 1 ao resultado:</p>
+<p>Math.floor(Math.random()) + 1</p>
+<p>Arredondando um número decimal aleatório entre 0 e 1 para baixo irá sempre retornar 0, então adicionando 1 a ele sempre retornará 1. Precisamos multiplicar o número aleatório por 100 antes de o arredondarmos para baixo. O código seguinte nos daria um número aleatório entre 0 and 99:</p>
+<pre><code>Math.floor(Math.random()*100);
+
+</code></pre>
+<p>Por isso, queremos adicionar 1, para nos dar um número aleatório entre 1 e 100:</p>
+<pre><code>Math.floor(Math.random()*100) + 1;
+
+</code></pre>
+<p>Tente atualizar as duas linhas dessa forma, então salve e atualize o navegador — o jogo deve agora funcionar como nós queremos que funcione!</p>
+<h2 id="outros-erros-comuns"><a href="https://developer.mozilla.org/pt-BR/docs/Learn/JavaScript/First_steps/What_went_wrong#outros_erros_comuns">Outros erros comuns</a></h2>
+<p>Existem outros erros comuns com os quais você irá esbarrar em seu código. Essa seção destaca a maioria deles.</p>
+<h3 id="syntaxerror-missing--before-statement"><a href="https://developer.mozilla.org/pt-BR/docs/Learn/JavaScript/First_steps/What_went_wrong#syntaxerror_missing_before_statement"><em>SyntaxError: missing ; before statement</em></a></h3>
+<p>Erro de sintaxe: faltando “;” antes da declaração. Esse erro geralmente significa que você deixou de inserir um ponto e vírgula ao final de uma de suas linhas de código, mas algumas vezes pode ser mais crítico. Por exemplo, se mudarmos essa linha (número 58) dentro da função  <code>conferirPalpite()</code>:</p>
+<pre><code>var palpiteUsuario = Number(campoPalpite.value);
+
+</code></pre>
+<p>para</p>
+<pre><code>var palpiteUsuario === Number(campoPalpite.value);
+
+</code></pre>
+<p>Exibe esse erro porque pensa que você está fazendo algo diferente. Você deve se certificar de não misturar o operador de atribuição (<code>=</code>) — que configura uma variável para ser igual a determinado valor — com o operador de igualdade restrita (<code>===</code>), que testa se um valor é exatamente igual a outro, e retorna um resultado  <code>true</code>/<code>false</code>  (verdadeiro ou falso).</p>
+<p><strong>Nota:</strong>  Veja nossa página de referência  <a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Errors/Missing_semicolon_before_statement">SyntaxError: missing ; before statement</a>  para mais detalhes sobre esse erro.</p>
+<h3 id="o-programa-sempre-diz-que-você-ganhou-independentemente-do-palpite-que-insira"><a href="https://developer.mozilla.org/pt-BR/docs/Learn/JavaScript/First_steps/What_went_wrong#o_programa_sempre_diz_que_voc%C3%AA_ganhou_independentemente_do_palpite_que_insira">O programa sempre diz que você ganhou, independentemente do palpite que insira</a></h3>
+<p>Isso pode ser outro sintoma de confusão entre o operador de atribuição e o operador de igualdade restrita. Por exemplo, se nós quiséssemos essa linha dentro de  <code>conferirPalpite()</code>:</p>
+<pre><code>if (palpiteUsuario === numeroAleatorio) {
+
+</code></pre>
+<p>para</p>
+<pre><code>if (palpiteUsuario = numeroAleatorio) {
+
+</code></pre>
+<p>o teste retornaria sempre  <code>true</code>  (verdadeiro), causando o programa a reportar que o jogo foi vencido. Tome cuidado!</p>
+<h3 id="syntaxerror-missing--after-argument-list"><a href="https://developer.mozilla.org/pt-BR/docs/Learn/JavaScript/First_steps/What_went_wrong#syntaxerror_missing_after_argument_list"><em>SyntaxError: missing ) after argument list</em></a></h3>
+<p>Erro de sintaxe: faltando “)” depois de listar uma declaração. Esse é bem simples — geralmente significa que deixamos de fechar o parênteses no final ao invocar uma função/método.</p>
+<p><strong>Nota:</strong>  Veja nossa página de referência  <a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Errors/Missing_parenthesis_after_argument_list">SyntaxError: missing ) after argument list</a>  para mais detalhes sobre o erro.</p>
+<h3 id="syntaxerror-missing--after-property-id"><a href="https://developer.mozilla.org/pt-BR/docs/Learn/JavaScript/First_steps/What_went_wrong#syntaxerror_missing_after_property_id"><em>SyntaxError: missing : after property id</em></a></h3>
+<p>Erro de sintaxe: faltando “:” depois da propriedade id. Esse erro geralmente se relaciona à formação incorreta de um objeto de JavaScript, mas nesse caso o obtivemos alterando:</p>
+<pre><code>function conferirPalpite() {
+
+</code></pre>
+<p>para</p>
+<pre><code>function conferirPalpite( {
+
+</code></pre>
+<p>Isso levou o navegador a pensar que estávamos tentando passar todo o conteúdo da função como se fosse um argumento dessa função. Seja cuidadoso com esses parênteses!</p>
+<h3 id="syntaxerror-missing--after-function-body"><a href="https://developer.mozilla.org/pt-BR/docs/Learn/JavaScript/First_steps/What_went_wrong#syntaxerror_missing_after_function_body"><em>SyntaxError: missing } after function body</em></a></h3>
+<p>Erro de sintaxe: faltando “}” depois do corpo da função. Isso é fácil — geralmente significa que você deixou de colocar uma das chaves de uma função ou de uma estrutura condicional. Nós obtemos esse erro deletando uma das chaves de fechamento próximas ao final da função  <code>conferirPalpite()</code>.</p>
+<h3 id="syntaxerror-expected-expression-got-string--ou--syntaxerror-unterminated-string-literal"><a href="https://developer.mozilla.org/pt-BR/docs/Learn/JavaScript/First_steps/What_went_wrong#syntaxerror_expected_expression_got_string_ou_syntaxerror_unterminated_string_literal"><em>SyntaxError: expected expression, got ‘string’</em>  ou  <em>SyntaxError: unterminated string literal</em></a></h3>
+<p>Erro de sintaxe: esperado uma expressão, obtido uma ‘string’ e Erro de sintaxe: string literal não terminada. Esses erros geralmente significam que você deixou de colocar aspas no início ou no final da declaração de uma cadeia de texto. No primeiro erro acima, '<em>string’</em>  seria substituído pelo(s) caractere(s) encontrado(s) pelo navegador ao invés da aspa no início de uma cadeia de texto. O segundo erro quer dizer que a cadeia de texto não foi finalizada com o caractere de aspa.</p>
+<p>Para todos esses erros, pense em como nós abordamos os exemplos em que olhamos no passo a passo. Quando um erro surge, olha o número da linha que é informado, vá até essa linha e veja se consegue localizar o que há de errado. Mantenha em mente que o erro não estará necessariamente nessa linha, e também que o erro pode não ter sido causado exatamente pelo mesmo problema que citamos acima!</p>
+<p><strong>Nota:</strong>  Veja nossas páginas de referência  <a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Errors/Unexpected_token">SyntaxError: Unexpected token</a>  e  <a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Errors/Unterminated_string_literal">SyntaxError: unterminated string literal</a>  para mais detalhes sobre esses erros.</p>
+<h2 id="sumário-1"><a href="https://developer.mozilla.org/pt-BR/docs/Learn/JavaScript/First_steps/What_went_wrong#sum%C3%A1rio">Sumário</a></h2>
+<p>Então aqui temos, o básico de como resolver erros em programas simples de JavaScript. Não será sempre tão fácil de solucionar o que está errado em seu código, mas pelo menos isso irá te poupar algumas horas de sono e lhe permitir progredir um pouco mais rápido quando as coisas não saírem certas no início da sua jornada de aprendizado.</p>
+<h2 id="aula-4">Aula 4</h2>
+<h2 id="ferramentas-que-você-precisa"><a href="https://developer.mozilla.org/pt-BR/docs/Learn/JavaScript/First_steps/Variables#ferramentas_que_voc%C3%AA_precisa">Ferramentas que você precisa</a></h2>
+<p>Ao longo deste artigo, pediremos que você digite linhas de código para testar seu entendimento do conteúdo. Se você estiver utilizando um navegador em um computador, o melhor lugar para digitar seus código de exemplos é o console JavaScript do seu navegador (veja o artigo  <a href="https://developer.mozilla.org/pt-BR/docs/Learn/Common_questions/What_are_browser_developer_tools">O que são as ferramentas de desenvolvimento do navegador</a>  para mais informações sobre como acessar essa ferramenta).</p>
+<p>No entanto, nós também providenciamos um simples console JavaScript incorporado à página logo abaixo para que você inserir o código, caso não esteja usando um navegador com um console JavaScript facilmente disponível, ou se achar o console incorporado mais confortável.</p>
+<h2 id="o-que-é-uma-variável"><a href="https://developer.mozilla.org/pt-BR/docs/Learn/JavaScript/First_steps/Variables#o_que_%C3%A9_uma_vari%C3%A1vel">O que é uma variável?</a></h2>
+<p>Uma variável é um container para um valor, como um número que podemos usar em uma operação de adição, ou uma sequência de texto que possamos usar como parte de uma oração. Mas uma coisa especial a respeito das variáveis é que seu conteúdo pode mudar. Vamos ver um exemplo simples:</p>
+<pre><code>&lt;button&gt;Aperte-me&lt;/button&gt;
+
+</code></pre>
+<pre><code>var button = document.querySelector('button');
+
+button.onclick = function() {
+  var nome = prompt('Qual é o seu nome?');
+  alert('Olá ' + nome + ', é um prazer te ver!');
+}
+
+</code></pre>
+<p>Nesse exemplo, apertar o botão executa algumas linhas de código. A primeira linha exibe uma caixa pop-up na tela que pede ao leitor para inserir o seu nome, e então armazena o valor na variável. A segunda linha exibe uma mensagem de boas vindas que inclui seu nome, obtido do valor da variável.</p>
+<p>Para entender porque isso é útil, vamos pensar sobre como nós escreveríamos esse exemplo sem usar uma variável. Iria acabar se parecendo com algo do tipo:</p>
+<p>var nome = prompt(‘Qual é o seu nome?’);</p>
+<p>if (nome === ‘Adão’) {<br>
+alert(‘Olá Adão, é um prazer te ver!’);<br>
+} else if (nome === ‘Alan’) {<br>
+alert(‘Olá Alan, é um prazer te ver!’);<br>
+} else if (nome === ‘Bella’) {<br>
+alert(‘Olá Bella, é um prazer te ver!’);<br>
+} else if (nome === ‘Bianca’) {<br>
+alert(‘Olá Bianca, é um prazer te ver!’);<br>
+} else if (nome === ‘Chris’) {<br>
+alert(‘Olá Chris, é um prazer te ver !’);<br>
+}</p>
+<p>// … e assim por diante …</p>
+<p>Você talvez não entenda totalmente a sintaxe que estamos usando (ainda!), mas deve ter pegado a ideia — se nós não tivermos variáveis disponíveis teríamos que implementar um bloco de código gigantesco para conferir qual era o nome inserido, e então exibir a mensagem apropriada para aquele nome. Isso é obviamente muito ineficiente (o código é muito maior, mesmo para apenas quatro opções de nome), e simplesmente não funcionaria — você não poderia armazenar todas as possíveis opções de nome.</p>
+<p>Variáveis simplesmente fazem sentido, e a medida que você for aprendendo mais sobre JavaScript elas começarão a se tornar uma coisa natural.</p>
+<p>Outra coisa especial sobra as variáveis é que elas podem conter praticamente qualquer coisa — não apenas cadeias de texto e números. Variáveis também podem conter dados complexos e até mesmo funções completas para fazer coisas incríveis. Você irá aprender mais sobre isso a medida que continuarmos.</p>
+<p><strong>Nota:</strong>  Perceba que dissemos que as variáveis contém valores. Essa é uma distinção importante a se fazer. Elas não são os valores; e sim os containers para eles. Você pode pensar nelas sendo pequenas caixas de papelão nas quais você pode guardar coisas…</p>
+<p><img src="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/Variables/boxes.png" alt=""></p>
+<h2 id="declarando-uma-variável"><a href="https://developer.mozilla.org/pt-BR/docs/Learn/JavaScript/First_steps/Variables#declarando_uma_vari%C3%A1vel">Declarando uma variável</a></h2>
+<p>Para usar uma variável primeiro tem que criá-la — mais precisamente, chamamos isso de declarar a variável. Para fazê-lo digitamos a palavra chave  <code>var</code>  seguido do nome que desejamos dar à variável:</p>
+<pre><code>var meuNome;
+var minhaIdade;
+
+</code></pre>
+<p>Aqui, estamos criando duas variáveis chamadas  <code>meuNome</code>  e  <code>minhaIdade</code>. Tente agora digitar essas linhas no console do seu navegador. Depois disso, tente criar uma variável (ou duas) com suas próprias escolhas de nomes.</p>
+<p><strong>Nota:</strong>  No JavaScript, todas as intruções em código deve terminar com um ponto e vírgula (<code>;</code>) — seu código pode até funcionar sem o ponto e vírgula em linhas únicas, mas provavelmente não irá funcionar quando estiver escrevendo várias linhas de código juntas. Tente pegar o hábito de sempre incluir o ponto e vírgula.</p>
+<p>Você pode testar se os valores agora existem no ambiente de execução digitando apenas os nomes das variáveis, ex.:</p>
+<pre><code>meuNome;
+minhaidade;
+
+</code></pre>
+<p>Elas atualmente não possuem valor; são containers vazios. Quando você insere o nome de uma variável, você deve obter em retorno ou um valor  <code>undefined</code>  (indefinido), ou se a variável não existir, você recebe uma mensagem de erro — tente digitar:</p>
+<pre><code>scoobyDoo;
+
+</code></pre>
+<p><strong>Nota:</strong>  Não confunda uma variável que existe mas não tenho valor definido com uma variável que não existe — são coisas bem diferentes.</p>
+<h2 id="inicializando-uma-variável"><a href="https://developer.mozilla.org/pt-BR/docs/Learn/JavaScript/First_steps/Variables#inicializando_uma_vari%C3%A1vel">Inicializando uma variável</a></h2>
+<p>Uma vez que você declarou uma variável, você pode inicializá-la com um valor. Você faz isso digitando o nome da variável, seguido do sinal de igual (<code>=</code>) e o valor que deseja atribuir a ela. Por exemplo:</p>
+<pre><code>meuNome = 'Chris';
+minhaIdade = 37;
+
+</code></pre>
+<p>Tente voltar ao console agora e digitar essas linhas acima. Você deve ver o valor que atribuiu à variável retornado no console confirmando-o, em cada caso. De novo, você pode retornar os valores de suas variáveis simplesmente digitando seus nomes no console — tente isso novamente:</p>
+<pre><code>meuNome;
+minhaIdade;
+
+</code></pre>
+<p>Você pode declarar e inicializar uma variável ao mesmo tempo, assim:</p>
+<pre><code>var meuNome = 'Chris';
+
+</code></pre>
+<p>Isso provavelmente é como irá fazer na maioria das vezes, já que é mais rápido do que fazer as duas ações em duas linhas separadas.</p>
+<h2 id="a-diferença-entre-var-e-let"><a href="https://developer.mozilla.org/pt-BR/docs/Learn/JavaScript/First_steps/Variables#a_diferen%C3%A7a_entre_var_e_let">A diferença entre var e let</a></h2>
+<p>Agora você pode estar pensando “por que precisamos de duas palavras-chave para definir variáveis? Por que  <code>var</code>  <em>e</em>  <code>let</code>?”.</p>
+<p>As razões são um tanto históricas. Quando o JavaScript foi criado, havia apenas  <code>var</code>. Isso funciona basicamente bem na maioria dos casos, mas tem alguns problemas na maneira como funciona — seu design pode ser confuso ou totalmente irritante. Portanto,  <code>let</code>  foi criada nas versões modernas de JavaScript, uma nova palavra-chave para criar variáveis que funcionam de maneira um pouco diferente para  <code>var</code>, corrigindo seus problemas no processo.</p>
+<p>Algumas diferenças simples são explicadas abaixo. Não abordaremos todas as diferenças agora, mas você começará a descobri-las à medida que aprender mais sobre JavaScript (se realmente quiser ler sobre elas agora, fique à vontade para conferir nossa  <a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Statements/let">página de referência let</a>).</p>
+<p>Para começar, se você escrever um programa JavaScript de várias linhas que declare e inicialize uma variável, poderá realmente declarar uma variável com  <code>var</code>  depois de inicializá-la e ainda funcionará. Por exemplo:</p>
+<pre><code>meuNome = 'Chris';
+
+function logNome() {
+  console.log(meuNome);
+}
+
+logNome();
+
+var meuNome;
+
+</code></pre>
+<p><strong>Nota:</strong>  Isso não funcionará ao digitar linhas individuais em um console JavaScript, apenas ao executar várias linhas de JavaScript em um documento da web.</p>
+<p>Isso funciona por causa do  <strong>hoisting</strong>  — leia  <a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Statements/var#var_hoisting">var hoisting</a>  pra mais detalhes.</p>
+<p>Hoisting não funciona mais com  <code>let</code>. Se mudássemos de  <code>var</code>  para  <code>let</code>  no exemplo acima, teríamos um erro. Isso é bom — declarar uma variável depois que você a inicializa resulta em código confuso e difícil de entender.</p>
+<p>E depois, ao usar  <code>var</code>, você pode declarar a mesma variável quantas vezes quiser, mas com  <code>let</code>  você não consegue. Isso pode funcionar:</p>
+<pre><code>var meuNome = 'Chris';
+var meuNome = 'Bob';
+
+</code></pre>
+<p>Mas isso geraria um erro na segunda linha:</p>
+<pre><code>let meuNome = 'Chris';
+let meuNome = 'Bob';
+
+</code></pre>
+<p>Você precisaria fazer assim:</p>
+<pre><code>let meuNome = 'Chris';
+meuNome = 'Bob';
+
+</code></pre>
+<p>Novamente, essa é uma decisão sensata da linguagem. Não há razão para redeclarar variáveis — isso apenas torna as coisas mais confusas.</p>
+<p>Por esses motivos e mais, recomendamos que você use  <code>let</code>  o máximo possível em seu código, em vez de  <code>var</code>. Não há motivo para usar  <code>var</code>, a menos que você precise oferecer suporte para versões antigas do Internet Explorer com seu código (ele não suporta  <code>let</code>  até a versão 11; o navegador mais moderno do Windows, o Edge, suporta  <code>let</code>).</p>
+<h2 id="atualizando-uma-variável"><a href="https://developer.mozilla.org/pt-BR/docs/Learn/JavaScript/First_steps/Variables#atualizando_uma_vari%C3%A1vel">Atualizando uma variável</a></h2>
+<p>Uma vez que uma tenha um valor atribuido, você pode atualizar esse valor simplesmente dando a ela um valor diferente. Tente inserir as seguintes linhas no seu console:</p>
+<pre><code>meuNome = 'Bob';
+minhaIdade = 40;
+
+</code></pre>
+<h3 id="um-adendo-sobre-regras-de-nomeação-de-variáveis"><a href="https://developer.mozilla.org/pt-BR/docs/Learn/JavaScript/First_steps/Variables#um_adendo_sobre_regras_de_nomea%C3%A7%C3%A3o_de_vari%C3%A1veis">Um adendo sobre regras de nomeação de variáveis</a></h3>
+<p>Você pode chamar uma variável praticamente qualquer nome que queira, mas há limitações. Geralmente você deve se limitar a utilizar somente caracteres latinos (0-9, a-z, A-Z) e o caractere underline ( _ ).</p>
+<ul>
+<li>Você não deve usar outros caracteres porque eles podem causar erros ou ser difíceis de entender por uma audiência internacional.</li>
+<li>Não use underline no início do nome de variáveis — isso é utilizado em certos construtores JavaScript para significar coisas específicas, então pode deixar as coisas confusas.</li>
+<li>Não use número no início do nome de variáveis. Isso não é permitido e irá causar um erro.</li>
+<li>Uma conveção segura e se ater é a chamada  <a href="https://pt.wikipedia.org/wiki/CamelCase">“lower camel case”</a>, onde você junta várias palavras, usando minúscula para a primeira palavra inteira e, em seguida, maiusculiza a primeira letra das palavras subsequentes. Temos utilizado esse procedimento para os nomes das nossas variáveis nesse artigo até aqui.</li>
+<li>Faça nomes de variáveis intuitivos, para que descrevam o dado que ela contém. Não use letras ou números únicos, ou frases muito longas.</li>
+<li>As variáveis diferenciam letras maiúsculas e minúsculas — então  <code>minhaidade</code>  é uma variável diferente de  <code>minhaIdade</code>.</li>
+<li>Um último ponto — você também precisa evitar utilizar palavras reservadas pelo JavaScript como nome para suas variáveis — com isso, queremos dizer as palavras que fazem parte da sintaxe do JavaScript! Então você não pode usar palavras como  <code>var</code>,  <code>function</code>,  <code>let</code>  e  <code>for</code>  como nome de variáveis. Os navegadores vão reconhecê-las como itens de código diferentes e, portanto, você terá erros.</li>
+</ul>
+<p><strong>Nota:</strong>  Você pode encontrar uma lista bem completa de palavras reservadas para evitar em  <a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Lexical_grammar#palavras-chave">Gramática léxica — Palavras-chave</a>.</p>
+<p>Exemplos de bons nomes:</p>
+<p>idade<br>
+minhaIdade<br>
+inicio<br>
+corInicial<br>
+valorFinalDeSaida<br>
+audio1<br>
+audio2</p>
+<p>Exemplos ruins de nomes:</p>
+<p>1<br>
+a<br>
+_12<br>
+minhaidade<br>
+MINHAIDADE<br>
+var<br>
+Document<br>
+skjfndskjfnbdskjfb<br>
+esseeumnomedevariavelbemlongoeestupido</p>
+<p>Tente criar mais algumas variáveis agora, com a orientação acima em mente.</p>
+<h2 id="tipos-de-variáveis"><a href="https://developer.mozilla.org/pt-BR/docs/Learn/JavaScript/First_steps/Variables#tipos_de_vari%C3%A1veis">Tipos de variáveis</a></h2>
+<p>Existem alguns diferentes tipos de dados que podemos armazenar em variáveis. Nessa seção iremos descrevê-los brevemente, e então em artigos futuros você aprenderá sobre eles em mais detalhes.</p>
+<p>Até agora nós vimos os dois primeiros, mas há outros.</p>
+<h3 id="números"><a href="https://developer.mozilla.org/pt-BR/docs/Learn/JavaScript/First_steps/Variables#n%C3%BAmeros">Números</a></h3>
+<p>Você pode armazenar números em variáveis, tanto números inteiros, como por exemplo 30 (também chamados de  <em>integers</em>) como números decimais, por exemplo 2.456 (também chamados de  <em>floats</em>  ou  <em>floating point numbers</em>). Você não precisa declarar tipos de variáveis no JavaScript, diferentemente de outras linguagens de programação. Quando você atribui a uma variável o valor em número, você não inclui as aspas:</p>
+<pre><code>var minhaIdade = 17;
+
+</code></pre>
+<h3 id="strings--cadeias-de-texto"><a href="https://developer.mozilla.org/pt-BR/docs/Learn/JavaScript/First_steps/Variables#strings_cadeias_de_texto"><em>Strings</em>  (cadeias de texto)</a></h3>
+<p><em>Strings</em>  são sequências de texto. Quando você dá a uma variável um valor em texto (<em>string</em>), você precisa envolver o texto em aspas simples ou duplas; caso contrário, o JavaScript vai tentar interpretá-lo como sendo outro nome de variável.</p>
+<pre><code>var despedidaGolfinho = 'Até logo e obrigado por todos os peixes!';
+
+</code></pre>
+<h3 id="booleans--boleanos"><a href="https://developer.mozilla.org/pt-BR/docs/Learn/JavaScript/First_steps/Variables#booleans_boleanos"><em>Booleans</em>  (boleanos)</a></h3>
+<p><em>Booleans</em>  são valores verdadeiro/falso (<em>true/false</em>) — eles podem ter dois valores,  <code>true</code>  (verdadeiro) ou  <code>false</code>  (falso). São geralmente usados para verificar uma condição, que em seguida o código é executado apopriadamente. Por exemplo, um caso simples seria:</p>
+<pre><code>var estouVivo = true;
+
+</code></pre>
+<p>Enquanto na realidade seria utlizado mais da seguinte forma:</p>
+<pre><code>var teste = 6 &lt; 3;
+
+</code></pre>
+<p>Esse exemplo está usando o operador “menor que” (<code>&lt;</code>) para testar se 6 é menor que 3. Como você pode esperar, irá retornar  <code>false</code>  (falso), porque 6 não é menor que 3! Você aprenderá mais sobre tais operadores mais tarde no curso.</p>
+<h3 id="arrays"><a href="https://developer.mozilla.org/pt-BR/docs/Learn/JavaScript/First_steps/Variables#arrays"><em>Arrays</em></a></h3>
+<p>Um array é um único objeto que contém valores múltiplos inseridos entre colchetes e separados por vírgulas. Tente inserir as seguintes linhas de código no seu console:</p>
+<pre><code>var meuNomeArray = ['Chris', 'Bob', 'Jim'];
+var meuNumeroArray = [10,15,40];
+
+</code></pre>
+<p>Uma vez que esses arrays estejam definidos, você pode acessar cada um de seus valores através de sua localização dentro do array. Tente essas linhas:</p>
+<pre><code>meuNomeArray[0]; // deve retornar 'Chris'
+meuNumeroArray[2]; // deve retornar 40
+
+</code></pre>
+<p>Os colchetes especificam um valor do índice correspondente à posição do valor que você deseja retornado. Você talvez tenha notado que os arrays em JavaScript são indexados a partir do zero: o primeiro elemento está na posíção 0 do índice.</p>
+<p>Você aprenderá mais sobre arrays em um artigo futuro.</p>
+<h3 id="objetos"><a href="https://developer.mozilla.org/pt-BR/docs/Learn/JavaScript/First_steps/Variables#objetos">Objetos</a></h3>
+<p>Em programação, um objeto é uma estrutura de código que representa um objeto da vida real. Você pode ter um simples objeto que representa um estacionamento de carro contendo informações sobre sobre sua largura e comprimento, ou você poderia ter um objeto que representa uma pessoa, e contém dados sobre seu nome, altura, peso, que idioma ela fala, como dizer olá a ela, e mais.</p>
+<p>Tente inserir a seguinte linha em seu console:</p>
+<pre><code>var cachorro = { nome : 'Totó', raca : 'Dálmata' };
+
+</code></pre>
+<p>Para obter a informação armazenada no objeto, você pode usar a seguinte sintaxe:</p>
+<pre><code>cachorro.nome
+
+</code></pre>
+<p>Nós não iremos ver mais sobre objetos por agora — você pode aprender mais sobre eles em um artigo futuro.</p>
+<h2 id="digitação-permissiva"><a href="https://developer.mozilla.org/pt-BR/docs/Learn/JavaScript/First_steps/Variables#digita%C3%A7%C3%A3o_permissiva">Digitação permissiva</a></h2>
+<p>JavaScript é uma “dynamically typed language”, o que significa que, diferente de outras linguagens, você não precisa especificar que tipo de dados uma variável irá conter (ex.: números, cadeias de texto, arrays, etc).</p>
+<p>Por exemplo, se você declarar uma variável e dar a ela um valor encapsulado em aspas, o navegador irá tratar a variável como sendo uma  <em>string</em>  (cadeia de texto):</p>
+<pre><code>var minhaString = 'Olá';
+
+</code></pre>
+<p>Irá continuar sendo uma  <em>string</em>, mesmo que dentro das apas contenha um número, então seja cuidadoso:</p>
+<pre><code>var meuNumero = '500'; // opa, isso continua sendo uma string
+typeof(meuNumero);
+meuNumero = 500; // bem melhor — agora isso é um número
+typeof(meuNumero);
+
+</code></pre>
+<p>Tente inserir as quatro linhas acima em seu console uma por uma, e veja quais são os resultados. Você notará que estamos usando uma função especial chamada  <code>typeof()</code>  — ela irá retornar o tipo de dado da variável que você passar. Da primeira vez que for executada, deve retornar  <code>string</code>, como naquele ponto a variável  <code>meuNumero</code>  contém uma  <em>string</em>,  <code>'500'</code>. Dê uma olhada e veja o que é retornado da segunda vez que você a utilizar.</p>
+<h2 id="constants-em-javascript"><a href="https://developer.mozilla.org/pt-BR/docs/Learn/JavaScript/First_steps/Variables#constants_em_javascript">Constants em JavaScript</a></h2>
+<p>Muitas linguagens de programação têm o conceito de  <em>constant</em>  — um valor que uma vez declarado não pode ser alterado. Há muitas razões pelas quais você deseja fazer isso, desde segurança (se um script de terceiros alterou esses valores, poderia causar problemas) até a depuração e a compreensão do código (é mais difícil alterar acidentalmente valores que não devem ser alterados e bagunçar as coisas).</p>
+<p>Nos primeiros dias do JavaScript, não existiam  <em>constants</em>. No JavaScript moderno, temos a palavra-chave  <code>const</code>, que nos permite armazenar valores que nunca podem ser alterados:</p>
+<pre><code>const diasNaSemana = 7;
+const horasNoDia = 24;
+
+</code></pre>
+<p><code>const</code>  funciona exatamente da mesma maneira que  <code>let</code>, exceto que você não pode atribuir um novo valor a  <code>const</code>. No exemplo a seguir, a segunda linha geraria um erro:</p>
+<pre><code>const diasNaSemana = 7;
+diasNaSemana = 8;
+
+</code></pre>
+<h2 id="teste-suas-habilidades"><a href="https://developer.mozilla.org/pt-BR/docs/Learn/JavaScript/First_steps/Variables#teste_suas_habilidades!">Teste suas habilidades!</a></h2>
+<p>Você chegou ao final deste artigo, mas consegue se lembrar das informações mais importantes? Você pode encontrar alguns testes adicionais para verificar se você reteve essas informações antes de prosseguir — veja  <a href="https://developer.mozilla.org/pt-BR/docs/Learn/JavaScript/First_steps/Test_your_skills:_variables">Teste suas habilidades: variáveis</a>.</p>
+<h2 id="sumário-2"><a href="https://developer.mozilla.org/pt-BR/docs/Learn/JavaScript/First_steps/Variables#sum%C3%A1rio">Sumário</a></h2>
+<p>Por agora você deve saber razoavelmente sobre variáveis JavaScript e como criá-las. No próximo artigo Vamos focar nos números em mais detalhes, vendo como fazer matemática básica no JavaScript.</p>
+<h2 id="aula-5">Aula 5</h2>
+<h2 id="todo-mundo-ama-matemática"><a href="https://developer.mozilla.org/pt-BR/docs/Learn/JavaScript/First_steps/Math#todo_mundo_ama_matem%C3%A1tica">Todo mundo ama matemática</a></h2>
+<p>Ok, talvez não. Alguns de nós gostam de matemática, alguns de nós tem a odiado desde que tivemos que aprender a tabuada de multiplicação e divisão na escola, e alguns de nós estão em algum lugar no meio dos dois cenários. Mas nenhum de nós pode negar que a matemática é uma parte fundamental da vida sem a qual não poderíamos ir muito longe. Isso é especialmente verdadeiro quando estamos aprendendo a programar em JavaScript (ou em qualquer outra linguagem, diga-se de passagem) — muito do que fazemos se baseia no processamento de dados numéricos, cálculo de novos valores, etc. Assim você não ficará surpreso em aprender que o JavaScript tem uma configuração completa de funções matemáticas disponíveis.</p>
+<p>Este artigo discute apenas as partes básicas que você precisa saber agora.</p>
+<h3 id="tipos-de-números"><a href="https://developer.mozilla.org/pt-BR/docs/Learn/JavaScript/First_steps/Math#tipos_de_n%C3%BAmeros">Tipos de números</a></h3>
+<p>Em programação, até mesmo o humilde sistema de números decimais que todos nós conhecemos tão bem é mais complicado do que você possa pensar. Usamos diferentes termos para descrever diferentes tipos de números decimais, por exemplo:</p>
+<ul>
+<li><strong>Integers</strong>  (inteiros) são números inteiros, ex. 10, 400 ou -5.</li>
+<li><strong>Números de ponto flutuante</strong>  <em>(floats)</em>  tem pontos e casas decimais, por exemplo 12.5 e 56.7786543.</li>
+<li><strong>Doubles</strong>  são tipos de  <em>floats</em>  que tem uma precisão maior do que os números de ponto flutuante padrões (significando que eles são mais precisos, possuindo uma grande quantidade de casas decimais).</li>
+</ul>
+<p>Temos até mesmo diferentes tipos de sistemas numéricos! O decimal tem por base 10 (o que significa que ele usa um número entre 0–9 em cada casa), mas temos também algo como:</p>
+<ul>
+<li><strong>Binário</strong>  — A linguagem de menor level dos computadores; 0s e 1s.</li>
+<li><strong>Octal</strong>  — Base 8, usa um caractere entre 0–7 em cada coluna.</li>
+<li><strong>Hexadecimal</strong>  — Base 16, usa um caractere entre 0–9 e depois um entre a–f em cada coluna. Você pode já ter encontrado esses números anteriormente, trabalhando com  <a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Values_and_units#valores_hexadecimais">cores no CSS</a>.</li>
+</ul>
+<p><strong>Antes de se preocupar com seu cérebro estar derretendo, pare agora mesmo!</strong>  Para um começo, vamos nos ater aos números decimais no decorrer desse curso; você raramente irá se deparar com a necessidade de começar a pensar sobre os outros tipos, se é que vai precisar algum dia.</p>
+<p>A segunda boa notícia é que, diferentemente de outras linguagens de programação, o JavaScript tem apenas um tipo de dados para números, você advinhou,  <a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Number"><code>Number</code></a>. Isso significa que qualquer que seja o tipo de números com os quais você está lidando em JavaScript, você os manipula do mesmo jeito.</p>
+<h3 id="tudo-é-número-para-mim"><a href="https://developer.mozilla.org/pt-BR/docs/Learn/JavaScript/First_steps/Math#tudo_%C3%A9_n%C3%BAmero_para_mim">Tudo é número para mim</a></h3>
+<p>Vamos brincar rapidamente com alguns números para nos familiarizarmos com a sintaxe básica que precisamos. Insira os comandos listados abaixo em seu  <a href="https://developer.mozilla.org/pt-BR/docs/Learn/Common_questions/What_are_browser_developer_tools">console JavaScript</a>, ou use o console simples incorporado abaixo, se preferir.</p>
+<p><strong><a href="https://mdn.github.io/learning-area/javascript/introduction-to-js-1/variables/">Abra em uma nova janela</a></strong></p>
+<ol>
+<li>
+<p>Primeiramente, vamos declarar duas variáveis e as inicializar com um  <em>integer</em>  e um  <em>float</em>, respectivamente, então digitaremos os nomes das variáveis para verificar se está tudo em ordem:</p>
+<pre><code>var meuInt = 5;
+var meuFloat = 6.667;
+meuInt;
+meuFloat;
+
+</code></pre>
+</li>
+<li>
+<p>Valores numéricos são inseridos sem aspas — tente declarar e inicializar mais duas variáveis contendo números antes de seguir em frente.</p>
+</li>
+<li>
+<p>Agora vamos checar se nossas duas variáveis originais são do mesmo tipo de dados. Há um operador chamado  <a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Operators/typeof"><code>typeof</code></a>  no JavaScript que faz isso. Insira as duas linhas conforme mostradas abaixo:</p>
+<pre><code>typeof meuInt;
+typeof meuFloat;
+
+</code></pre>
+<p>Você deve obter  <code>"number"</code>  de volta nos dois casos — isso torna as coisas muito mais fáceis para nós do que se diferentes tipos de números tivessem diferentes tipos de dados, e tivéssemos que lidar com eles em diferentes maneiras. Ufa!</p>
+</li>
+</ol>
+<h2 id="operadores-aritméticos"><a href="https://developer.mozilla.org/pt-BR/docs/Learn/JavaScript/First_steps/Math#operadores_aritm%C3%A9ticos">Operadores aritméticos</a></h2>
+<p>São os operadores que utilizamos para fazer as operações aritiméticas básicas:</p>
+<p>Operador</p>
+<p>Nome</p>
+<p>Propósito</p>
+<p>Exemplo</p>
+<p><code>+</code></p>
+<p>Adição</p>
+<p>Adiciona um número a outro.</p>
+<p><code>6 + 9</code></p>
+<p><code>-</code></p>
+<p>Subtração</p>
+<p>Subtrai o número da direita do número da esquerda.</p>
+<p><code>20 - 15</code></p>
+<p><code>*</code></p>
+<p>Multiplicação</p>
+<p>Multiplica um número pelo outro.</p>
+<p><code>3 * 7</code></p>
+<p><code>/</code></p>
+<p>Divisão</p>
+<p>Divide o número da esquerda pelo número da direita.</p>
+<p><code>10 / 5</code></p>
+<p><code>%</code></p>
+<p>Restante  <em>(Remainder</em>  - as vezes chamado de modulo)</p>
+<p>Retorna o resto da divisão em números inteiros do número da esquerda pelo número da direita.</p>
+<p><code>8 % 3</code>  (retorna 2; como três cabe duas vezes em 8, deixando 2 como resto.)</p>
+<p><strong>Nota:</strong>  Você verá algumas vezes números envolvidos em aritimética chamados de  operandos.</p>
+<p>Nós provavelmente não precisamos ensinar a você como fazer matemática básica, mas gostaríamos de testar seu entendimento da sintaxe envolvida. Tente inserir os exemplos abaixo no seu  <a href="https://developer.mozilla.org/pt-BR/docs/Learn/Common_questions/What_are_browser_developer_tools">console JavaScript</a>, ou use o console incorporado visto anteriormente, se preferir, para familiarizar-se com a sintaxe.</p>
+<ol>
+<li>
+<p>Primeiro tente inserir alguns exemplos simples por sua conta, como</p>
+<pre><code>10 + 7
+9 * 8
+60 % 3
+
+</code></pre>
+</li>
+<li>
+<p>Você pode tentar declarar e inicializar alguns números dentro de variáveis, e tentar usá-los nas operações — as variáveis irão se comportar exatamente como os valores que elas armazenam para a finalidade das operações. Por exemplo:</p>
+<pre><code>var num1 = 10;
+var num2 = 50;
+9 * num1;
+num2 / num1;
+
+</code></pre>
+</li>
+<li>
+<p>Por último, nesta seção, tente inserir algumas expressões mais complexas, como:</p>
+<pre><code>5 + 10 * 3;
+num2 % 9 * num1;
+num2 + num1 / 8 + 2;
+
+</code></pre>
+</li>
+</ol>
+<p>Alguns dos exemplos do último bloco podem não ter retornado os valores que você estava esperando; a seção abaixo pode lhe explicar o porquê.</p>
+<h3 id="precedência-de-operador"><a href="https://developer.mozilla.org/pt-BR/docs/Learn/JavaScript/First_steps/Math#preced%C3%AAncia_de_operador">Precedência de operador</a></h3>
+<p>Vamos olhar para o último exemplo, assumindo que  <code>num2</code>  guarda o valor 50 e  <code>num1</code>  possui o valor 10 (como iniciado acima):</p>
+<pre><code>num2 + num1 / 8 + 2;
+
+</code></pre>
+<p>Como um ser humano, talvez você leia isso como  <em>“50 mais 10 é igual a 60”</em>, depois  <em>“8 mais 2 é igual a 10”</em>, e então  <em>“60 dividido por 10 é igual a 6”</em>.</p>
+<p>No entanto seu navegador vai ler  <em>“10 dividido por 8 é igual a 1.25”</em>, então  <em>“50 mais 1.25 mais 2 é igual a 53.25”</em>.</p>
+<p>Isto acontence por causa da  <strong>precedência de operadores</strong>  — algumas operações serão aplicadas antes de outras quando calcularmos o resultado de uma soma (referida em programação como uma expressão). A precedência de operadores em JavaScript é semelhante ao ensinado nas aulas de matemática na escola — Multiplicação e divisão são realizados primeiro, depois a adição e subtração (a soma é sempre realizada da esquerda para a direita).</p>
+<p>Se você quiser substituir a precedência do operador, poderá colocar parênteses em volta das partes que desejar serem explicitamente tratadas primeiro. Então, para obter um resultado de 6, poderíamos fazer isso:</p>
+<pre><code>(num2 + num1) / (8 + 2);
+
+</code></pre>
+<p>Tente fazer e veja como fica.</p>
+<p><strong>Nota:</strong>  Uma lista completa de todos os operadores JavaScript e suas precedências pode ser vista em  <a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Guide/Expressions_and_Operators#operator_precedence">Expressões e operadores</a>.</p>
+<h2 id="operadores-de-incremento-e-decremento"><a href="https://developer.mozilla.org/pt-BR/docs/Learn/JavaScript/First_steps/Math#operadores_de_incremento_e_decremento">Operadores de incremento e decremento</a></h2>
+<p>Às vezes você desejará adicionar ou subtrair, repetidamente, um valor de uma variável numérica. Convenientemente isto pode ser feito usando os operadores incremento  <code>++</code>  e decremento  <code>--</code>. Usamos  <code>++</code>  em nosso jogo “Adivinhe o número” no primeiro artigo  <a href="https://developer.mozilla.org/pt-BR/docs/Learn/JavaScript/First_steps/A_first_splash">Um primeiro mergulho no JavaScript</a>, quando adicionamos 1 ao nosso  <code>contagemPalpites</code>  para saber quantas adivinhações o usuário deixou após cada turno.</p>
+<pre><code>contagemPalpites++;
+
+</code></pre>
+<p><strong>Nota:</strong>  Eles são mais comumente usado em  <a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Guide/Loops_and_iteration">Laços e iterações</a>, que será visto no curso mais tarde. Por exemplo, digamos que você queira passar por uma lista de preços e adicionar imposto sobre vendas a cada um deles. Você usaria um loop para passar por cada valor e fazer o cálculo necessário para adicionar o imposto sobre vendas em cada caso. O incrementador é usado para mover para o próximo valor quando necessário. Na verdade, fornecemos um exemplo simples mostrando como isso é feito -  <a href="https://mdn.github.io/learning-area/javascript/introduction-to-js-1/maths/loop.html">verifique ao vivo</a>  e observe o  <a href="https://github.com/mdn/learning-area/blob/master/javascript/introduction-to-js-1/maths/loop.html">código-fonte</a>  para ver se consegue identificar os incrementadores! Veremos os  <em>loops</em>  detalhadamente mais adiante no curso.</p>
+<p>Vamos tentar brincar com eles no seu console. Para começar, note que você não pode aplicá-las diretamente a um número, o que pode parecer estranho, mas estamos atribuindo a variável um novo valor atualizado, não operando no próprio valor. O seguinte retornará um erro:</p>
+<pre><code>3++;
+
+</code></pre>
+<p>Então, você só pode incrementar uma variável existente. Tente isto:</p>
+<pre><code>var num1 = 4;
+num1++;
+
+</code></pre>
+<p>Ok, segunda coisa estranha! Quando você fizer isso, verá um valor 4 retornado - isso ocorre porque o navegador retorna o valor atual e,  <em>em seguida</em>, incrementa a variável. Você pode ver que ele foi incrementado se você retornar o valor da variável novamente:</p>
+<pre><code>num1;
+
+</code></pre>
+<p>Acontece a mesma coisa com  <code>--</code>  : tente o seguinte</p>
+<pre><code>var num2 = 6;
+num2--;
+num2;
+
+</code></pre>
+<p><strong>Nota:</strong>  Você pode fazer o navegador fazer o contrário - incrementar/decrementar a variável e depois retornar o valor, colocando o operador no início da variável ao invés do final. Tente os exemplos acima novamente, mas desta vez use  <code>++num1</code>  e  <code>--num2</code>.</p>
+<h2 id="operadores-de-atribuição"><a href="https://developer.mozilla.org/pt-BR/docs/Learn/JavaScript/First_steps/Math#operadores_de_atribui%C3%A7%C3%A3o">Operadores de atribuição</a></h2>
+<p>Operadores de atribuição são os que atribuem um valor à uma variável. Nós já usamos o básico,  <code>=</code>, muitas vezes, simplesmente atribuindo à variável do lado esquerdo o valor indicado do lado direito do operador:</p>
+<pre><code>var x = 3; // x contém o valor 3
+var y = 4; // y contém o valor 4
+x = y; // x agora contém o mesmo valor de y, 4
+
+</code></pre>
+<p>Mas existem alguns tipos mais complexos, que fornecem atalhos úteis para manter seu código mais puro e mais eficiente. Os mais comuns estão listados abaixo:</p>
+<p>Operator</p>
+<p>Name</p>
+<p>Purpose</p>
+<p>Example</p>
+<p>Shortcut for</p>
+<p><code>+=</code></p>
+<p>Atribuição de adição</p>
+<p>Adiciona o valor à direita ao valor da variável à esquerda e, em seguida, retorna o novo valor da variável</p>
+<p><code>x = 3; x += 4;</code></p>
+<p><code>x = 3; x = x + 4;</code></p>
+<p><code>-=</code></p>
+<p>Atribuição de subtração</p>
+<p>Subtrai o valor à direita do valor da variável à esquerda e retorna o novo valor da variável</p>
+<p><code>x = 6; x -= 3;</code></p>
+<p><code>x = 6; x = x - 3;</code></p>
+<p><code>*=</code></p>
+<p>Atribuição de multiplicação</p>
+<p>Multiplica o valor da variável à esquerda pelo valor à direita e retorna o novo valor da variável</p>
+<p><code>x = 2; x *= 3;</code></p>
+<p><code>x = 2; x = x * 3;</code></p>
+<p><code>/=</code></p>
+<p>Atribuição de divisão</p>
+<p>Divide o valor da variável à esquerda pelo valor à direita e retorna o novo valor da variável</p>
+<p><code>x = 10; x /= 5;</code></p>
+<p><code>x = 10; x = x / 5;</code></p>
+<p>Tente digitar alguns dos exemplos acima em seu console para ter uma ideia de como eles funcionam. Em cada caso, veja se você pode adivinhar qual é o valor antes de digitar a segunda linha.</p>
+<p>Note que você pode muito bem usar outros valores ​​no lado direito de cada expressão, por exemplo:</p>
+<pre><code>var x = 3; // x contém o valor 3
+var y = 4; // y contém o valor 4
+x *= y; // x agora contém o valor 12
+
+</code></pre>
+<p><strong>Nota:</strong>  Existem muitos  <a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Guide/Expressions_and_Operators#operador_atribuicao">outros operadores de atribuição disponíveis</a>, mas estes são os básicos que você deve aprender agora.</p>
+<h2 id="aprendizado-ativo-dimensionando-uma-canvas-box"><a href="https://developer.mozilla.org/pt-BR/docs/Learn/JavaScript/First_steps/Math#aprendizado_ativo_dimensionando_uma_canvas_box">Aprendizado ativo: dimensionando uma canvas box</a></h2>
+<p>Neste exercício, você manipulará alguns números e operadores para alterar o tamanho de uma caixa. A caixa é desenhada usando uma API do navegador chamada  <a href="https://developer.mozilla.org/pt-BR/docs/Web/API/Canvas_API">Canvas API</a>. Não há necessidade de se preocupar sobre como isso funciona, apenas concentre-se na matemática por enquanto. A largura e altura da caixa (em pixels) são definidas pelas variáveis x e y, que recebem um valor inicial de 50.</p>
+<p><strong><a href="https://mdn.github.io/learning-area/javascript/introduction-to-js-1/maths/editable_canvas.html">Abrir em nova janela</a></strong></p>
+<p>Na caixa de código editável acima, há duas linhas marcadas com um comentário que gostaríamos que você atualizasse para aumentar/diminuir a caixa para determinados tamanhos, usando determinados operadores e/ou valores em cada caso. Vamos tentar o seguinte:</p>
+<ul>
+<li>Altere a linha que calcula x para que a caixa ainda tenha 50px de largura, mas que 50 seja calculado usando os números 43 e 7 e um operador aritmético.</li>
+<li>Altere a linha que calcula y tenha 75px de altura, mas que 75 seja calculado usando os números 25 e 3 e um operador aritmético.</li>
+<li>Altere a linha que calcula x para que a caixa tenha 250px de largura, mas que 250 seja calculado usando dois números e o operador resto (modulo).</li>
+<li>Altere a linha que calcula y para que a caixa tenha 150px de altura, mas que 150 seja calculado usando três números e os operadores de subtração e divisão.</li>
+<li>Altere a linha que calcula x para que a caixa tenha 200px de largura, mas que 200 seja calculado usando o número 4 e um operador de atribuição.</li>
+<li>Altere a linha que calcula y para que a caixa tenha 200px de altura, mas que 200 seja calculado usando os números 50 e 3, o operador de multiplicação e o operador de atribuição de adição.</li>
+</ul>
+<p>Não se preocupe se você estragar totalmente o código. Você sempre pode pressionar o botão Reset para fazer as coisas funcionarem novamente. Depois de ter respondido corretamente a todas as perguntas acima, sinta-se à vontade para brincar um pouco com o código ou crie seus próprios desafios.</p>
+<h2 id="operadores-de-comparação"><a href="https://developer.mozilla.org/pt-BR/docs/Learn/JavaScript/First_steps/Math#operadores_de_compara%C3%A7%C3%A3o">Operadores de comparação</a></h2>
+<p>Às vezes, queremos executar testes verdadeiro / falso e, em seguida, agir de acordo, dependendo do resultado desse teste, para fazer isso, usamos  <strong>operadores de comparação</strong>.</p>
+<p>Operator</p>
+<p>Name</p>
+<p>Purpose</p>
+<p>Example</p>
+<p><code>===</code></p>
+<p>Igualdade estrita</p>
+<p>Verifica se o valor da esquerda e o da direita são idênticos entre si.</p>
+<p><code>5 === 2 + 4</code></p>
+<p><code>!==</code></p>
+<p>Não-igualdade-estrita</p>
+<p>Verifica se o valor da esquerda e o da direita  <strong>não</strong>  são idênticos entre si.</p>
+<p><code>5 !== 2 + 3</code></p>
+<p><code>&lt;</code></p>
+<p>Menor que</p>
+<p>Verifica se o valor da esquerda é menor que o valor da direita.</p>
+<p><code>10 &lt; 6</code></p>
+<p><code>&gt;</code></p>
+<p>Maior que</p>
+<p>Verifica se o valor da esquerda é maior que o valor da direita.</p>
+<p><code>10 &gt; 20</code></p>
+<p>&lt;=</p>
+<p>Menor ou igual que</p>
+<p>Verifica se o valor da esquerda é menor que ou igual ao valor da direita.</p>
+<p><code>3 &lt;= 2</code></p>
+<blockquote>
+<p>=</p>
+</blockquote>
+<p>Maior ou igual que</p>
+<p>Verifica se o valor da esquerda é maior que ou igual ao valor da direita.</p>
+<p><code>5 &gt;= 4</code></p>
+<p><strong>Nota:</strong>  Talvez você já tenha visto alguém usando  <code>==</code>  e<code>!=</code>  afim de testar igualdade ou desigualdade em JavaScript. Estes são operadores válidos em JavaScript, mas que diferem de  <code>===</code>/<code>!==</code>. As versões anteriores testam se os valores são os mesmos, mas não se os tipos de dados dos valores são os mesmos. As últimas versões estritas testam a igualdade de ambos os valores e seus tipos de dados. Elas tendem a resultar em menos erros, por isso recomendamos que você as use.</p>
+<p>Se você tentar inserir alguns desses valores em um console, verá que todos eles retornam  <code>true</code>/<code>false</code>  — aqueles booleanos que mencionamos no último artigo. Eles são muito úteis, pois nos permitem tomar decisões em nosso código, e eles são usados ​​toda vez que queremos fazer uma escolha de algum tipo. Por exemplo, booleanos podem ser usados ​​para:</p>
+<ul>
+<li>Exibir o text label em um botão, dependendo se um recurso está ativado ou desativado</li>
+<li>Exibir uma mensagem de ‘game over’ se um jogo acabou ou uma mensagem de vitória se o jogo foi vencido</li>
+<li>Exibir uma saudação sazonal correta, dependendo da época de festas</li>
+<li>Aumentar ou diminuir o zoom do mapa, dependendo do nível de zoom selecionado</li>
+</ul>
+<p>Veremos como codificar essa lógica quando examinarmos instruções condicionais em um artigo futuro. Por enquanto, vamos dar uma olhada em um exemplo rápido:</p>
+<pre><code>&lt;button&gt;Iniciar máquina&lt;/button&gt;
+&lt;p&gt;A máquina está parada.&lt;/p&gt;
+
+</code></pre>
+<pre><code>```
+var btn = document.querySelector('button');
+var txt = document.querySelector('p');
+
+btn.addEventListener('click', updateBtn);
+
+function updateBtn() {
+   if (btn.textContent === 'Iniciar máquina') {
+       btn.textContent = 'Parar máquina';
+       txt.textContent = 'A máquina iniciou!';
+   } else {
+       btn.textContent = 'Iniciar máquina';
+       txt.textContent = 'A máquina está parada.';
+   }
+}
+
+```
+</code></pre>
+<p><strong><a href="https://mdn.github.io/learning-area/javascript/introduction-to-js-1/maths/conditional.html">Abrir em nova janela</a></strong></p>
+<p>Você pode ver o operador de igualdade sendo usado apenas dentro da função  <code>updateBtn()</code>. Neste caso, não estamos testando se duas expressões matemáticas têm o mesmo valor, estamos testando se o conteúdo de texto de um botão contém uma certa string , mas ainda é o mesmo princípio em funcionamento. Se o botão estiver dizendo “Iniciar máquina” quando for pressionado, mudaremos o rótulo para “Parar máquina” e atualizaremos o rótulo conforme apropriado. Se o botão estiver dizendo “Parar máquina” quando for pressionado, nós trocamos a tela de volta.</p>
+<p><strong>Nota:</strong>  Esse controle que troca entre dois estados geralmente é chamado de  <strong>toggle</strong>. Ele alterna entre um estado e outro - acender, apagar, etc.</p>
+<h2 id="resumo"><a href="https://developer.mozilla.org/pt-BR/docs/Learn/JavaScript/First_steps/Math#resumo">Resumo</a></h2>
+<p>Neste artigo, cobrimos as informações fundamentais que você precisa saber sobre números em JavaScript, por enquanto. Você verá os números sendo usados ​​de novo e de novo, durante todo o aprendizado de JavaScript. Portanto, é uma boa ideia tirar isso do caminho agora. Se você é uma daquelas pessoas que não gosta de matemática, pode se consolar com o fato de este capítulo ser muito curto.</p>
+<p>No próximo artigo, vamos explorar o texto e como o JavaScript nos permite manipulá-lo.</p>
+<h2 id="aula-6">Aula 6</h2>
+<h2 id="o-poder-das-palavras"><a href="https://developer.mozilla.org/pt-BR/docs/Learn/JavaScript/First_steps/Strings#o_poder_das_palavras">O poder das palavras</a></h2>
+<p>Palavras são muito importante para humanos - elas são uma grande parte de como nos comunicamos. Desde que a Web é largamente baseada em texto, projetada para permitir humanos a comunicar e compartilhar infomação, isto é útil para nós termos controle sobre como apresentar isso.  <a href="https://developer.mozilla.org/pt-BR/docs/Glossary/HTML">HTML</a>  fornece estrutura e significado para nosso texto,  <a href="https://developer.mozilla.org/pt-BR/docs/Glossary/CSS">CSS</a>  nos permite estilizar precisamente ele, e JavaScript contem um número de funcionalidades para manipular strings, criar mensagens de boas-vindas customizadas, mostrando rótulos quando preciso, sorteando termos de acordo como desejado e muito mais.</p>
+<p>Muitos dos programas que temos visto até agora no curso está envolvido em alguma parte com manipulação de string.</p>
+<h2 id="strings-—-o-básico"><a href="https://developer.mozilla.org/pt-BR/docs/Learn/JavaScript/First_steps/Strings#strings_%E2%80%94_o_b%C3%A1sico">Strings — O básico</a></h2>
+<p>Em um primeiro relance, strings são tratadas de forma parecida como números, mas quando vamos mais a fundo, você começa a ver algumas diferenças importantes. Vamos começar a entrar em linhas básicas no console para nos familiarizar. Nós vamos fornecer abaixo (você pode também  <a href="https://mdn.github.io/learning-area/javascript/introduction-to-js-1/variables/index.html">abrir isto no console</a>  em uma guia ou janela separada, ou usar o  <a href="https://developer.mozilla.org/pt-BR/docs/Learn/Common_questions/What_are_browser_developer_tools">console do navegador</a>  se você preferir).</p>
+<h3 id="criando-uma-string"><a href="https://developer.mozilla.org/pt-BR/docs/Learn/JavaScript/First_steps/Strings#criando_uma_string">Criando uma string</a></h3>
+<ol>
+<li>
+<p>Para começar, digite as linhas seguintes:</p>
+<pre><code>var string = 'The revolution will not be televised.';
+string;
+
+</code></pre>
+<p>Como fizemos com números, nós declaramos uma variável, inicializando-a com um valor string, e então retornamos o valor. A única diferença aqui é que quando escrevemos uma string, você precisa colocá-la entre aspas.</p>
+</li>
+<li>
+<p>Se você não fez isso, ou esqueceu uma das aspas, você recebeu um erro. Experimente digitar as linhas seguintes:</p>
+<pre><code>var badString = This is a test;
+var badString = 'This is a test;
+var badString = This is a test';
+
+</code></pre>
+<p>Estas linhas não funcionam porque todo texto sem aspas são interpretados como um nome de variável, propriedade do nome, palavra reservada ou algo assim. Se o navegador não puder encontrar, então um erro é apresentado (ex.: “faltando; declaração anterior”). Se o navegador puder ver onde a string começa, mas não conseguir encontrar o fim, como indicado com as segundas aspas, é retornado um erro (com “string não terminada”). Se seu programa retorna tais erros, então volte e verifique todas suas strings para ter certeza que não faltam aspas.</p>
+</li>
+<li>
+<p>O seguinte funcionará se você definiu previamente a variável  <code>string</code>  - tente isto agora:</p>
+<pre><code>var badString = string;
+badString;
+
+</code></pre>
+<p><code>badString</code>  é agora definido para ter o mesmo valor de  <code>string</code>.</p>
+</li>
+</ol>
+<h3 id="aspas-simples-x-aspas-duplas"><a href="https://developer.mozilla.org/pt-BR/docs/Learn/JavaScript/First_steps/Strings#aspas_simples_x_aspas_duplas">Aspas simples x aspas duplas</a></h3>
+<ol>
+<li>
+<p>Em JavaScript, você pode escolher aspas simples ou duplas para envolver suas strings. Ambas linhas abaixo funcionará bem:</p>
+<pre><code>var sgl = 'Single quotes.';
+var dbl = "Double quotes";
+sgl;
+dbl;
+
+</code></pre>
+</li>
+<li>
+<p>Há poucas diferenças entre as duas, e qual você usar é de preferência pessoal. Você deve escolher uma e permanecer nela, entretanto; diferentes aspas no código pode ser confuso, especialmente se você usa diferentes aspas na mesma string! O seguinte retornará erro:</p>
+<pre><code>var badQuotes = 'What on earth?";
+
+</code></pre>
+</li>
+<li>
+<p>O navegador interpretará como a string não tivesse fechada, porque o outro tipo de aspas pode aparecer dentro da sua string. Por exemplo, ambos exemplos abaixo são okay:</p>
+<pre><code>var sglDbl = 'Would you eat a "fish supper"?';
+var dblSgl = "I'm feeling blue.";
+sglDbl;
+dblSgl;
+
+</code></pre>
+</li>
+<li>
+<p>Entretanto, você não pode incluir o mesmo tipo de aspas dentro da sua string, se você usa para conter seu texto. O seguinte será um erro, como é confuso para o navegador onde a string termina:</p>
+<pre><code>var bigmouth = 'I've got no right to take my place...';
+
+</code></pre>
+<p>Isto nos leva muito bem ao nosso próximo assunto.</p>
+</li>
+</ol>
+<h3 id="caracteres-de-escape-na-string"><a href="https://developer.mozilla.org/pt-BR/docs/Learn/JavaScript/First_steps/Strings#caracteres_de_escape_na_string">Caracteres de escape na string</a></h3>
+<p>Para corrigir o problema anterior, nós precisamos escapar o problema da aspa. Caracteres de escape significa que nós fazemos algo para ter certeza que eles são reconhecidos como texto, não parte do código. Em JavaScript, nós fazemos isso colocando uma barra invertida logo antes do caracter.Tente isso:</p>
+<pre><code>var bigmouth = 'I\'ve got no right to take my place...';
+bigmouth;
+
+</code></pre>
+<p>Isto funciona bem. Você pode escapar outros caracteres do mesmo jeito, ex.:  <code>\"</code>, e há alguns códigos especiais também. Veja  <a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/String#escape_notation">Notação de escape</a>  para mais detalhes.</p>
+<h2 id="concatenando-strings"><a href="https://developer.mozilla.org/pt-BR/docs/Learn/JavaScript/First_steps/Strings#concatenando_strings">Concatenando strings</a></h2>
+<ol>
+<li>
+<p>Concatenar é uma palavra chique da programação que significa “colocar junto”. Para colocar strings juntas em JavaScript, usamos o operador (+), o mesmo usamos para adicionar números, mas neste contexto é algo diferente. Vamos tentar este exemplo no console.</p>
+<pre><code>var one = 'Hello, ';
+var two = 'how are you?';
+var joined = one + two;
+joined;
+
+</code></pre>
+<p>O resultado disso é uma variável chamada  <code>joined</code>, que contém o valor “Hello, how are you?”.</p>
+</li>
+<li>
+<p>No último exemplo, nós somente juntamos duas strings, mas você pode fazer quantas quiser, contanto que inclua um  <code>+</code>  entre cada uma.Experimente isso:</p>
+<pre><code>var multiple = one + one + one + one + two;
+multiple;
+
+</code></pre>
+</li>
+<li>
+<p>Você pore usar um mix de variáveis e strings reais. Tente isso:</p>
+<pre><code>var response = one + 'I am fine — ' + two;
+response;
+
+</code></pre>
+</li>
+</ol>
+<p><strong>Nota:</strong>  Quando você coloca uma string atual no seu código dentro de aspas simples ou duplas, é chamada uma  <strong>string literal</strong>.</p>
+<h3 id="concatenação-em-contexto"><a href="https://developer.mozilla.org/pt-BR/docs/Learn/JavaScript/First_steps/Strings#concatena%C3%A7%C3%A3o_em_contexto">Concatenação em contexto</a></h3>
+<p>Vamos dar uma olhada na concatenação em ação — aqui está um exemplo do curso anterior:</p>
+<pre><code>&lt;button&gt;Pressione-me&lt;/button&gt;
+
+</code></pre>
+<pre><code>var button = document.querySelector('button');
+
+button.onclick = function() {
+  var nome = prompt('Qual é o seu nome?');
+  alert('Olá ' + nome + ', prazer em conhecê-lo!');
+}
+
+</code></pre>
+<p>Aqui estamos usando uma função  <a href="https://developer.mozilla.org/pt-BR/docs/Web/API/Window/prompt" title="Window.prompt()"><code>Window.prompt()</code></a>  na linha 4, a qual pergunta ao usuário para responder uma questão via uma caixa de diálogo, então armazena o texto em uma variável — neste caso  <code>nome</code>. Nós então usamos uma função  <a href="https://developer.mozilla.org/pt-BR/docs/Web/API/Window/alert" title="Window.alert()"><code>Window.alert()</code></a>  na linha 5 para mostrar outra caixa de diálogo contendo nossa string montada de duas strings literais e a variável  <code>name</code>,via concatenação.</p>
+<h3 id="números-x-strings"><a href="https://developer.mozilla.org/pt-BR/docs/Learn/JavaScript/First_steps/Strings#n%C3%BAmeros_x_strings">Números x strings</a></h3>
+<ol>
+<li>
+<p>Então o que acontece quando tentamos adicionar (ou concatenar) uma string e um número? Vamos tentar isso no console:</p>
+<pre><code>'Front ' + 242;
+
+</code></pre>
+<p>Você pode esperar um erro disto, mas funciona correto. Tentando representar uma string como um número, realmente não faz sentido. Mas representando um número como string, faz. Então o navegador espertamente converte o número em string e concatena as duas.</p>
+</li>
+<li>
+<p>Você pode fazer isto até com dois números — você pode forçar um número a ser string colocando ele entre aspas. Experimente o seguinte (nós estamos usando o operador  <code>typeof</code>  para checar o que a variável é, se um número ou string):</p>
+<pre><code>var myDate = '19' + '67';
+typeof myDate;
+
+</code></pre>
+</li>
+<li>
+<p>Se você tem uma variável numérica que precisa converter em string, mas não mudar completamente, ou uma string e quer converter em número, você pode usar a construção seguinte:</p>
+<ul>
+<li>
+<p>O objeto  <a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Number"><code>Number</code></a>  converterá qualquer coisa passada em um número, se for possível. Tente o seguinte:</p>
+<pre><code>var myString = '123';
+var myNum = Number(myString);
+typeof myNum;
+
+</code></pre>
+</li>
+<li>
+<p>Por outro lado, todo número tem um método chamado  <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/toString"><code>toString()</code></a>  que converterá para a string equivalente. Tente isto:</p>
+<pre><code>var myNum = 123;
+var myString = myNum.toString();
+typeof myString;
+
+</code></pre>
+</li>
+</ul>
+<p>Estas construções podem ser bem úteis em algumas situações. Por exemplo, se o usuário colocar um número em um campo de texto, isso será uma string. Entretanto, se você quiser adicionar este número a algo, você precisa que seja um número, então você pode passar isto através do  <code>Number()</code>  para poder manipular.Nós fizemos exatamente isto no nosso  <a href="https://github.com/mdn/learning-area/blob/master/javascript/introduction-to-js-1/first-splash/number-guessing-game.html#L59">Number Guessing Game, in line 59</a>.</p>
+</li>
+</ol>
+<h2 id="conclusão"><a href="https://developer.mozilla.org/pt-BR/docs/Learn/JavaScript/First_steps/Strings#conclus%C3%A3o">Conclusão</a></h2>
+<p>Então isto é o basico sobre strings em JavaScript. No próximo artigo nós iremos continuar daqui, vendo alguns métodos de construção de strings disponíveis em JavaScript e como nós podemos usá-los para manipular nossa string da forma como quisermos.</p>
+<h2 id="aula-7">Aula 7</h2>
+<h2 id="strings-como-objetos"><a href="https://developer.mozilla.org/pt-BR/docs/Learn/JavaScript/First_steps/Useful_string_methods#strings_como_objetos">Strings como objetos</a></h2>
+<p>Como dissemos antes e diremos novamente —  <em>tudo</em>  é um objeto em JavaScript. Quando você cria um string, usando por exemplo</p>
+<pre><code>var string = 'This is my string';
+
+</code></pre>
+<p>sua variável torna-se uma instância do objeto string e, como resultado, tem um grande número de propriedades e métodos diponíveis para ela. Você pode ver isso se você for na página do objeto  <a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/String"><code>String</code></a>  e olhar para baixo na lista do lado da página!</p>
+<p><strong>Agora, antes de seu cérebro começar a derreter, não se preocupe!</strong>  Você não precisa saber sobre a maioria deles no início da sua jornada de aprendizado. Mas há alguns que você potencialmente usará com bastante frequência que veremos aqui.</p>
+<p>Vamos digitar alguns exemplos em um console novo. Nós fornecemos um abaixo (você também pode abrir este console em uma guia ou janela separada, ou usar o console do desenvolvedor do navegador, se preferir).</p>
+<p>Nós fornecemos um abaixo (você também pode  <a href="https://mdn.github.io/learning-area/javascript/introduction-to-js-1/variables/index.html">abrir esse console</a>  em uma aba ou janela separada, ou usar o  <a href="https://developer.mozilla.org/pt-BR/docs/Learn/Common_questions/What_are_browser_developer_tools">console do navegador do desenvolvedor</a>  se você preferir).</p>
+<h3 id="descobrindo-o-comprimento-de-uma-string"><a href="https://developer.mozilla.org/pt-BR/docs/Learn/JavaScript/First_steps/Useful_string_methods#descobrindo_o_comprimento_de_uma_string">Descobrindo o comprimento de uma string</a></h3>
+<p>Essa é fácil — você simplesmente usa a propriedade  <a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/String/length"><code>length</code></a>. Tente digitar as linhas a seguir:</p>
+<pre><code>var browserType = 'mozilla';
+browserType.length;
+
+</code></pre>
+<p>Isso deve retornar o número 7, porque “mozilla” tem 7 caracteres. Isso é útil por vários motivos; por exemplo, você pode querer encontrar os comprimentos de uma série de nomes para que você possa exibi-los em ordem de comprimento, ou deixar um usuário saber que um nome de usuário que ele informou em um campo de formulário é muito longo se este for maior do que um certo comprimento.</p>
+<h3 id="recuperando-um-caractere-de-string-específico"><a href="https://developer.mozilla.org/pt-BR/docs/Learn/JavaScript/First_steps/Useful_string_methods#recuperando_um_caractere_de_string_espec%C3%ADfico">Recuperando um caractere de string específico</a></h3>
+<p>Nota complementar: você pode retornar qualquer caractere dentro de uma string usando a  <strong>notação colchete</strong>  - isso significa que você inclui colchetes (<code>[]</code>) no final do nome da variável. Dentro dos colchetes, você inclui o número do caractere que deseja retornar, por exemplo, para recuperar a primeira letra, faça o seguinte:</p>
+<pre><code>browserType[0];
+
+</code></pre>
+<p>Computadores contam a partir de 0, não 1! Para recuperar o último caractere de  <em>qualquer</em>  string, nós podemos usar a linha a seguir, combinando essa técnica com a propriedade  <code>length</code>  que vimos anteriormente:</p>
+<pre><code>browserType[browserType.length-1];
+
+</code></pre>
+<p>O comprimento de “mozilla” é 7, mas porque a contagem começa de 0, a posição do caractere é 6, daí precisamos usar  <code>length-1</code>. Você pode usar isso para, por exemplo, encontrar a primeira letra de uma série de strings e ordená-los alfabeticamente.</p>
+<h3 id="encontrando-uma-substring-dentro-de-uma-string-e-extraindo-a"><a href="https://developer.mozilla.org/pt-BR/docs/Learn/JavaScript/First_steps/Useful_string_methods#encontrando_uma_substring_dentro_de_uma_string_e_extraindo-a">Encontrando uma substring dentro de uma string e extraindo-a</a></h3>
+<ol>
+<li>
+<p>Às vezes você quer saber se uma string menor está presente dentro de uma maior (geralmente dizemos  <em>se uma substring está presente dentro de uma string</em>). Isso pode ser feito usando o método  <a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/String/indexOf"><code>indexOf ()</code></a>, que leva um único  <a href="https://developer.mozilla.org/en-US/docs/Glossary/Parameter" title="Currently only available in English (US)">parameter  (en-US)</a>  - a substring que deseja procurar. Experimente isso:</p>
+<pre><code>browserType.indexOf('zilla');
+
+</code></pre>
+<p>Isso nos dá o resultado 2, porque a substring “zilla” se inicia na posição 2 (0, 1, 2 — então, 3 caraceteres) dentro de “mozilla”. Esse código poderia ser usado para filtrar cadeias de caracteres. Por exemplo, podemos ter uma lista de endereços da web e apenas queremos imprimir aqueles que contenham “mozilla”.</p>
+</li>
+<li>
+<p>Isso pode ser feito de outro jeito, que é possivelmente mais eficaz. Experimente isso:</p>
+<pre><code>browserType.indexOf('vanilla');
+
+</code></pre>
+<p>Isso deve lhe dar um resultado  <code>-1</code>  — isso é retornado quando a substring, neste caso ‘vanilla’, não é encontrada na string principal. Você pode usar isso para encontrar todas as instâncias de strings que  <strong>não contém</strong>  a substring ‘mozilla’, ou  <strong>contém</strong>, se você usar o operador de negação, conforme mostrado abaixo. Você poderia fazer algo assim:</p>
+<pre><code>if(browserType.indexOf('mozilla') !== -1) {
+  // faz coisas com a string
+}
+
+</code></pre>
+</li>
+<li>
+<p>Quando você sabe onde uma substring começa dentro de uma string e você sabe em qual caractere você deseja que ela termine,  <a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/String/slice"><code>slice ()</code></a>  pode ser usado para extrair isto. Tente o seguinte:</p>
+<pre><code>browserType.slice(0,3);
+
+</code></pre>
+<p>Isso retorna “moz” — o primeiro parâmetro é a posição do caractere a partir da qual será iniciada a extração, e o segundo parâmetro é a posição seguinte do último caractere a ser extraído. Então, a fatia ocorre da primeira posição, até a última posição, mas não incluindo. Você também pode dizer que o segundo parâmetro é igual ao comprimento da string que está sendo retornada.</p>
+</li>
+</ol>
+<p>Também, se você sabe que você deseja extrair todos os caracteres restantes em uma string após um certo caracter, você não tem que incluir o segundo parametro! Você apenas precisa incluir a posição do caracter a partir de onde você deseja extrar os caracteres restantes em uma string. Tente o seguinte:</p>
+<pre><code>browserType.slice(2);
+
+</code></pre>
+<p>Isso retornará “zilla” — isso é porque a posição de caracter 2 é a letra z, e porque você não incluiu o segundo parametro, a substring retornou todos os caracteres restantes na string.</p>
+<p><strong>Nota:</strong>  O segundo parametro do  <code>slice()</code>  é opcional: Se você não incluir ele, o slice finaliza no fim da string original. Existem outras opções também; estude a  <a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/String/slice"><code>slice()</code></a>  pagina para ver o que mais você pode descobrir.</p>
+<h3 id="mudando-entre-maiúsculas-e-minúsculas"><a href="https://developer.mozilla.org/pt-BR/docs/Learn/JavaScript/First_steps/Useful_string_methods#mudando_entre_mai%C3%BAsculas_e_min%C3%BAsculas">Mudando entre maiúsculas e minúsculas</a></h3>
+<p>O método string  <a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase"><code>toLowerCase()</code></a>  e  <a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase"><code>toUpperCase()</code></a>  toma a string e converte todos os caracteres para minusculo - ou maiusculo, respectivamente. Este pode ser util, por exemplo, se você quer normalizar todas as entradas de dados do usuário antes de armazenar em um banco de dados.</p>
+<p>Vamos testar inserindo as seguintes linhas para ver o que acontece:</p>
+<pre><code>var radData = 'My NaMe Is MuD';
+radData.toLowerCase();
+radData.toUpperCase();
+
+</code></pre>
+<h3 id="atualizando-partes-de-uma-string"><a href="https://developer.mozilla.org/pt-BR/docs/Learn/JavaScript/First_steps/Useful_string_methods#atualizando_partes_de_uma_string">Atualizando partes de uma string</a></h3>
+<p>Você pode substituir uma substring dentro de uma string com uma outra substring usando o método  <a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/String/replace"><code>replace()</code></a>. Este funciona muito simples em um nível básico, apesar haver algumas coisas avançadas que você pode fazer com ele, nós não iremos tão longe ainda.</p>
+<p>Ele toma dois parametros — A string que você quer substituir e a string que você quer que substitua o primeiro parametro. Tente este exemplo:</p>
+<pre><code>browserType.replace('moz','van');
+
+</code></pre>
+<p>Observe que para realmente obter o valor atualizado refletido na variavel  <code>browserType</code>  em um programa real, você teria que setar o valor da variavel para ser o resultado da operação; não apenas atualizar o valor da substring automaticamente. Assim você teria que realmente escrever isso:  <code>browserType = browserType.replace('moz','van');</code></p>
+<h2 id="exemplos-para-aprendizado-ativo"><a href="https://developer.mozilla.org/pt-BR/docs/Learn/JavaScript/First_steps/Useful_string_methods#exemplos_para_aprendizado_ativo">Exemplos para aprendizado ativo</a></h2>
+<p>Nesta seção, tentaremos escrever um código de manipulação de string. Em cada exercício abaixo, temos uma matriz de strings e um loop que processa cada valor na matriz e o exibe em uma lista com marcadores. Você não precisa entender matrizes ou loops agora - isso será explicado em artigos futuros. Tudo o que você precisa fazer em cada caso é escrever o código que produzirá as strings no formato em que as queremos.</p>
+<p>Cada exemplo vem com um botão “Reset”, que você pode usar para redefinir o código original, isso se cometer um erro e não conseguir faze-lo funcionar novamente, e um botão “Show Solution” que você pode pressionar para ver aresposta em potencial se realmente estiver travado.</p>
+<h3 id="filtrando-mensagens-de-saudação"><a href="https://developer.mozilla.org/pt-BR/docs/Learn/JavaScript/First_steps/Useful_string_methods#filtrando_mensagens_de_sauda%C3%A7%C3%A3o">Filtrando mensagens de saudação</a></h3>
+<p>No primeiro exercício, começaremos com simplicidade - temos várias mensagens de cartão, mas queremos classificá-las para listar apenas as mensagens de Natal. Queremos que você preencha um teste condicional dentro da estrutura if (…), para testar cada string e apenas imprimi-la na lista se for uma mensagem de Natal.</p>
+<ol>
+<li>Primeiro pense em como você poderia testar se a mensagem em cada caso é uma mensagem de Natal. Qual string está presente em todas essas mensagens e que método você poderia usar para testar se ela está presente?</li>
+<li>Em seguida, você precisará escrever um teste condicional do formulario operando2 operador operando1. A coisa à esquerda é igual à coisa à direita? Ou neste caso, o método chama à esquerda retorna o resultado à direita?</li>
+<li>Dica: Nesse caso, é provavelmente mais útil testar se a chamada do método não é igual a um determinado resultado.</li>
+</ol>
+<h3 id="corrigindo-a-capitalização"><a href="https://developer.mozilla.org/pt-BR/docs/Learn/JavaScript/First_steps/Useful_string_methods#corrigindo_a_capitaliza%C3%A7%C3%A3o">Corrigindo a capitalização</a></h3>
+<p>Neste exercício, temos os nomes das cidades no Reino Unido, mas a capitalização está toda desarrumada. Nós queremos que você as altere para que elas sejam todas minúsculas, exceto pela primeira letra maiúscula. Uma boa maneira de fazer isso é:</p>
+<ol>
+<li>Converta toda a cadeia contida na variável de entrada para minúscula e armazene-a em uma nova variável.</li>
+<li>Pegue a primeira letra da string nesta nova variável e armazene-a em outra variável.</li>
+<li>Usando esta última variável como substring, substitua a primeira letra da string em minúsculas pela primeira letra da string em minúsculas alterada para maiúscula. Armazene o resultado desse procedimento de substituição em outra nova variável.</li>
+<li>Altere o valor da variável  <code>result</code>  para igual ao resultado final, não a  <code>input</code>.</li>
+</ol>
+<p><strong>Nota:</strong>  Uma dica — os parâmetros dos métodos de string não precisam ser literais de string; eles também podem ser variáveis, ou mesmo variáveis com um método sendo invocado nelas.</p>
+<h3 id="fazendo-novas-strings-a-partir-de-partes-antigas"><a href="https://developer.mozilla.org/pt-BR/docs/Learn/JavaScript/First_steps/Useful_string_methods#fazendo_novas_strings_a_partir_de_partes_antigas">Fazendo novas strings a partir de partes antigas</a></h3>
+<p>Neste último exercício, o array contém um monte de strings contendo informações sobre estações de trem no norte da Inglaterra. As strings são itens de dados que contêm o código da estação de três letras, seguido por alguns dados legíveis por máquina, seguidos por um ponto-e-vírgula, seguido pelo nome da estação legível por humanos. Por exemplo:</p>
+<p>MAN675847583748sjt567654;Manchester Piccadilly</p>
+<p>Queremos extrair o código e o nome da estação e juntá-los em uma string com a seguinte estrutura:</p>
+<p>MAN: Manchester Piccadilly</p>
+<p>Nós recomendamos que faça assim:</p>
+<ol>
+<li>Extraia o código da estação de três letras e armazene-o em uma nova variável.</li>
+<li>Encontre o número de índice do caractere do ponto e vírgula.</li>
+<li>Extraia o nome da estação legível usando o número do índice de caracteres de ponto-e-vírgula como ponto de referência e armazene-o em uma nova variável.</li>
+<li>Concatene as duas novas variáveis e uma string literal para fazer a string final.</li>
+<li>Altere o valor da variável  <code>result</code>  para igual à string final, não a  <code>input</code>.</li>
+</ol>
+<h2 id="conclusão-1"><a href="https://developer.mozilla.org/pt-BR/docs/Learn/JavaScript/First_steps/Useful_string_methods#conclus%C3%A3o">Conclusão</a></h2>
+<p>Você não pode escapar do fato de que ser capaz de lidar com palavras e frases em programação é muito importante — particularmente em JavaScript, pois os sites são todos sobre comunicação com pessoas. Este artigo forneceu os fundamentos que você precisa saber sobre a manipulação de strings por enquanto. Isso deve atendê-lo bem ao abordar tópicos mais complexos no futuro. Em seguida, vamos ver o último tipo de dados importante que precisamos focar no curto prazo — arrays.</p>
+<h2 id="aula-8">Aula 8</h2>
+<h2 id="o-que-é-uma-array"><a href="https://developer.mozilla.org/pt-BR/docs/Learn/JavaScript/First_steps/Arrays#o_que_%C3%A9_uma_array">O que é uma array?</a></h2>
+<p>Arrays são geralmente descritas como “lista de objetos”; elas são basicamente objetos que contem múltiplos valores armazenados em uma lista. Um objeto array pode ser armazenado em variáveis e ser tratado de forma muito similar a qualquer outro tipo de valor, a diferença está em podermos acessar cada valor dentro da lista individualmente, e fazer super úteis e eficientes coisas com a lista, como laço através da lista e fazer a mesma coisa para cada valor. Talvez nós pegamos uma série de produtos e seus preços armazenados em uma array, e nós queremos fazer um laço através de todos eles e mostrar em um recibo, enquanto somamos todos os preços e mostramos o preço total ao final.</p>
+<p>Se nós não tivessemos arrays, teríamos que armazenar cada item em uma variável separada, então chamar o código para mostrar e adicionar separadamente cada item. Isto seria muito mais longo de escrever, menos eficiente e mais suscetível a erros. Se nós temos 10 itens para adicionar na fatura, isto é ruim o bastante, mas e se fosse 100 itens ou 1000? Nós vamos retornar a este exemplo mais tarde neste artigo.</p>
+<p>Como no artigo anterior, vamos aprender o básico de arrays introduzindo com alguns exemplos dentro de um console JavaScript. Nós fornecemos um abaixo (você também pode  <a href="https://mdn.github.io/learning-area/javascript/introduction-to-js-1/variables/index.html">abrir este console</a>  em uma aba separada ou janela, ou usar o  <a href="https://developer.mozilla.org/pt-BR/docs/Learn/Common_questions/What_are_browser_developer_tools">console de desenvolvedor do navegador</a>  se preferir).</p>
+<h3 id="criando-uma-array"><a href="https://developer.mozilla.org/pt-BR/docs/Learn/JavaScript/First_steps/Arrays#criando_uma_array">Criando uma array</a></h3>
+<p>Arrays são contruídas de colchetes, os quais contém uma lista de itens separada por vírgulas.</p>
+<ol>
+<li>
+<p>Vamos supor que queremos armazenar uma lista de compras em uma array — nós temos algo como o seguinte. Digite as linhas abaixo no seu console:</p>
+<pre><code>var shopping = ['bread', 'milk', 'cheese', 'hummus', 'noodles'];
+shopping;
+
+</code></pre>
+</li>
+<li>
+<p>Neste caso, cada item na array é uma string, mas tenha em mente que você pode armazenar qualquer item em uma array — string, número, objeto, outra variável, até outra array. Você pode também misturar e combinar tipos de itens — eles não têm que ser todos números, strings, etc. Tente isto:</p>
+<pre><code>var sequence = [1, 1, 2, 3, 5, 8, 13];
+var random = ['tree', 795, [0, 1, 2]];
+
+</code></pre>
+</li>
+<li>
+<p>Tente criar um par de arrays você mesmo, antes de seguir em frente.</p>
+</li>
+</ol>
+<h3 id="acessando-e-modificando-itens-de-uma-array"><a href="https://developer.mozilla.org/pt-BR/docs/Learn/JavaScript/First_steps/Arrays#acessando_e_modificando_itens_de_uma_array">Acessando e modificando itens de uma array</a></h3>
+<p>Você pode acessar itens individuais em uma array usando a notação de colchetes, da mesma forma que você  <a href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/Useful_string_methods#retrieving_a_specific_string_character">acessa as letras em uma string</a>.</p>
+<ol>
+<li>
+<p>Digite o seguinte no seu console:</p>
+<pre><code>shopping[0];
+// returns "bread"
+
+</code></pre>
+</li>
+<li>
+<p>Você também pode modificar um item em uma array simplesmente dando um novo valor ao item. Tente isto:</p>
+<pre><code>shopping[0] = 'tahini';
+shopping;
+// shopping vai retornar agora [ "tahini", "milk", "cheese", "hummus", "noodles" ]
+
+</code></pre>
+<p><strong>Nota:</strong>  Nós dissemos isto antes, mas como lembrete — computadores começam a contar do 0!</p>
+</li>
+<li>
+<p>Note que uma array dentro de uma array é chamada de array multidimensional. Você pode acessar um item dentro de uma array que está localizada dentro de outra array, colocando dois conjuntos de colchetes juntos. Por exemplo, para acessar um dos itens dentro de uma array, que é o terceiro item dentro da array  <code>random</code>  (veja a seção anterior), nós podemos fazer algo tipo isto:</p>
+<pre><code>random[2][2];
+
+</code></pre>
+</li>
+<li>
+<p>Antes de continuar, faça algumas modificações nos exemplos, crie seus próprios arrays e veja o que funciona e o que não funciona. Divirta-se!</p>
+</li>
+</ol>
+<h3 id="encontrando-o-comprimento-de-uma-array"><a href="https://developer.mozilla.org/pt-BR/docs/Learn/JavaScript/First_steps/Arrays#encontrando_o_comprimento_de_uma_array">Encontrando o comprimento de uma array</a></h3>
+<p>Você pode encontrar o comprimento de uma array (quantos itens existem nela) exatamente do mesmo jeito que você encontra o comprimento (em caracteres) de uma string — usando a propriedade  <a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/length"><code>length</code></a>. Tente o seguinte:</p>
+<pre><code>sequence.length;
+// deve retornar 7
+
+</code></pre>
+<p>Isto tem outras funcionalidades, mas é mais comum usar em um laço para seguir todos os itens em uma array. Então, por exemplo:</p>
+<pre><code>var sequence = [1, 1, 2, 3, 5, 8, 13];
+for (var i = 0; i &lt; sequence.length; i++) {
+  console.log(sequence[i]);
+}
+
+</code></pre>
+<p>Você irá aprender sobre laços propriamente em um artigo futuro, mas, brevemente, este código está dizendo:</p>
+<ol>
+<li>Comece o laço no item número 0 na array.</li>
+<li>Pare o laço no item de número igual ao comprimento da array. Isto funcionará para uma array de qualquer tamanho, mas neste caso vai parar o laço no item 7 (isto é bom, como o último item — que nós queremos que o laço cubra — é 6.</li>
+<li>Para cada item, imprima no console do navegador com  <a href="https://developer.mozilla.org/en-US/docs/Web/API/console/log"><code>console.log()</code></a>.</li>
+</ol>
+<h2 id="alguns-métodos-úteis-em-array"><a href="https://developer.mozilla.org/pt-BR/docs/Learn/JavaScript/First_steps/Arrays#alguns_m%C3%A9todos_%C3%BAteis_em_array">Alguns métodos úteis em array</a></h2>
+<p>Nesta seção vamos ver alguns métodos relacionados a array úteis que nos permitem dividir strings em itens de array e vice-versa, e adicionar novos itens em arrays.</p>
+<h3 id="convertendo-entre-strings-e-arrays"><a href="https://developer.mozilla.org/pt-BR/docs/Learn/JavaScript/First_steps/Arrays#convertendo_entre_strings_e_arrays">Convertendo entre strings e arrays</a></h3>
+<p>Frequentemente você vai se deparar com alguns dados contidos em uma grande e longa string, e você pode querer separar os itens em uma forma mais útil e então manipular eles, como mostrar em uma tabela. Para fazer isto, nós podemos usar o método  <a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/String/split"><code>split()</code></a>. Nesta forma mais simples, ela pega um parâmetro solitário, o caracter que você deseja separar da string e retorna o restante antes e depois do item separado na array.</p>
+<p><strong>Nota:</strong>  Ok, isto é tecnicamente um método de string, não um método de array, mas nós podemos colocar em arrays já que cai bem.</p>
+<ol>
+<li>
+<p>Vamos brincar com isto para ver como funciona. Primeiro, crie uma string no seu console:</p>
+<pre><code>var myData = 'Manchester,London,Liverpool,Birmingham,Leeds,Carlisle';
+
+</code></pre>
+</li>
+<li>
+<p>Agora vamos dividir isto em cada vírgula:</p>
+<pre><code>var myArray = myData.split(',');
+myArray;
+
+</code></pre>
+</li>
+<li>
+<p>Finalmente, tentamos encontrar o comprimento da sua nova array, e recuperar alguns itens dela:</p>
+<pre><code>myArray.length;
+myArray[0]; // the first item in the array
+myArray[1]; // the second item in the array
+myArray[myArray.length-1]; // the last item in the array
+
+</code></pre>
+</li>
+<li>
+<p>Você também pode ir no sentido oposto usando o método  <a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/join"><code>join()</code></a>. Tente o seguinte:</p>
+<pre><code>var myNewString = myArray.join(',');
+myNewString;
+
+</code></pre>
+</li>
+<li>
+<p>Outro jeito de converter uma array em uma string é usar o método  <a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/toString"><code>toString()</code></a>.  <code>toString()</code>  é indiscutivelmente mais simples que o  <code>join()</code>  pois não necessita um parâmetro, mas mais limitado. Com  <code>join()</code>  você pode especificar diferentes separadores (tente o passo 4 com um caracter diferente da vírgula).</p>
+<pre><code>var dogNames = ['Rocket','Flash','Bella','Slugger'];
+dogNames.toString(); //Rocket,Flash,Bella,Slugger
+
+</code></pre>
+</li>
+</ol>
+<h3 id="adicionando-e-removendo-itens-de-arrays"><a href="https://developer.mozilla.org/pt-BR/docs/Learn/JavaScript/First_steps/Arrays#adicionando_e_removendo_itens_de_arrays">Adicionando e removendo itens de arrays</a></h3>
+<p>Nós ainda não falamos sobre adicionar e remover itens de uma array — vamos dar uma olhada agora. Nós vamos usar a array  <code>myArray</code>  que acabamos de criar na última seção. Se você não viu a última seção, primeiro crie a array no seu console:</p>
+<pre><code>var myArray = ['Manchester', 'London', 'Liverpool', 'Birmingham', 'Leeds', 'Carlisle'];
+
+</code></pre>
+<p>Antes de tudo, para adicionar ou remover um item no final de uma array, nós podemos usar  <a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/push"><code>push()</code></a>  e  <a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/pop"><code>pop()</code></a>  respectivamente.</p>
+<ol>
+<li>
+<p>note que você precisa para incluir um ou mais itens ao final da sua array. Tente isto:</p>
+<pre><code>myArray.push('Cardiff');
+myArray;
+myArray.push('Bradford', 'Brighton');
+myArray;
+
+</code></pre>
+</li>
+<li>
+<p>O novo comprimento da array é retornado quando a chamada do método completa. Se você quer armazenar o novo comprimento da array em uma variável, você poderia fazer algo como isto:</p>
+<pre><code>var newLength = myArray.push('Bristol');
+myArray;
+newLength;
+
+</code></pre>
+</li>
+<li>
+<p>Removendo o último item da array é tão simples como um  <code>pop()</code>  nele. Tente isto:</p>
+<pre><code>myArray.pop();
+
+</code></pre>
+</li>
+<li>
+<p>O item que foi removido é retornado quando a chamada do método completa. Para salvar o item em uma nova variável, você poderia fazer isto:</p>
+<pre><code>var removedItem = myArray.pop();
+myArray;
+removedItem;
+
+</code></pre>
+</li>
+</ol>
+<p><a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/unshift"><code>unshift()</code></a>  e  <a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/shift"><code>shift()</code></a>  funciona exatamente do mesmo modo que  <code>push()</code>  e  <code>pop()</code>, respectivamente, exceto que eles funcionam no começo da array, não no final.</p>
+<ol>
+<li>
+<p>Primeiro  <code>unshift()</code>  — tente os seguintes comandos:</p>
+<pre><code>myArray.unshift('Edinburgh');
+myArray;
+
+</code></pre>
+</li>
+<li>
+<p>Agora  <code>shift()</code>;Tente estes!</p>
+<pre><code>var removedItem = myArray.shift();
+myArray;
+removedItem;
+
+</code></pre>
+</li>
+</ol>
+<h2 id="aprendizado-ativo-imprimindo-aqueles-produtos"><a href="https://developer.mozilla.org/pt-BR/docs/Learn/JavaScript/First_steps/Arrays#aprendizado_ativo_imprimindo_aqueles_produtos!">Aprendizado ativo: Imprimindo aqueles produtos!</a></h2>
+<p>Vamos retornar ao exemplo que descrevemos antes — imprimindo nomes de produtos e preços em uma fatura, então totalizando os preços e imprindindo eles ao final. No exemplo editável abaixo há comentários contendo números — cada um deles marcam um lugar onde você tem que acidionar algo ao código. Eles são como segue:</p>
+<ol>
+<li>Abaixo do comentário  <code>// number 1</code>  está um número de strings, cada uma contendo um nome de produto e preço separado por uma vírgula. Nós gostaríamos que você colocasse eles dentro de uma array e armazenasse eles na array chamada  <code>products</code>.</li>
+<li>Na mesma linha o comentário  <code>// number 2</code>  está no começo de um laço for. Nesta linha nós temos  <code>i&lt;=0</code>, o qual é um teste condicional que faz o  <a href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/A_first_splash#loops">laço for</a>  parar imediatamente, porque está dizendo “pare quando  <code>i</code>  for menor ou igual a 0”, e  <code>i</code>  começa em 0. Nós gostaríamos de substituir isto com um teste condicional que termina o laço quando o  <code>i</code>for menor que o tamanho da array  <code>products</code>.</li>
+<li>Logo abaixo do comentário  <code>// number 3</code>  nós queremos que você escreva uma linha de código que divide o item da array (<code>name:price</code>) em dois itens separados, um contendo somente o nome e outro só com o preço. Se você não tem certeza de como fazer isto, consulte o artigo  <a href="https://developer.mozilla.org/pt-BR/docs/Learn/JavaScript/First_steps/Useful_string_methods">Métodos úteis em string</a>para alguma ajuda, ou ainda melhor, veja a seção  <a href="https://developer.mozilla.org/pt-BR/docs/Learn/JavaScript/First_steps/Arrays#converting_between_strings_and_arrays">Converting between strings and arrays</a>  neste artigo.</li>
+<li>Como parte da linha de código acima, você também quer converter o preço de string para número. Se você não se lembra como fazer isto, veja o  <a href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/Strings#numbers_versus_strings">artigo primeiras strings</a>.</li>
+<li>Há uma variável chamada  <code>total</code>  que é criada e atribuída o valor 0 no começo do código. Dentro do loop (abaixo  <code>// number 4</code>) nós queremos que você escreva uma linha que adicione o preço atual ao total em cada iteração do laço, então ao final do código o preço total é impresso na fatura. Você pode precisar de um  <a href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/Math#assignment_operators">operador aritiméticos</a>  para isto.</li>
+<li>Nós queremos que você mude a linha logo abaixo de  <code>// number 5</code>  para que a variável  <code>itemText</code>  seja igual a “nome do item atual - $preço do item atual”, por exemplo “Shoes - $23.99” em cada caso, então a informação correta para cada item é impressa na fatura. Esta é uma simples concatenação de string, a qual deveria ser familiar para você.</li>
+</ol>
+<h2 id="aprendizado-ativo-top-5-buscadores"><a href="https://developer.mozilla.org/pt-BR/docs/Learn/JavaScript/First_steps/Arrays#aprendizado_ativo_top_5_buscadores">Aprendizado ativo: Top 5 buscadores</a></h2>
+<p>Um bom uso para os métodos de array como  <a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/push"><code>push()</code></a>  e  <a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/pop"><code>pop()</code></a>  está quando você está mantendo um registro de itens atuais ativos em um aplicativo web. Em uma cena animada, por exemplo, você pode ter uma array de objetos representando o gráfico de fundo mostrado atualmente, e você pode querer somente mostrar 50 por vez, para performace ou alguma razão de ordem. Como novos objetos são criados e adicionados na array, os antigos podem ser deletados da array para manter o número desejado.</p>
+<p>Neste exemplo nós vamos mostrar um uso bem mais simples — aqui nós estamos dando a você um falso site de busca, com uma caixa de busca. A idéia é que quando termos são digitados na caixa de busca, os 5 principais termos de busca anterior sejam mostrados na lista. Quando o número de termos passar de 5, o último termo começa sendo deletado. A cada vez um novo termo é adicionado ao topo, então os 5 termos anteriores são sempre mostrados.</p>
+<p><strong>Nota:</strong>  Em um aplicativo de busca real, você seria, provavelmente, habilitado a clicar nos termos anteriores para retornar às pesquisas, e isto iria mostrar o reusltado atual! Nós estamos só mantendo simples, por agora.</p>
+<p>Para completar o aplicativo, nós precisamos que você:</p>
+<ol>
+<li>Adicione uma linha abaixo do comentário  <code>// number 1</code>  que adicione o valor digitado atual na busca ao começo da array. Isto pode ser recuperado usando  <code>searchInput.value</code>.</li>
+<li>Adicione uma linha abaixo do comentário  <code>// number 2</code>  que remova o último valor no fim da array.</li>
+</ol>
+<h2 id="conclusão-2"><a href="https://developer.mozilla.org/pt-BR/docs/Learn/JavaScript/First_steps/Arrays#conclus%C3%A3o">Conclusão</a></h2>
+<p>Depois de ler este artigo, nós temos certeza que você concordará que arrays parecem muito úteis; você verá elas surgirem em todo lugar em JavaScript, frequentemente associadas com laços para fazer a mesma coisa para cada item de uma array. Nós estaremos ensinando a você todo o básico que há para saber sobre laços no próximo módulo, mas por agora você deve se dar uma palmada de incentivo e dar uma bem merecida parada; você trabalhou durante todo os artigos neste módulo!</p>
+<p>A única coisa que resta a fazer é trabalhar na avaliação deste módulo, a qual vai testar seu entendimento dos artigos anteriores a este.</p>
+<h2 id="veja-também"><a href="https://developer.mozilla.org/pt-BR/docs/Learn/JavaScript/First_steps/Arrays#veja_tamb%C3%A9m">Veja também</a></h2>
+<ul>
+<li><a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Guide/Indexed_collections">Coleções indexadas</a>  — um guia avançado guia de arrays e seus primos,  <em>typed arrays</em>.</li>
+<li><a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array"><code>Array</code></a>  — a página de referência  <code>Array</code>  — para um guia de referência detalhado para as funcionalidades discutidas nesta página e muito mais.</li>
+</ul>
+<h2 id="desafio">DESAFIO</h2>
+<h2 id="ponto-de-partida"><a href="https://developer.mozilla.org/pt-BR/docs/Learn/JavaScript/First_steps/Silly_story_generator#ponto_de_partida">Ponto de partida</a></h2>
+<p>Para começar esta avaliação, você deve:</p>
+<ul>
+<li><a href="https://github.com/mdn/learning-area/blob/master/javascript/introduction-to-js-1/assessment-start/index.html">Pegue o arquivo HTML</a>  para o exemplo e salve uma cópia local deste arquivo como index.html em um novo diretório em algum local do seu computador. Este arquivo ainda contém o CSS para estilizar o exemplo contido no arquivo.</li>
+<li>Vá para a  <a href="https://github.com/mdn/learning-area/blob/master/javascript/introduction-to-js-1/assessment-start/raw-text.txt">página que contém o texto bruto</a>  e matenha-a aberta em uma aba separada do navegador em algum lugar. Você precisará dela mais tarde.</li>
+</ul>
+<p><strong>Nota:</strong>  Alternativamente, você pode utilizar um site como  <a href="http://jsbin.com/">JSBin</a>  ou  <a href="https://thimble.mozilla.org/">Thimble</a>  para fazer a sua avaliação. Você pode colar o HTML, CSS e javaScript em um desses editores online. Se o editor online que você estiver utilizando não possuir um painel separado para javaScript, sinta-se a vontade para inseri-lo em um elemento </p><h2 id="resumo-do-projeto"><a href="https://developer.mozilla.org/pt-BR/docs/Learn/JavaScript/First_steps/Silly_story_generator#resumo_do_projeto">Resumo do projeto</a></h2>
+<p>Você recebeu algum HTML/CSS em bruto e algumas strings de texto e funções de JavaScript; Você precisa escrever o JavaScript necessário para transformar este em um programa funcional, que faz o seguinte:</p>
+<ul>
+<li>Gera uma história boba quando o botão “Gerar história aleatória” é pressionado.</li>
+<li>Substitui o nome padrão “Bob” na história com um nome personalizado, somente se um nome personalizado for inserido no campo de texto “Inserir nome personalizado” antes que o botão de geração seja pressionado.</li>
+<li>Gera outra história boba aleatória se você pressionar novamente o botão (e novamente…)</li>
+</ul>
+<p>A seguinte captura de tela mostra um exemplo do que o programa concluído deve produzir:</p>
+<p><img src="https://developer.mozilla.org/pt-BR/docs/Learn/JavaScript/First_steps/Silly_story_generator/assessment-1.png" alt=""></p>
+<p>Para dar-lhe mais uma ideia,  <a href="https://mdn.github.io/learning-area/javascript/introduction-to-js-1/assessment-finished/">dê uma olhada no exemplo concluído</a>  (sem espreitar o código fonte!)</p>
+<h2 id="passos-para-completar"><a href="https://developer.mozilla.org/pt-BR/docs/Learn/JavaScript/First_steps/Silly_story_generator#passos_para_completar">Passos para completar</a></h2>
+<p>As seções a seguir descrevem o que você precisa fazer.</p>
+<p>Configuração básica:</p>
+<ol>
+<li>Crie um novo arquivo chamado main.js, no mesmo diretório que o arquivo index.html.</li>
+<li>Aplique o arquivo JavaScript externo ao seu HTML inserindo um elemento  <a href="https://developer.mozilla.org/pt-BR/docs/Web/HTML/Element/script"><code>&lt;script&gt;</code></a>  no seu HTML referenciando o main.js. Coloque-o antes da etiqueta de fechamento  <a href="https://developer.mozilla.org/pt-BR/docs/Web/HTML/Element/body"><code>&lt;body&gt;</code></a>.</li>
+</ol>
+<p>Variáveis e funções iniciais:</p>
+<ol>
+<li>No arquivo de texto cru, copie todo o código abaixo do cabeçalho “1. COMPLETE VARIABLE AND FUNCTION DEFINITIONS” e cole-o no topo do arquivo main.js. Isso dá a você três variáveis que armazenam referências ao campo de texto “Inserir nome personalizado” (customName), o botão “Gerar história aleatória” (randomizar), E o elemento  <a href="https://developer.mozilla.org/pt-BR/docs/Web/HTML/Element/p"><code>&lt;p&gt;</code></a>  na parte inferior do corpo HTML para onde a história será copiada (história), respectivamente. Além disso, você tem uma função chamada randomValueFromArray () que recebe um vetor e retorna um dos itens armazenados dentro do vetor aleatoriamente.</li>
+<li>Agora, veja a segunda seção do arquivo de texto bruto - “2. RAW TEXT STRINGS”. Ele contém strings de texto que atuarão como entrada em nosso programa. Gostaríamos que você armazenasse essas strings dentro de variáveis no main.js:
+<ol>
+<li>Armazene a primeira, grande e longa linha de texto dentro de uma variável chamada storyText.</li>
+<li>Armazene o primeiro conjunto de três strings dentro de um vetor chamado insertX.</li>
+<li>Armazene o segundo conjunto de três strings dentro de um vetor chamado insertY.</li>
+<li>Armazene o terceiro conjunto de três strings dentro de um vetor chamado insertZ.</li>
+</ol>
+</li>
+</ol>
+<p>Colocando o manipulador de eventos e a função incompleta:</p>
+<ol>
+<li>Agora volte ao arquivo de texto bruto.</li>
+<li>Copie o código encontrado abaixo do cabeçalho “3. EVENT LISTENER AND PARTIAL FUNCTION DEFINITION” E cole ele na parte inferior do arquivo main.js. Isto:
+<ul>
+<li>Adicione um ouvinte de evento de clique à variável randomize para que, quando o botão que ele representa, for clicado, a função  <code>result()</code>  seja executada.</li>
+<li>Adicione a função  <code>result()</code>  parcialmente concluída ao seu código. Para o restante da avaliação, você estará preenchendo linhas dentro desta função para completá-la e fazê-la funcionar corretamente.</li>
+</ul>
+</li>
+</ol>
+<p>Completando a função  <code>result()</code>:</p>
+<ol>
+<li>Crie uma nova variável chamada  <code>newStory</code>, e defina seu valor como igual a  <code>storyText</code>. Isso é necessário para que possamos criar uma nova história aleatória toda vez que o botão for pressionado e a função for executada. Se fizermos alterações diretamente no  <code>storyText</code>, só poderemos gerar uma nova história uma vez.</li>
+<li>Crie três novas variáveis chamadas  <code>xItem</code>,  <code>yItem</code>, e  <code>zItem</code>, e torne-as iguais ao resultado da chamada da função  <code>randomValueFromArray()</code>  em seus três arrays (o resultado em cada caso será um item aleatório de cada array em que é chamado). Por exemplo, você pode chamar a função e fazer com que ela retorne uma string aleatória de  <code>insertX</code>  escrevendo  <code>randomValueFromArray(insertX)</code>.</li>
+<li>Em seguida, queremos substituir os três espaços reservados na variável  <code>newStory</code>  —  <code>:insertx:</code>,  <code>:inserty:</code>, e  <code>:insertz:</code>  — com strings armazenadas em  <code>xItem</code>,  <code>yItem</code>, e  <code>zItem</code>. Existe um método de string específico que irá ajudá-lo aqui - em cada caso, faça a chamada para o método igual a  <code>newStory</code>,então cada vez que é chamado, newStory é igual a si mesmo, mas com substituições feitas. Assim, cada vez que o botão é pressionado, esses espaços reservados são substituídos por uma string boba aleatória. Como uma dica adicional, o método em questão substitui apenas a primeira ocorrência da subseqüência de caracteres encontrada, portanto, talvez seja necessário fazer uma das chamadas duas vezes.</li>
+<li>Dentro do primeiro bloco  <code>if</code>, adicione outra chamada de método de substituição de string para substituir o nome ‘Bob’ encontrado na string  <code>newStory</code>  pela variável  <code>name</code>. Neste bloco estamos dizendo "Se um valor foi inserido na entrada de texto  <code>customName</code>, substitua Bob na história por esse nome personalizado ".</li>
+<li>Dentro do segundo bloco  <code>if</code>, estamos verificando se o botão de opção  <code>uk</code>  foi selecionado. Se assim for, converteremos os valores de peso e temperatura na história de libras e Fahrenheit em graus centígrados. O que você precisa fazer é o seguinte:
+<ol>
+<li>Procure as fórmulas para converter libras em pedras e Fahrenheit em centígrados.</li>
+<li>Dentro da linha que define a variável  <code>weight</code>, substitua 300 por um cálculo que converta 300 libras em pedras. Concatene  <code>' stone'</code>  no final do resultado da chamada geral  <code>Math.round()</code>.</li>
+<li>Dentro da linha que define a variável  <code>temperature</code>, substitua 94 por um cálculo que converta 94 graus Fahrenheit em graus centígrados. Concatene  <code>' centigrade'</code>  no resultado da chamada geral  <code>Math.round()</code>.</li>
+<li>Apenas sob as duas definições de variáveis, adicione mais duas linhas de substituição de string que substituem ‘94 fahrenheit’ pelo conteúdo da variável  <code>temperature</code>, e ‘300 libras’ com o conteúdo da variável  <code>weight</code>.</li>
+</ol>
+</li>
+<li>Finalmente, na segunda e última linha da função, torne a propriedade<code>textContent</code>  da variável  <code>story</code>  (que faz referência ao parágrafo) igual a  <code>newStory</code>.</li>
+</ol>
+<h2 id="dicas-e-sugestões"><a href="https://developer.mozilla.org/pt-BR/docs/Learn/JavaScript/First_steps/Silly_story_generator#dicas_e_sugest%C3%B5es">Dicas e sugestões</a></h2>
+<ul>
+<li>
+<p>Você não precisa editar o HTML de nenhuma maneira, exceto para adicionar o JavaScript ao seu HTML.</p>
+</li>
+<li>
+<p>Se você não tiver certeza se o JavaScript é aplicado ao seu HTML corretamente, tente remover todo o restante do arquivo JavaScript temporariamente, adicionando um pouco de JavaScript que você sabe que criará um efeito óbvio, salvando e atualizando. Por exemplo, o seguinte transforma o plano de fundo do elemento  <a href="https://developer.mozilla.org/pt-BR/docs/Web/HTML/Element/html"><code>&lt;html&gt;</code></a>  em vermelho - para que a janela inteira do navegador fique vermelha se o JavaScript for aplicado corretamente:</p>
+<pre><code>document.querySelector('html').style.backgroundColor = 'red';
+
+</code></pre>
+</li>
+<li>
+<p><a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Math/round">Math.round()</a>  é um método JavaScript integrado que simplesmente arredonda o resultado de um cálculo para o número inteiro mais próximo.</p>
+</li>
+</ul>
+</div>
+</body>
+
+</html>
