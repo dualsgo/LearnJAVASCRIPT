@@ -1,0 +1,1 @@
+## Fazer com que apareça um botão diferente para cada jogador que for adicionado.

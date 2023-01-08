@@ -62,3 +62,37 @@ valor2 = 'Douglas'
 total = valor1 + valor2 // + quando usando entre strings une os textos para dar sequencia
 console.log(total) //Exibe o texto MayconDouglas
 */
+
+//Operador de comparação (true ou false // boolean)
+
+/* var valor1, valor2, total;
+valor1 = 8
+valor2 = 8
+total = valor1 == valor2 //valor1 é igual a valor2? (grandeza/valor)
+console.log(total)//retorna true */
+
+/* var valor1, valor2, total;
+valor1 = 8
+valor2 = "8"
+total = valor1 == valor2 //valor1 é igual a valor2? (grandeza/valor)
+console.log(total)//retorna true */
+
+/* var valor1, valor2, total;
+valor1 = 8
+valor2 = 8
+total = valor1 === valor2 //valor1 é igual a valor2? (grandeza/valor e tipo)
+console.log(total)//retorna true pois são mesmo tipo (number e number) */
+
+/* var valor1, valor2, total;
+valor1 = 8
+valor2 = "8"
+total = valor1 === valor2 //valor1 é igual a valor2? (grandeza/valor e tipo)
+console.log(total)//retorna false pois são tipos diferentes (number e string) */
+
+//Operador ternário
+
+/* var idade, eleitor, resultado
+idade = 18;
+eleitor = idade < 18 ? "Vota" :"Não vota";
+console.log(eleitor); */
+
