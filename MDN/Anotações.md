@@ -17,7 +17,6 @@ As três camadas ficam muito bem uma em cima da outra. Vamos exemplificar com um
 
 ```
 
-Copy to Clipboard
 
 ![](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/What_is_JavaScript/just-html.png)
 
@@ -41,7 +40,6 @@ p {
 
 ```
 
-Copy to Clipboard
 
 ![](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/What_is_JavaScript/html-and-css.png)
 
@@ -59,7 +57,6 @@ function atualizarNome() {
 
 ```
 
-Copy to Clipboard
 
 Experimente clicar no botão acima para ver o que acontece (note também que você pode encontrar essa demonstração no GitHub — veja o  [código fonte](https://github.com/mdn/learning-area/blob/main/javascript/introduction-to-js-1/what-is-js/javascript-label.html)  ou  [veja funcionar](https://mdn.github.io/learning-area/javascript/introduction-to-js-1/what-is-js/javascript-label.html))!
 
@@ -132,7 +129,6 @@ function atualizarNome() {
 
 ```
 
-Copy to Clipboard
 
 Aqui nós estamos selecionando um parágrafo (linha 1) e anexando a ele um  _event listener_  (linha 3). Então, quando o parágrafo recebe um clique, o bloco de código  `atualizarNome()`  (linhas 5 a 8) é executado. O bloco de código  `atualizarNome()`(esses tipos de bloco de código reutilizáveis são chamados "funções") pede ao usuário que informe um novo nome, e então insere esse nome no parágrafo, atualizando-o.
 
@@ -181,7 +177,7 @@ O JavaScript é inserido na sua página de uma maneira similar ao CSS. Enquanto 
     
     ```
     
-    Copy to Clipboard
+  
     
 4.  Agora nós vamos adicionar um pouco de JavaScript dentro do nosso elemento  [`<script>`](https://developer.mozilla.org/pt-BR/docs/Web/HTML/Element/script)  para que a página faça algo mais interessante — adicione o seguinte código abaixo da linha "// O JavaScript fica aqui":
     
@@ -200,7 +196,7 @@ O JavaScript é inserido na sua página de uma maneira similar ao CSS. Enquanto 
     
     ```
     
-    Copy to Clipboard
+  
     
 5.  Salve seu arquivo e recarregue a página — agora você deveria ver que quando você clique no botão, um novo parágrafo é gerado e colocado logo abaixo.
 
@@ -220,7 +216,7 @@ Isso funciona muito bem, mas e se nós quiséssemos colocar nosso JavaScript em 
     
     ```
     
-    Copy to Clipboard
+  
     
 3.  Em  `script.js`, adicione o seguinte script:
     
@@ -239,7 +235,7 @@ Isso funciona muito bem, mas e se nós quiséssemos colocar nosso JavaScript em 
     
     ```
     
-    Copy to Clipboard
+  
     
 4.  Salve e atualize seu navegador, e você deverá ver a mesma coisa! Funciona igualmente, mas agora nós temos o JavaScript em um arquivo externo. Isso é geralmente uma coisa boa em termos de organização de código, e faz com que seja possível reutilizar o código em múltiplos arquivos HTML. Além disso, o HTML fica mais legível sem grandes pedaços de script no meio dele.
 
@@ -280,7 +276,6 @@ for(var i = 0; i < botoes.length ; i++) {
 
 ```
 
-Copy to Clipboard
 
 Isso talvez parece ser mais do que o atributo  `onclick`, mas isso vai funcionar para todos os botões, não importa quantos tem na página, e quantos forem adicionados ou removidos. O JavaScript não precisará ser mudado.
 
@@ -301,7 +296,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
 ```
 
-Copy to Clipboard
 
 Isso é um  _event listener_  (ouvidor de eventos*)*, que ouve e aguarda o disparo do evento "DOMContentLoaded" vindo do  _browser_, evento este que significa que o corpo do HTML está completamente carregado e pronto. O código JavaScript que estiver dentro desse bloco não será executado até que o evento seja disparado, portanto, o erro será evitado (você irá  [aprender sobre eventos](https://developer.mozilla.org/pt-BR/docs/Learn/JavaScript/Building_blocks/Events)  mais tarde).
 
@@ -312,7 +306,6 @@ No exemplo externo, nós usamos um recurso moderno do JavaScript para resolver e
 
 ```
 
-Copy to Clipboard
 
 Neste caso, ambos script e HTML irão carregar de forma simultânea e o código irá funcionar.
 
@@ -337,7 +330,6 @@ Por exemplo, se você tiver os seguintes elementos script:
 
 ```
 
-Copy to Clipboard
 
 Você não pode garantir que o script.  `jquery.js`  carregará antes ou depois do  `script2.js`  e  `script3.js`  . Nesse caso, se alguma função desses scripts dependerem de algo vindo do  `jquery`, ela produzirá um erro pois o  `jquery`  ainda não foi definido/carregado quando os scripts executaram essa função.
 
@@ -354,7 +346,6 @@ Scripts que são carregados utilizando o atributo  `defer`  (veja abaixo) irão 
 
 ```
 
-Copy to Clipboard
 
 Todos os scripts com o atributo  `defer`  irão carregar na ordem que aparecem na página. No segundo exemplo, podemos ter a certeza que o script  `jquery.js`  irá carregar antes do  `script2.js`  e  `script3.js`  e o  `script2.js`  irá carregar antes do  `script3.js`. Os scripts não irão rodar sem que antes todo o conteúdo da página seja carregado, que no caso, é muito útil se os seus scripts dependem de um DOM completamente disponibilizado em tela (por exemplo, scripts que modificam um elemento).
 
@@ -375,7 +366,7 @@ Assim como HTML e CSS, é possível escrever comentários dentro do seu código 
     
     ```
     
-    Copy to Clipboard
+  
     
 -   Um comentário de múltiplas linhas é escrito entre os caracteres /* e */. Por exemplo:
     
@@ -387,7 +378,7 @@ Assim como HTML e CSS, é possível escrever comentários dentro do seu código 
     
     ```
     
-    Copy to Clipboard
+  
     
 
 Então, por exemplo, você poderia fazer anotações na nossa última demonstração de código JavaScript, da seguinte forma:
@@ -416,7 +407,6 @@ for(var i = 0; i < botoes.length ; i++) {
 
 ```
 
-Copy to Clipboard
 
 **Nota:**  Em geral mais comentários são melhores que menos, porém você deve tomar cuidado para não adicionar comentários de mais tentando explicar o que uma variável é (o nome da sua variável deve ser mais intuitivo), ou tentando explicar uma operação simples (talvez seu código seja muito complicado denecessariamente).
 
@@ -484,7 +474,6 @@ O lugar em que começaremos a escrever nosso código será dentro da tag  [`<scr
 
 ```
 
-Copy to Clipboard
 
 ### [Adicionando variáveis para armazenar nossos dados](https://developer.mozilla.org/pt-BR/docs/Learn/JavaScript/First_steps/A_first_splash#adicionando_vari%C3%A1veis_para_armazenar_nossos_dados)
 
@@ -505,7 +494,6 @@ var botaoReinicio;
 
 ```
 
-Copy to Clipboard
 
 Aqui estamos setando as variáveis que precisamos para guardar os dados que nosso programa irá utilizar. Variáveis são basicamente recipientes para valores (como números, ou strings ou textos). Variáveis são criadas com a palavra-chave  `var`  seguida de um nome para sua variável. Você pode atribuir um valor para sua variável com um sinal de igual (`=`) seguido do valor que você quer dar a ela.
 
@@ -521,7 +509,7 @@ No nosso exemplo:
     
     ```
     
-    Copy to Clipboard
+  
     
 -   As próximas duas variáveis armazenam referências para o campo de texto e o botão de envio e são usados para controlar o envio do palpite.
     
@@ -531,7 +519,7 @@ No nosso exemplo:
     
     ```
     
-    Copy to Clipboard
+  
     
 -   As últimas duas variáveis (contagemPalpites e botaoReinicio) são usadas para armazenar a contagem dos palpites do usuário, e o outro é uma referência para o botão de reset, que não existe ainda (mas irá existir).
 
@@ -548,7 +536,6 @@ function conferirPalpite() {
 
 ```
 
-Copy to Clipboard
 
 Funções são blocos reutilizáveis de código que você pode escrever uma vez e executá-lo de novo e de novo, eliminando a necessidade de repetir o código todas as vezes. Isso é realmente útil. Há várias formas de se definir funções, mas, por agora, vamos nos concentrar em um tipo simples. Aqui nós definimos uma função usando a palavra chave  `function`, seguida de um nome, com parênteses colocados na sequência. Depois disso nós colocamos duas chaves (`{ }`). Dentro das chaves vai todo o código que queremos executar sempre que chamarmos a função.
 
@@ -563,7 +550,6 @@ conferirPalpite();
 
 ```
 
-Copy to Clipboard
 
 Você deverá ver um alerta aparecer dizendo "Eu sou um placeholder"; nós definimos uma função em nosso código que cria um alerta a qualquer hora em que a chamarmos.
 
@@ -619,7 +605,6 @@ cumprimento;
 
 ```
 
-Copy to Clipboard
 
 Há também alguns atalhos para operadores disponíveis, chamados de operadores de atribuição ampliada (ou atribuição composta). Por exemplo, se você quer adicionar uma nova sequência de texto à uma existente e retornar o resultado, você pode fazer o seguinte:
 
@@ -628,7 +613,6 @@ nome += ' diz olá!';
 
 ```
 
-Copy to Clipboard
 
 Isso é equivalente a:
 
@@ -637,7 +621,6 @@ nome = nome + ' diz olá!';
 
 ```
 
-Copy to Clipboard
 
 Quando estamos rodando testes de verdadeiro/falso (por exemplo, condicinais internas — veja  [abaixo](https://developer.mozilla.org/pt-BR/docs/Learn/JavaScript/First_steps/A_first_splash#conditionals), usamos operadores de comparação, por exemplo:
 
@@ -711,7 +694,6 @@ function conferirPalpite() {
 
 ```
 
-Copy to Clipboard
 
 Isso é bastante código — ufa! Vamos abordar cada seção e explicar o que faz.
 
@@ -723,7 +705,7 @@ Isso é bastante código — ufa! Vamos abordar cada seção e explicar o que fa
     
     ```
     
-    Copy to Clipboard
+  
     
     Se a condição for verdadeira, nós tornamos o conteúdo do parágrafo de palpites,  `<p class="palpites"></p>`  igual a "Palpites anteriores: ". Caso contrário, o texto não é exibido.
 -   A linha 6 acrescenta o valor atual de  `palpiteUsuario`  ao final do parágrafo  `palpites`, mais um espaço em branco para que haja espaçamento entre cada palpite mostrado.
@@ -744,7 +726,6 @@ envioPalpite.addEventListener('click', conferirPalpite);
 
 ```
 
-Copy to Clipboard
 
 Aqui nós estamos adicionando um  _event listener_  ao botão  `envioPalpite`. Esse é um método que aceita a inserção de dois valores (chamados de argumentos) — o tipo de envento que estamos monitorando (neste caso o evento  `click`) como um  _string_  (sequência de texto), e o código que queremos executar quando o evento ocorrer (neste caso a função  `conferirPalpite()`  — note que não temos que especificar os parênteses quando estivermos escrevendo dentro de  [`addEventListener()`](https://developer.mozilla.org/pt-BR/docs/Web/API/EventTarget/addEventListener "addEventListener()")).
 
@@ -766,7 +747,6 @@ function configFimDeJogo() {
 
 ```
 
-Copy to Clipboard
 
 -   As primeiras duas linhas desabilitam a entrada de texto do formulário e o clique do botão, definindo a propriedade  _disabled_  (desabilitado) de cada um como  `true`  (verdadeiro). Isso é necessário, pois se não o fizermos, o usuário poderia submeter mais palpites depois do jogo ter terminado, o que iria bagunçar as coisas.
 -   As próximas três linhas geram um novo elemento  [`<button>`](https://developer.mozilla.org/pt-BR/docs/Web/HTML/Element/button), define o texto de seu rótulo como "Iniciar novo jogo", e o adiciona ao final do nosso HTML existente.
@@ -797,7 +777,6 @@ function reiniciarJogo() {
 
 ```
 
-Copy to Clipboard
 
 Esse longo bloco de código redefine completamente tudo do modo como era no início do jogo, para que o jogador possa jogá-lo novamente. Ele:
 
@@ -823,7 +802,6 @@ for (var i = 1 ; i < 21 ; i++) { console.log(i) }
 
 ```
 
-Copy to Clipboard
 
 O que aconteceu? Os números de 1 a 20 foram exibidos no seu console. Isso acontece por causa do loop. Um loop  `for`  utiliza a inserção de três valores (argumentos):
 
@@ -841,7 +819,6 @@ for (var i = 0 ; i < reiniciarParas.length ; i++) {
 
 ```
 
-Copy to Clipboard
 
 Esse código cria uma variável contendo uma lista de todos os parágrafos dentro de  `<div class="resultadoParas">`  usando o método  [`querySelectorAll()`](https://developer.mozilla.org/pt-BR/docs/Web/API/Document/querySelectorAll "querySelectorAll()"), e então faz o loop em cada um, removendo o conteúdo de texto dos mesmos.
 
@@ -854,7 +831,6 @@ campoPalpite.focus();
 
 ```
 
-Copy to Clipboard
 
 Essa linha usa o método  [`focus()`  (en-US)](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/focus "Currently only available in English (US)")  para automaticamente colocar o cursor dentro campo de texto do  [`<input>`](https://developer.mozilla.org/pt-BR/docs/Web/HTML/Element/Input)  assim que a página carrega, significando que o usuário já pode começar a digitar o primeiro palpite, e não precisa clicar no campo do formulário primeiro. É apenas uma pequena adição, mas melhora a usabilidade — dando ao usuário uma boa dica visual do que ele deve fazer para jogar o jogo.
 
@@ -867,7 +843,6 @@ var campoPalpite = document.querySelector('.campoPalpite');
 
 ```
 
-Copy to Clipboard
 
 Para pegar essa referência, usamos o método  [`querySelector()`](https://developer.mozilla.org/pt-BR/docs/Web/API/Document/querySelector "querySelector()")  do objeto  [`document`](https://developer.mozilla.org/pt-BR/docs/Web/API/Document).  `querySelector()`  pega um pedaço de informação — um  [seletor CSS  (en-US)](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Selectors "Currently only available in English (US)")  que seleciona o elemento ao qual você quer referenciar.
 
@@ -878,7 +853,6 @@ campoPalpite.focus();
 
 ```
 
-Copy to Clipboard
 
 Variáveis que não contém referências a elementos de formulário não terão  `focus()`  disponível para elas. Por exemplo, a variável  `palpites`  contém referência de um elemento  [`<p>`](https://developer.mozilla.org/pt-BR/docs/Web/HTML/Element/p), e  `contagemPalpites`  contém um número.
 
@@ -896,7 +870,7 @@ Vamos brincar um pouco com alguns objetos do navegador.
         
         ```
         
-        Copy to Clipboard
+      
         
         A propriedade  `value`  representa o valor atual inserido no campo de texto. Você verá que inserindo esse comando, nós mudamos o valor desse objeto!
 4.  Agora tente digitar  `palpites`  e pressione  _return_. O console irá mostrar que a variável contém um elemento  [`<p>`](https://developer.mozilla.org/pt-BR/docs/Web/HTML/Element/p).
@@ -907,7 +881,7 @@ Vamos brincar um pouco com alguns objetos do navegador.
     
     ```
     
-    Copy to Clipboard
+  
     
     O navegador irá retornar  `undefined`, porque  `value`  não existe em parágrafos.
 6.  Para mudar o texto dentro de um parágrafo, você precisa da propriedade  [`textContent`](https://developer.mozilla.org/pt-BR/docs/Web/API/Node/textContent "textContent"). Tente isso:
@@ -917,7 +891,7 @@ Vamos brincar um pouco com alguns objetos do navegador.
     
     ```
     
-    Copy to Clipboard
+  
     
 7.  Agora algo divertido. Tente inserir as linhas abaixo, uma por uma:
     
@@ -929,7 +903,7 @@ Vamos brincar um pouco com alguns objetos do navegador.
     
     ```
     
-    Copy to Clipboard
+  
     
     Cada elemento em uma página tem uma propriedade  `style`, que contém um objeto no qual estão inseridos em suas propriedades todos os estilos incorporados de CSS aplicados ao respectivo elemento. Isso nos permite configurar dinamicamente novos estilos CSS nos elementos usando JavaScript.
 
@@ -978,7 +952,7 @@ Anteriormente no curso, nós fizemos você digitar alguns comandos simples de Ja
     
     ```
     
-    Copy to Clipboard
+  
     
 4.  O erro diz o seguinte "envioPalpite.addeventListener is not a function", que significa envioPalpite.addeventListener não é uma funçao. Então provavelmente digitamos algo errado. Se você não estiver certo da digitação correta de parte da sintaxe, é uma boa ideia procurar a funcionalidade no MDN docs. A melhor forma de fazer isso atualmente é pesquisar por "mdn  _nome-da-funcionalidade_" em seu mecanismo de buscas favorito. Aqui está um atalho para te salvar algum tempo nesse caso:  [`addEventListener()`](https://developer.mozilla.org/pt-BR/docs/Web/API/EventTarget/addEventListener).
 5.  Então, olhando nessa essa página, o erro parece ser termos digitado o nome da função errado! Lembre-se de que o JavaScript diferencia letras maiúsculas de minúsculas, então qualquer diferença na digitação ou no uso de letras maiúsculas irá causar um erro. Alterar  `addeventListener`  para  `addEventListener`  deverá corrigir esse erro. Faça essa alteração no código do seu arquivo.
@@ -1002,7 +976,7 @@ Anteriormente no curso, nós fizemos você digitar alguns comandos simples de Ja
     
     ```
     
-    Copy to Clipboard
+  
     
 5.  Essa linha está tentando definir a propriedade  `textContent`  (conteúdo de texto) da variável  `baixoOuAlto`  como uma sequência de texto, mas isso não está funcionando porque  `baixoOuAlto`  não contém o que deveria conter. Vamos ver o porquê — tente localizar outras instâncias de  `baixoOuAlto`  no código. A instância que aparece primeiro no código JavaScript é na linha 48:
     
@@ -1011,7 +985,7 @@ Anteriormente no curso, nós fizemos você digitar alguns comandos simples de Ja
     
     ```
     
-    Copy to Clipboard
+  
     
 6.  Nesse ponto estamos tentando fazer com que a variável contenha uma referência a um elemento no documento HTML. Vamos conferir se o valor é  `null`  (nulo) depois que essa linha é executada. Adicione o seguinte código na linha 49:
     
@@ -1020,7 +994,7 @@ Anteriormente no curso, nós fizemos você digitar alguns comandos simples de Ja
     
     ```
     
-    Copy to Clipboard
+  
     
     **Nota:**  [`console.log()`](https://developer.mozilla.org/en-US/docs/Web/API/console/log)  é uma função de debugging (correção de erros) realmente útil que exibe um valor na tela do console. Então ela irá imprimir o valor da variável  `baixoOuAlto`  na tela do console assim que tentarmos defini-la na linha 48.
     
@@ -1032,7 +1006,7 @@ Anteriormente no curso, nós fizemos você digitar alguns comandos simples de Ja
     
     ```
     
-    Copy to Clipboard
+  
     
 9.  Então nós precisamos de um seletor de classe aqui, que começa com um ponto (.), mas o seletor passado pelo método  `querySelector()`  na linha 48 não tem o ponto. Esse pode ser o problema! Tente mudar  `baixoOuAlto`  para  `.baixoOuAlto`  na linha 48.
 10.  Tente salvar o arquivo e atualizá-lo no navegador de novo, e a sua declaração  `console.log()`  deverá retornar o elemento  `<p>`  que queremos. Ufa! Outro erro resolvido! Você pode deletar a linha do seu  `console.log()`  agora, ou mantê-la para referência posterior — a escolha é sua.
@@ -1058,7 +1032,7 @@ Há sem dúvida um problema na lógica do jogo em algum lugar — o jogo não es
     
     ```
     
-    Copy to Clipboard
+  
     
 2.  E a linha que gera o número aleatório antes de cada jogo subsequente está na linha 113, ou próximo a ela:
     
@@ -1067,7 +1041,7 @@ Há sem dúvida um problema na lógica do jogo em algum lugar — o jogo não es
     
     ```
     
-    Copy to Clipboard
+  
     
 3.  Para checar se essas linhas são mesmo o problema, vamos recorrer ao nosso amigo  `console.log()`  de novo — insira a seguinte linha diretamente abaixo de cada uma das duas linhas:
     
@@ -1076,7 +1050,7 @@ Há sem dúvida um problema na lógica do jogo em algum lugar — o jogo não es
     
     ```
     
-    Copy to Clipboard
+  
     
 4.  Salve o arquivo e atualize o navegador, então jogue algumas vezes — você verá que o  `numeroAleatorio`  é igual a 1 cada vez em que é exibido no console.
 
@@ -1089,7 +1063,6 @@ Math.random()
 
 ```
 
-Copy to Clipboard
 
 Em seguida, passamos o resultado invocando  `Math.random()`  através de  [`Math.floor()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/floor), que arredonda o número passado para o menor número inteiro mais próximo. E então adicionamos 1 ao resultado:
 
@@ -1102,7 +1075,6 @@ Math.floor(Math.random()*100);
 
 ```
 
-Copy to Clipboard
 
 Por isso, queremos adicionar 1, para nos dar um número aleatório entre 1 e 100:
 
@@ -1111,7 +1083,6 @@ Math.floor(Math.random()*100) + 1;
 
 ```
 
-Copy to Clipboard
 
 Tente atualizar as duas linhas dessa forma, então salve e atualize o navegador — o jogo deve agora funcionar como nós queremos que funcione!
 
@@ -1128,7 +1099,6 @@ var palpiteUsuario = Number(campoPalpite.value);
 
 ```
 
-Copy to Clipboard
 
 para
 
@@ -1137,7 +1107,6 @@ var palpiteUsuario === Number(campoPalpite.value);
 
 ```
 
-Copy to Clipboard
 
 Exibe esse erro porque pensa que você está fazendo algo diferente. Você deve se certificar de não misturar o operador de atribuição (`=`) — que configura uma variável para ser igual a determinado valor — com o operador de igualdade restrita (`===`), que testa se um valor é exatamente igual a outro, e retorna um resultado  `true`/`false`  (verdadeiro ou falso).
 
@@ -1152,7 +1121,6 @@ if (palpiteUsuario === numeroAleatorio) {
 
 ```
 
-Copy to Clipboard
 
 para
 
@@ -1161,7 +1129,6 @@ if (palpiteUsuario = numeroAleatorio) {
 
 ```
 
-Copy to Clipboard
 
 o teste retornaria sempre  `true`  (verdadeiro), causando o programa a reportar que o jogo foi vencido. Tome cuidado!
 
@@ -1180,7 +1147,6 @@ function conferirPalpite() {
 
 ```
 
-Copy to Clipboard
 
 para
 
@@ -1189,7 +1155,6 @@ function conferirPalpite( {
 
 ```
 
-Copy to Clipboard
 
 Isso levou o navegador a pensar que estávamos tentando passar todo o conteúdo da função como se fosse um argumento dessa função. Seja cuidadoso com esses parênteses!
 
@@ -1226,7 +1191,6 @@ Uma variável é um container para um valor, como um número que podemos usar em
 
 ```
 
-Copy to Clipboard
 
 ```
 var button = document.querySelector('button');
@@ -1238,7 +1202,6 @@ button.onclick = function() {
 
 ```
 
-Copy to Clipboard
 
 Nesse exemplo, apertar o botão executa algumas linhas de código. A primeira linha exibe uma caixa pop-up na tela que pede ao leitor para inserir o seu nome, e então armazena o valor na variável. A segunda linha exibe uma mensagem de boas vindas que inclui seu nome, obtido do valor da variável.
 
@@ -1280,7 +1243,6 @@ var minhaIdade;
 
 ```
 
-Copy to Clipboard
 
 Aqui, estamos criando duas variáveis chamadas  `meuNome`  e  `minhaIdade`. Tente agora digitar essas linhas no console do seu navegador. Depois disso, tente criar uma variável (ou duas) com suas próprias escolhas de nomes.
 
@@ -1294,7 +1256,6 @@ minhaidade;
 
 ```
 
-Copy to Clipboard
 
 Elas atualmente não possuem valor; são containers vazios. Quando você insere o nome de uma variável, você deve obter em retorno ou um valor  `undefined`  (indefinido), ou se a variável não existir, você recebe uma mensagem de erro — tente digitar:
 
@@ -1303,7 +1264,6 @@ scoobyDoo;
 
 ```
 
-Copy to Clipboard
 
 **Nota:**  Não confunda uma variável que existe mas não tenho valor definido com uma variável que não existe — são coisas bem diferentes.
 
@@ -1317,7 +1277,6 @@ minhaIdade = 37;
 
 ```
 
-Copy to Clipboard
 
 Tente voltar ao console agora e digitar essas linhas acima. Você deve ver o valor que atribuiu à variável retornado no console confirmando-o, em cada caso. De novo, você pode retornar os valores de suas variáveis simplesmente digitando seus nomes no console — tente isso novamente:
 
@@ -1327,7 +1286,6 @@ minhaIdade;
 
 ```
 
-Copy to Clipboard
 
 Você pode declarar e inicializar uma variável ao mesmo tempo, assim:
 
@@ -1336,7 +1294,6 @@ var meuNome = 'Chris';
 
 ```
 
-Copy to Clipboard
 
 Isso provavelmente é como irá fazer na maioria das vezes, já que é mais rápido do que fazer as duas ações em duas linhas separadas.
 
@@ -1363,7 +1320,6 @@ var meuNome;
 
 ```
 
-Copy to Clipboard
 
 **Nota:**  Isso não funcionará ao digitar linhas individuais em um console JavaScript, apenas ao executar várias linhas de JavaScript em um documento da web.
 
@@ -1379,7 +1335,6 @@ var meuNome = 'Bob';
 
 ```
 
-Copy to Clipboard
 
 Mas isso geraria um erro na segunda linha:
 
@@ -1389,7 +1344,6 @@ let meuNome = 'Bob';
 
 ```
 
-Copy to Clipboard
 
 Você precisaria fazer assim:
 
@@ -1399,7 +1353,6 @@ meuNome = 'Bob';
 
 ```
 
-Copy to Clipboard
 
 Novamente, essa é uma decisão sensata da linguagem. Não há razão para redeclarar variáveis — isso apenas torna as coisas mais confusas.
 
@@ -1415,7 +1368,6 @@ minhaIdade = 40;
 
 ```
 
-Copy to Clipboard
 
 ### [Um adendo sobre regras de nomeação de variáveis](https://developer.mozilla.org/pt-BR/docs/Learn/JavaScript/First_steps/Variables#um_adendo_sobre_regras_de_nomea%C3%A7%C3%A3o_de_vari%C3%A1veis)
 
@@ -1470,7 +1422,6 @@ var minhaIdade = 17;
 
 ```
 
-Copy to Clipboard
 
 ### [_Strings_  (cadeias de texto)](https://developer.mozilla.org/pt-BR/docs/Learn/JavaScript/First_steps/Variables#strings_cadeias_de_texto)
 
@@ -1481,7 +1432,6 @@ var despedidaGolfinho = 'Até logo e obrigado por todos os peixes!';
 
 ```
 
-Copy to Clipboard
 
 ### [_Booleans_  (boleanos)](https://developer.mozilla.org/pt-BR/docs/Learn/JavaScript/First_steps/Variables#booleans_boleanos)
 
@@ -1492,7 +1442,6 @@ var estouVivo = true;
 
 ```
 
-Copy to Clipboard
 
 Enquanto na realidade seria utlizado mais da seguinte forma:
 
@@ -1501,7 +1450,6 @@ var teste = 6 < 3;
 
 ```
 
-Copy to Clipboard
 
 Esse exemplo está usando o operador "menor que" (`<`) para testar se 6 é menor que 3. Como você pode esperar, irá retornar  `false`  (falso), porque 6 não é menor que 3! Você aprenderá mais sobre tais operadores mais tarde no curso.
 
@@ -1515,7 +1463,6 @@ var meuNumeroArray = [10,15,40];
 
 ```
 
-Copy to Clipboard
 
 Uma vez que esses arrays estejam definidos, você pode acessar cada um de seus valores através de sua localização dentro do array. Tente essas linhas:
 
@@ -1525,7 +1472,6 @@ meuNumeroArray[2]; // deve retornar 40
 
 ```
 
-Copy to Clipboard
 
 Os colchetes especificam um valor do índice correspondente à posição do valor que você deseja retornado. Você talvez tenha notado que os arrays em JavaScript são indexados a partir do zero: o primeiro elemento está na posíção 0 do índice.
 
@@ -1542,7 +1488,6 @@ var cachorro = { nome : 'Totó', raca : 'Dálmata' };
 
 ```
 
-Copy to Clipboard
 
 Para obter a informação armazenada no objeto, você pode usar a seguinte sintaxe:
 
@@ -1551,7 +1496,6 @@ cachorro.nome
 
 ```
 
-Copy to Clipboard
 
 Nós não iremos ver mais sobre objetos por agora — você pode aprender mais sobre eles em um artigo futuro.
 
@@ -1566,7 +1510,6 @@ var minhaString = 'Olá';
 
 ```
 
-Copy to Clipboard
 
 Irá continuar sendo uma  _string_, mesmo que dentro das apas contenha um número, então seja cuidadoso:
 
@@ -1578,7 +1521,6 @@ typeof(meuNumero);
 
 ```
 
-Copy to Clipboard
 
 Tente inserir as quatro linhas acima em seu console uma por uma, e veja quais são os resultados. Você notará que estamos usando uma função especial chamada  `typeof()`  — ela irá retornar o tipo de dado da variável que você passar. Da primeira vez que for executada, deve retornar  `string`, como naquele ponto a variável  `meuNumero`  contém uma  _string_,  `'500'`. Dê uma olhada e veja o que é retornado da segunda vez que você a utilizar.
 
@@ -1594,7 +1536,6 @@ const horasNoDia = 24;
 
 ```
 
-Copy to Clipboard
 
 `const`  funciona exatamente da mesma maneira que  `let`, exceto que você não pode atribuir um novo valor a  `const`. No exemplo a seguir, a segunda linha geraria um erro:
 
@@ -1604,7 +1545,6 @@ diasNaSemana = 8;
 
 ```
 
-Copy to Clipboard
 
 ## [Teste suas habilidades!](https://developer.mozilla.org/pt-BR/docs/Learn/JavaScript/First_steps/Variables#teste_suas_habilidades!)
 
@@ -1656,7 +1596,7 @@ Vamos brincar rapidamente com alguns números para nos familiarizarmos com a sin
     
     ```
     
-    Copy to Clipboard
+  
     
 2.  Valores numéricos são inseridos sem aspas — tente declarar e inicializar mais duas variáveis contendo números antes de seguir em frente.
 3.  Agora vamos checar se nossas duas variáveis originais são do mesmo tipo de dados. Há um operador chamado  [`typeof`](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Operators/typeof)  no JavaScript que faz isso. Insira as duas linhas conforme mostradas abaixo:
@@ -1667,7 +1607,7 @@ Vamos brincar rapidamente com alguns números para nos familiarizarmos com a sin
     
     ```
     
-    Copy to Clipboard
+  
     
     Você deve obter  `"number"`  de volta nos dois casos — isso torna as coisas muito mais fáceis para nós do que se diferentes tipos de números tivessem diferentes tipos de dados, e tivéssemos que lidar com eles em diferentes maneiras. Ufa!
 
@@ -1736,7 +1676,7 @@ Nós provavelmente não precisamos ensinar a você como fazer matemática básic
     
     ```
     
-    Copy to Clipboard
+  
     
 2.  Você pode tentar declarar e inicializar alguns números dentro de variáveis, e tentar usá-los nas operações — as variáveis irão se comportar exatamente como os valores que elas armazenam para a finalidade das operações. Por exemplo:
     
@@ -1748,7 +1688,7 @@ Nós provavelmente não precisamos ensinar a você como fazer matemática básic
     
     ```
     
-    Copy to Clipboard
+  
     
 3.  Por último, nesta seção, tente inserir algumas expressões mais complexas, como:
     
@@ -1759,7 +1699,7 @@ Nós provavelmente não precisamos ensinar a você como fazer matemática básic
     
     ```
     
-    Copy to Clipboard
+  
     
 
 Alguns dos exemplos do último bloco podem não ter retornado os valores que você estava esperando; a seção abaixo pode lhe explicar o porquê.
@@ -1773,7 +1713,6 @@ num2 + num1 / 8 + 2;
 
 ```
 
-Copy to Clipboard
 
 Como um ser humano, talvez você leia isso como  _"50 mais 10 é igual a 60"_, depois  _"8 mais 2 é igual a 10"_, e então  _"60 dividido por 10 é igual a 6"_.
 
@@ -1788,7 +1727,6 @@ Se você quiser substituir a precedência do operador, poderá colocar parêntes
 
 ```
 
-Copy to Clipboard
 
 Tente fazer e veja como fica.
 
@@ -1803,7 +1741,6 @@ contagemPalpites++;
 
 ```
 
-Copy to Clipboard
 
 **Nota:**  Eles são mais comumente usado em  [Laços e iterações](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Guide/Loops_and_iteration), que será visto no curso mais tarde. Por exemplo, digamos que você queira passar por uma lista de preços e adicionar imposto sobre vendas a cada um deles. Você usaria um loop para passar por cada valor e fazer o cálculo necessário para adicionar o imposto sobre vendas em cada caso. O incrementador é usado para mover para o próximo valor quando necessário. Na verdade, fornecemos um exemplo simples mostrando como isso é feito -  [verifique ao vivo](https://mdn.github.io/learning-area/javascript/introduction-to-js-1/maths/loop.html)  e observe o  [código-fonte](https://github.com/mdn/learning-area/blob/master/javascript/introduction-to-js-1/maths/loop.html)  para ver se consegue identificar os incrementadores! Veremos os  _loops_  detalhadamente mais adiante no curso.
 
@@ -1814,7 +1751,6 @@ Vamos tentar brincar com eles no seu console. Para começar, note que você não
 
 ```
 
-Copy to Clipboard
 
 Então, você só pode incrementar uma variável existente. Tente isto:
 
@@ -1824,7 +1760,6 @@ num1++;
 
 ```
 
-Copy to Clipboard
 
 Ok, segunda coisa estranha! Quando você fizer isso, verá um valor 4 retornado - isso ocorre porque o navegador retorna o valor atual e,  _em seguida_, incrementa a variável. Você pode ver que ele foi incrementado se você retornar o valor da variável novamente:
 
@@ -1833,7 +1768,6 @@ num1;
 
 ```
 
-Copy to Clipboard
 
 Acontece a mesma coisa com  `--`  : tente o seguinte
 
@@ -1844,7 +1778,6 @@ num2;
 
 ```
 
-Copy to Clipboard
 
 **Nota:**  Você pode fazer o navegador fazer o contrário - incrementar/decrementar a variável e depois retornar o valor, colocando o operador no início da variável ao invés do final. Tente os exemplos acima novamente, mas desta vez use  `++num1`  e  `--num2`.
 
@@ -1859,7 +1792,6 @@ x = y; // x agora contém o mesmo valor de y, 4
 
 ```
 
-Copy to Clipboard
 
 Mas existem alguns tipos mais complexos, que fornecem atalhos úteis para manter seu código mais puro e mais eficiente. Os mais comuns estão listados abaixo:
 
@@ -1924,7 +1856,6 @@ x *= y; // x agora contém o valor 12
 
 ```
 
-Copy to Clipboard
 
 **Nota:**  Existem muitos  [outros operadores de atribuição disponíveis](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Guide/Expressions_and_Operators#operador_atribuicao), mas estes são os básicos que você deve aprender agora.
 
@@ -2022,7 +1953,6 @@ Veremos como codificar essa lógica quando examinarmos instruções condicionais
 
 ```
 
-Copy to Clipboard
 
     ```
     var btn = document.querySelector('button');
@@ -2042,7 +1972,6 @@ Copy to Clipboard
     
     ```
 
-Copy to Clipboard
 
 **[Abrir em nova janela](https://mdn.github.io/learning-area/javascript/introduction-to-js-1/maths/conditional.html)**
 
@@ -2078,7 +2007,7 @@ Em um primeiro relance, strings são tratadas de forma parecida como números, m
     
     ```
     
-    Copy to Clipboard
+  
     
     Como fizemos com números, nós declaramos uma variável, inicializando-a com um valor string, e então retornamos o valor. A única diferença aqui é que quando escrevemos uma string, você precisa colocá-la entre aspas.
 2.  Se você não fez isso, ou esqueceu uma das aspas, você recebeu um erro. Experimente digitar as linhas seguintes:
@@ -2099,7 +2028,7 @@ Em um primeiro relance, strings são tratadas de forma parecida como números, m
     
     ```
     
-    Copy to Clipboard
+  
     
     `badString`  é agora definido para ter o mesmo valor de  `string`.
 
@@ -2115,7 +2044,7 @@ Em um primeiro relance, strings são tratadas de forma parecida como números, m
     
     ```
     
-    Copy to Clipboard
+  
     
 2.  Há poucas diferenças entre as duas, e qual você usar é de preferência pessoal. Você deve escolher uma e permanecer nela, entretanto; diferentes aspas no código pode ser confuso, especialmente se você usa diferentes aspas na mesma string! O seguinte retornará erro:
     
@@ -2134,7 +2063,7 @@ Em um primeiro relance, strings são tratadas de forma parecida como números, m
     
     ```
     
-    Copy to Clipboard
+  
     
 4.  Entretanto, você não pode incluir o mesmo tipo de aspas dentro da sua string, se você usa para conter seu texto. O seguinte será um erro, como é confuso para o navegador onde a string termina:
     
@@ -2155,7 +2084,6 @@ bigmouth;
 
 ```
 
-Copy to Clipboard
 
 Isto funciona bem. Você pode escapar outros caracteres do mesmo jeito, ex.:  `\"`, e há alguns códigos especiais também. Veja  [Notação de escape](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/String#escape_notation)  para mais detalhes.
 
@@ -2171,7 +2099,7 @@ Isto funciona bem. Você pode escapar outros caracteres do mesmo jeito, ex.:  `\
     
     ```
     
-    Copy to Clipboard
+  
     
     O resultado disso é uma variável chamada  `joined`, que contém o valor "Hello, how are you?".
 2.  No último exemplo, nós somente juntamos duas strings, mas você pode fazer quantas quiser, contanto que inclua um  `+`  entre cada uma.Experimente isso:
@@ -2182,7 +2110,7 @@ Isto funciona bem. Você pode escapar outros caracteres do mesmo jeito, ex.:  `\
     
     ```
     
-    Copy to Clipboard
+  
     
 3.  Você pore usar um mix de variáveis e strings reais. Tente isso:
     
@@ -2192,7 +2120,7 @@ Isto funciona bem. Você pode escapar outros caracteres do mesmo jeito, ex.:  `\
     
     ```
     
-    Copy to Clipboard
+  
     
 
 **Nota:**  Quando você coloca uma string atual no seu código dentro de aspas simples ou duplas, é chamada uma  **string literal**.
@@ -2206,7 +2134,6 @@ Vamos dar uma olhada na concatenação em ação — aqui está um exemplo do cu
 
 ```
 
-Copy to Clipboard
 
 ```
 var button = document.querySelector('button');
@@ -2218,7 +2145,6 @@ button.onclick = function() {
 
 ```
 
-Copy to Clipboard
 
 Aqui estamos usando uma função  [`Window.prompt()`](https://developer.mozilla.org/pt-BR/docs/Web/API/Window/prompt "Window.prompt()")  na linha 4, a qual pergunta ao usuário para responder uma questão via uma caixa de diálogo, então armazena o texto em uma variável — neste caso  `nome`. Nós então usamos uma função  [`Window.alert()`](https://developer.mozilla.org/pt-BR/docs/Web/API/Window/alert "Window.alert()")  na linha 5 para mostrar outra caixa de diálogo contendo nossa string montada de duas strings literais e a variável  `name`,via concatenação.
 
@@ -2231,7 +2157,7 @@ Aqui estamos usando uma função  [`Window.prompt()`](https://developer.mozilla.
     
     ```
     
-    Copy to Clipboard
+  
     
     Você pode esperar um erro disto, mas funciona correto. Tentando representar uma string como um número, realmente não faz sentido. Mas representando um número como string, faz. Então o navegador espertamente converte o número em string e concatena as duas.
 2.  Você pode fazer isto até com dois números — você pode forçar um número a ser string colocando ele entre aspas. Experimente o seguinte (nós estamos usando o operador  `typeof`  para checar o que a variável é, se um número ou string):
@@ -2242,7 +2168,7 @@ Aqui estamos usando uma função  [`Window.prompt()`](https://developer.mozilla.
     
     ```
     
-    Copy to Clipboard
+  
     
 3.  Se você tem uma variável numérica que precisa converter em string, mas não mudar completamente, ou uma string e quer converter em número, você pode usar a construção seguinte:
     
@@ -2255,7 +2181,7 @@ Aqui estamos usando uma função  [`Window.prompt()`](https://developer.mozilla.
         
         ```
         
-        Copy to Clipboard
+      
         
     -   Por outro lado, todo número tem um método chamado  [`toString()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/toString)  que converterá para a string equivalente. Tente isto:
         
@@ -2266,7 +2192,7 @@ Aqui estamos usando uma função  [`Window.prompt()`](https://developer.mozilla.
         
         ```
         
-        Copy to Clipboard
+      
         
     
     Estas construções podem ser bem úteis em algumas situações. Por exemplo, se o usuário colocar um número em um campo de texto, isso será uma string. Entretanto, se você quiser adicionar este número a algo, você precisa que seja um número, então você pode passar isto através do  `Number()`  para poder manipular.Nós fizemos exatamente isto no nosso  [Number Guessing Game, in line 59](https://github.com/mdn/learning-area/blob/master/javascript/introduction-to-js-1/first-splash/number-guessing-game.html#L59).
@@ -2286,7 +2212,6 @@ var string = 'This is my string';
 
 ```
 
-Copy to Clipboard
 
 sua variável torna-se uma instância do objeto string e, como resultado, tem um grande número de propriedades e métodos diponíveis para ela. Você pode ver isso se você for na página do objeto  [`String`](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/String)  e olhar para baixo na lista do lado da página!
 
@@ -2306,7 +2231,6 @@ browserType.length;
 
 ```
 
-Copy to Clipboard
 
 Isso deve retornar o número 7, porque "mozilla" tem 7 caracteres. Isso é útil por vários motivos; por exemplo, você pode querer encontrar os comprimentos de uma série de nomes para que você possa exibi-los em ordem de comprimento, ou deixar um usuário saber que um nome de usuário que ele informou em um campo de formulário é muito longo se este for maior do que um certo comprimento.
 
@@ -2319,7 +2243,6 @@ browserType[0];
 
 ```
 
-Copy to Clipboard
 
 Computadores contam a partir de 0, não 1! Para recuperar o último caractere de  _qualquer_  string, nós podemos usar a linha a seguir, combinando essa técnica com a propriedade  `length`  que vimos anteriormente:
 
@@ -2328,7 +2251,6 @@ browserType[browserType.length-1];
 
 ```
 
-Copy to Clipboard
 
 O comprimento de "mozilla" é 7, mas porque a contagem começa de 0, a posição do caractere é 6, daí precisamos usar  `length-1`. Você pode usar isso para, por exemplo, encontrar a primeira letra de uma série de strings e ordená-los alfabeticamente.
 
@@ -2341,7 +2263,7 @@ O comprimento de "mozilla" é 7, mas porque a contagem começa de 0, a posição
     
     ```
     
-    Copy to Clipboard
+  
     
     Isso nos dá o resultado 2, porque a substring "zilla" se inicia na posição 2 (0, 1, 2 — então, 3 caraceteres) dentro de "mozilla". Esse código poderia ser usado para filtrar cadeias de caracteres. Por exemplo, podemos ter uma lista de endereços da web e apenas queremos imprimir aqueles que contenham "mozilla".
 2.  Isso pode ser feito de outro jeito, que é possivelmente mais eficaz. Experimente isso:
@@ -2351,7 +2273,7 @@ O comprimento de "mozilla" é 7, mas porque a contagem começa de 0, a posição
     
     ```
     
-    Copy to Clipboard
+  
     
     Isso deve lhe dar um resultado  `-1`  — isso é retornado quando a substring, neste caso 'vanilla', não é encontrada na string principal. Você pode usar isso para encontrar todas as instâncias de strings que  **não contém**  a substring 'mozilla', ou  **contém**, se você usar o operador de negação, conforme mostrado abaixo. Você poderia fazer algo assim:
     
@@ -2362,7 +2284,7 @@ O comprimento de "mozilla" é 7, mas porque a contagem começa de 0, a posição
     
     ```
     
-    Copy to Clipboard
+  
     
 3.  Quando você sabe onde uma substring começa dentro de uma string e você sabe em qual caractere você deseja que ela termine,  [`slice ()`](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/String/slice)  pode ser usado para extrair isto. Tente o seguinte:
     
@@ -2371,7 +2293,7 @@ O comprimento de "mozilla" é 7, mas porque a contagem começa de 0, a posição
     
     ```
     
-    Copy to Clipboard
+  
     
     Isso retorna "moz" — o primeiro parâmetro é a posição do caractere a partir da qual será iniciada a extração, e o segundo parâmetro é a posição seguinte do último caractere a ser extraído. Então, a fatia ocorre da primeira posição, até a última posição, mas não incluindo. Você também pode dizer que o segundo parâmetro é igual ao comprimento da string que está sendo retornada.
 
@@ -2382,7 +2304,6 @@ browserType.slice(2);
 
 ```
 
-Copy to Clipboard
 
 Isso retornará "zilla" — isso é porque a posição de caracter 2 é a letra z, e porque você não incluiu o segundo parametro, a substring retornou todos os caracteres restantes na string.
 
@@ -2401,7 +2322,6 @@ radData.toUpperCase();
 
 ```
 
-Copy to Clipboard
 
 ### [Atualizando partes de uma string](https://developer.mozilla.org/pt-BR/docs/Learn/JavaScript/First_steps/Useful_string_methods#atualizando_partes_de_uma_string)
 
@@ -2414,7 +2334,6 @@ browserType.replace('moz','van');
 
 ```
 
-Copy to Clipboard
 
 Observe que para realmente obter o valor atualizado refletido na variavel  `browserType`  em um programa real, você teria que setar o valor da variavel para ser o resultado da operação; não apenas atualizar o valor da substring automaticamente. Assim você teria que realmente escrever isso:  `browserType = browserType.replace('moz','van');`
 
@@ -2487,7 +2406,7 @@ Arrays são contruídas de colchetes, os quais contém uma lista de itens separa
     
     ```
     
-    Copy to Clipboard
+  
     
 2.  Neste caso, cada item na array é uma string, mas tenha em mente que você pode armazenar qualquer item em uma array — string, número, objeto, outra variável, até outra array. Você pode também misturar e combinar tipos de itens — eles não têm que ser todos números, strings, etc. Tente isto:
     
@@ -2497,7 +2416,7 @@ Arrays são contruídas de colchetes, os quais contém uma lista de itens separa
     
     ```
     
-    Copy to Clipboard
+  
     
 3.  Tente criar um par de arrays você mesmo, antes de seguir em frente.
 
@@ -2513,7 +2432,7 @@ Você pode acessar itens individuais em uma array usando a notação de colchete
     
     ```
     
-    Copy to Clipboard
+  
     
 2.  Você também pode modificar um item em uma array simplesmente dando um novo valor ao item. Tente isto:
     
@@ -2524,7 +2443,7 @@ Você pode acessar itens individuais em uma array usando a notação de colchete
     
     ```
     
-    Copy to Clipboard
+  
     
     **Nota:**  Nós dissemos isto antes, mas como lembrete — computadores começam a contar do 0!
     
@@ -2535,7 +2454,7 @@ Você pode acessar itens individuais em uma array usando a notação de colchete
     
     ```
     
-    Copy to Clipboard
+  
     
 4.  Antes de continuar, faça algumas modificações nos exemplos, crie seus próprios arrays e veja o que funciona e o que não funciona. Divirta-se!
 
@@ -2549,7 +2468,6 @@ sequence.length;
 
 ```
 
-Copy to Clipboard
 
 Isto tem outras funcionalidades, mas é mais comum usar em um laço para seguir todos os itens em uma array. Então, por exemplo:
 
@@ -2561,7 +2479,6 @@ for (var i = 0; i < sequence.length; i++) {
 
 ```
 
-Copy to Clipboard
 
 Você irá aprender sobre laços propriamente em um artigo futuro, mas, brevemente, este código está dizendo:
 
@@ -2586,7 +2503,7 @@ Frequentemente você vai se deparar com alguns dados contidos em uma grande e lo
     
     ```
     
-    Copy to Clipboard
+  
     
 2.  Agora vamos dividir isto em cada vírgula:
     
@@ -2596,7 +2513,7 @@ Frequentemente você vai se deparar com alguns dados contidos em uma grande e lo
     
     ```
     
-    Copy to Clipboard
+  
     
 3.  Finalmente, tentamos encontrar o comprimento da sua nova array, e recuperar alguns itens dela:
     
@@ -2608,7 +2525,7 @@ Frequentemente você vai se deparar com alguns dados contidos em uma grande e lo
     
     ```
     
-    Copy to Clipboard
+  
     
 4.  Você também pode ir no sentido oposto usando o método  [`join()`](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/join). Tente o seguinte:
     
@@ -2618,7 +2535,7 @@ Frequentemente você vai se deparar com alguns dados contidos em uma grande e lo
     
     ```
     
-    Copy to Clipboard
+  
     
 5.  Outro jeito de converter uma array em uma string é usar o método  [`toString()`](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/toString).  `toString()`  é indiscutivelmente mais simples que o  `join()`  pois não necessita um parâmetro, mas mais limitado. Com  `join()`  você pode especificar diferentes separadores (tente o passo 4 com um caracter diferente da vírgula).
     
@@ -2628,7 +2545,7 @@ Frequentemente você vai se deparar com alguns dados contidos em uma grande e lo
     
     ```
     
-    Copy to Clipboard
+  
     
 
 ### [Adicionando e removendo itens de arrays](https://developer.mozilla.org/pt-BR/docs/Learn/JavaScript/First_steps/Arrays#adicionando_e_removendo_itens_de_arrays)
@@ -2640,7 +2557,6 @@ var myArray = ['Manchester', 'London', 'Liverpool', 'Birmingham', 'Leeds', 'Carl
 
 ```
 
-Copy to Clipboard
 
 Antes de tudo, para adicionar ou remover um item no final de uma array, nós podemos usar  [`push()`](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/push)  e  [`pop()`](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/pop)  respectivamente.
 
@@ -2654,7 +2570,7 @@ Antes de tudo, para adicionar ou remover um item no final de uma array, nós pod
     
     ```
     
-    Copy to Clipboard
+  
     
 2.  O novo comprimento da array é retornado quando a chamada do método completa. Se você quer armazenar o novo comprimento da array em uma variável, você poderia fazer algo como isto:
     
@@ -2665,7 +2581,7 @@ Antes de tudo, para adicionar ou remover um item no final de uma array, nós pod
     
     ```
     
-    Copy to Clipboard
+  
     
 3.  Removendo o último item da array é tão simples como um  `pop()`  nele. Tente isto:
     
@@ -2674,7 +2590,7 @@ Antes de tudo, para adicionar ou remover um item no final de uma array, nós pod
     
     ```
     
-    Copy to Clipboard
+  
     
 4.  O item que foi removido é retornado quando a chamada do método completa. Para salvar o item em uma nova variável, você poderia fazer isto:
     
@@ -2685,7 +2601,7 @@ Antes de tudo, para adicionar ou remover um item no final de uma array, nós pod
     
     ```
     
-    Copy to Clipboard
+  
     
 
 [`unshift()`](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/unshift)  e  [`shift()`](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/shift)  funciona exatamente do mesmo modo que  `push()`  e  `pop()`, respectivamente, exceto que eles funcionam no começo da array, não no final.
@@ -2698,7 +2614,7 @@ Antes de tudo, para adicionar ou remover um item no final de uma array, nós pod
     
     ```
     
-    Copy to Clipboard
+  
     
 2.  Agora  `shift()`;Tente estes!
     
@@ -2709,7 +2625,7 @@ Antes de tudo, para adicionar ou remover um item no final de uma array, nós pod
     
     ```
     
-    Copy to Clipboard
+  
     
 
 ## [Aprendizado ativo: Imprimindo aqueles produtos!](https://developer.mozilla.org/pt-BR/docs/Learn/JavaScript/First_steps/Arrays#aprendizado_ativo_imprimindo_aqueles_produtos!)
@@ -2820,6 +2736,6 @@ Completando a função  `result()`:
     
     ```
     
-    Copy to Clipboard
+  
     
 -   [Math.round()](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Math/round)  é um método JavaScript integrado que simplesmente arredonda o resultado de um cálculo para o número inteiro mais próximo.
