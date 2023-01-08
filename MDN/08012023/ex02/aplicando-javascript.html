@@ -1,28 +1,53 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Aplicando JavaScript</title>
-  </head>
-  <body>
-    <button>Click me</button>
 
-    <script>
-      //função que cria paragrafos
-      function criarParagrafo() {
-        let para = document.createElement("p"); //variavel que fefine que o elemento p será criado
-        para.textContent = "Você clicou no botão!"; //texto exibido no paragrafo criado
-        document.body.appendChild(para); //define que o elemento deverá ser criado apos o outro
-      }
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aplicando JavaScript</title>
+</head>
 
-      const botoes = document.querySelectorAll("button"); //seleciona o elemento button pelo seletor
+<body>
+  <button>Click me</button>
 
-      for (var i = 0; i < botoes.length; i++) {
-        //estrutura de repetição com variavel de controle
-        botoes[i].addEventListener("click", criarParagrafo);
-      }
-    </script>
-  </body>
+  <script>
+    //função que cria paragrafos
+    function criarParagrafo() {
+      let para = document.createElement("p"); //variavel que fefine que o elemento p será criado
+      para.textContent = "Você clicou no botão!"; //texto exibido no paragrafo criado
+      document.body.appendChild(para); //define que o elemento deverá ser criado apos o outro
+    }
+
+    const botoes = document.querySelectorAll("button"); //seleciona o elemento button pelo seletor
+
+    for (var i = 0; i < botoes.length; i++) {
+      //estrutura de repetição com variavel de controle
+      botoes[i].addEventListener("click", criarParagrafo);
+    }
+
+    // Função: Cria um novo parágrafo e o insere no fim do arquivo HTML.
+
+    function criarParagrafo() {
+      var para = document.createElement('p');
+      para.textContent = 'Você clicou no botão!';
+      document.body.appendChild(para);
+    }
+
+    /*
+      1. Captura referências de todos os botões na página e armazena isso em um array.
+      2. Vai até todos os botões e adiciona um event listener click a cada um deles.
+    
+      Quando cada botão é clicado, a função criarParagrafo() será executada.
+    */
+
+    const botoes = document.querySelectorAll('button');
+
+    for (var i = 0; i < botoes.length; i++) {
+      botoes[i].addEventListener('click', criarParagrafo);
+    }
+
+  </script>
+</body>
+
 </html>
