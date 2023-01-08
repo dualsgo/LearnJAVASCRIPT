@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aplicando JavaScript</title>
+  </head>
+  <body>
+    <button>Click me</button>
+
+    <script>
+      //função que cria paragrafos
+      function criarParagrafo() {
+        let para = document.createElement("p"); //variavel que fefine que o elemento p será criado
+        para.textContent = "Você clicou no botão!"; //texto exibido no paragrafo criado
+        document.body.appendChild(para); //define que o elemento deverá ser criado apos o outro
+      }
+
+      const botoes = document.querySelectorAll("button"); //seleciona o elemento button pelo seletor
+
+      for (var i = 0; i < botoes.length; i++) {
+        //estrutura de repetição com variavel de controle
+        botoes[i].addEventListener("click", criarParagrafo);
+      }
+    </script>
+  </body>
+</html>
